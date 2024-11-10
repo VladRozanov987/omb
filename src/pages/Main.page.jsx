@@ -1,0 +1,26 @@
+//Components
+import MainSection from "../components/MainSection.component";
+import Photo from "../components/Photo.component";
+import Council from "../components/Council.component";
+import Questions from "../components/Questions.component";
+import Banner from "../components/Banner.component";
+import News from "../components/News.component";
+import Faq from "../components/Faq.component";
+import Partners from "../components/Partners.component";
+
+const MainPage = () => {
+  return (
+    <>
+      <MainSection />;
+      <Photo />
+      <Council title="Рада експертів" isAboutPage={false} />
+      <Questions />
+      <Banner />
+      <News limit={2} showButton={true} />
+      <Faq />
+      <Partners />
+    </>
+  );
+};
+
+export default MainPage;
