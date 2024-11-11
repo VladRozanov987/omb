@@ -1,6 +1,12 @@
 import React, { useState } from "react";
+
+//Styled
 import styled from "styled-components";
+
+//Data
 import { data } from "../data/Council.data";
+
+//Icons
 import ArrowUp from "../assets/icons/ArrowUpRightW.svg";
 
 const Council = ({ title = "Рада експертів", isAboutPage = false }) => {
@@ -85,7 +91,7 @@ const FilterButtons = ({ filter, onFilterChange }) => (
 );
 
 const StyledCouncil = styled.section`
-  padding: 128px 0 0 0;
+  padding-top: 128px;
 
   .d-flex {
     align-items: center;
@@ -93,6 +99,10 @@ const StyledCouncil = styled.section`
       isAboutPage
         ? "justify-content: flex-start;"
         : "justify-content: space-between;"}
+
+    h2 {
+      margin-bottom: 24px;
+    }
   }
 
   .btn {
@@ -120,20 +130,20 @@ const StyledCouncil = styled.section`
   .cards-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    margin: 48px 0 40px 0;
+    margin: 24px 0 40px 0;
     gap: 16px;
   }
 
   .card {
-    border: 1px solid #ccc;
-    border-radius: 8px;
     padding: 16px;
-    text-align: center;
+    text-align: left;
+
     img {
       max-width: 170px;
       height: auto;
       border-radius: 8px;
       margin-bottom: 16px;
+      margin-right: 32px;
     }
   }
 
@@ -144,6 +154,7 @@ const StyledCouncil = styled.section`
       font-size: 20px;
       color: var(--1c1f1c);
     }
+
     p {
       font-family: var(--font-family);
       font-weight: 300;

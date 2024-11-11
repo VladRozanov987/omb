@@ -48,16 +48,19 @@ const StyledNews = styled.section`
   .news-container {
     justify-content: space-between;
   }
+
   .news-items {
     cursor: pointer;
     margin-top: 50px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 48px;
+
     img {
       margin-bottom: 16px;
     }
   }
+
   .news-content {
     h3 {
       font-family: var(--font-family);
@@ -67,6 +70,7 @@ const StyledNews = styled.section`
       color: #000;
       margin-bottom: 16px;
     }
+
     p {
       font-family: var(--font-family);
       font-weight: 300;
@@ -75,6 +79,7 @@ const StyledNews = styled.section`
       color: #6e6e6e;
       margin-bottom: 8px;
     }
+
     span {
       font-family: var(--font-family);
       font-weight: 300;

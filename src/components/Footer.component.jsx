@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 //Styled
 import styled from "styled-components";
 
@@ -7,13 +9,10 @@ import Logo from "../assets/img/Logo.png";
 // Icons
 import insta from "../assets/icons/insta.svg";
 import instaHov from "../assets/icons/insta-hov.svg";
-
 import linked from "../assets/icons/linked.svg";
 import linkedHov from "../assets/icons/linked-hov.svg";
-
 import facebook from "../assets/icons/facebook.svg";
 import facebookHov from "../assets/icons/facebook-hov.svg";
-import { useState } from "react";
 
 const Footer = () => {
   const [hoveredIcons, setHoveredIcons] = useState({
@@ -158,31 +157,37 @@ const Footer = () => {
 const StyledFooter = styled.footer`
   padding: 46px 0 13px 0;
   background: #f3f3f3;
+
   .footer-links {
     display: flex;
     align-items: center;
     justify-content: space-between;
+
     ul > li:not(:last-child) {
       margin-right: 32px;
     }
   }
+
   .footer-text {
     margin-top: 10px;
     display: flex;
     justify-content: space-between;
   }
+
   .text-block {
     display: flex;
     flex-direction: column;
     margin: 12px 0;
+
     a {
       font-family: var(--font-family);
       font-weight: 600;
       font-size: 16px;
-      line-height: 200%;
+      line-height: 150%;
       color: var(--1c1f1c);
     }
   }
+
   .copy {
     font-family: var(--font-family);
     font-weight: 400;

@@ -40,10 +40,12 @@ const StyledQuestions = styled.section`
   .questions-aside {
     max-width: 566px;
     width: 566px;
+
     h2 {
       max-width: 514px;
       margin-bottom: 48px;
     }
+
     p {
       max-width: 430px;
       font-family: var(--font-family);

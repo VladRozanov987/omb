@@ -1,3 +1,6 @@
+import { BrowserRouter as Router } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
+
 //Components
 import Header from "./components/Header.component";
 import Footer from "./components/Footer.component";
@@ -10,9 +13,8 @@ import NewsDetail from "./pages/NewsDetail.page";
 
 //Global Style
 import GlobalStyle from "./components/GlobalStyle.component";
-import { BrowserRouter as Router } from "react-router-dom";
-import { Route, Routes } from "react-router-dom";
 
+//Hooks
 import ScrollToTop from "./hooks/ScrollToTop";
 
 function App() {

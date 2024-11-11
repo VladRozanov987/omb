@@ -7,8 +7,8 @@ const GlobalStyle = createGlobalStyle`
     --ffc50a: #ffc50a;
     --245daa: #245daa;
     --1c1f1c: #1c1f1c;
-    --font-family: "e-Ukraine Head", sans-serif;
-    --second-family: "e-Ukraine", sans-serif;
+    --font-family: "Play", sans-serif;
+    --second-family: "Play", sans-serif;
   }
 
   * {
@@ -90,7 +90,7 @@ const GlobalStyle = createGlobalStyle`
     font-weight: 600;
     font-size: 16px;
     line-height: 150%;
-    color: #000;
+    color: var(--1c1f1c);
   }
 
   ul {
@@ -105,7 +105,6 @@ const GlobalStyle = createGlobalStyle`
     line-height: 150%;
     color: #232824;
     text-decoration: none;
-
   }
 
   span {
@@ -115,8 +114,6 @@ const GlobalStyle = createGlobalStyle`
     line-height: 229%;
     color: var(--464646);
   }
-
-  
 `;
 
 export default GlobalStyle;

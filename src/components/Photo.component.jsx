@@ -29,13 +29,16 @@ const Photo = () => {
 const StyledPhoto = styled.section`
   margin-top: -30px;
   z-index: 2;
+
   .main-img {
     margin: 80px 0 130px 0;
     z-index: 9;
+
     img {
       max-width: 100%;
     }
   }
+
   .main-expl {
     display: flex;
     align-items: center;
@@ -52,6 +55,7 @@ const StyledPhoto = styled.section`
       color: var(--1c1f1c);
     }
   }
+
   .main-expl::before {
     content: "";
     position: absolute;

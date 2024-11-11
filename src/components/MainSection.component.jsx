@@ -44,9 +44,11 @@ const StyledMain = styled.main`
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+
   h1 {
     max-width: 780px;
   }
+
   p {
     font-family: var(--font-family);
     font-weight: 300;
@@ -57,6 +59,7 @@ const StyledMain = styled.main`
     margin-top: 32px;
     margin-bottom: 40px;
   }
+
   .main-name {
     margin-top: 78px;
     max-width: 388px;
@@ -64,6 +67,7 @@ const StyledMain = styled.main`
     display: flex;
     flex-direction: column;
     justify-self: center;
+
     h3 {
       font-family: var(--font-family);
       font-weight: 400;
@@ -71,6 +75,7 @@ const StyledMain = styled.main`
       text-align: right;
       color: var(--1c1f1c);
     }
+
     p {
       font-family: var(--font-family);
       font-weight: 300;

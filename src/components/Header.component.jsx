@@ -1,4 +1,6 @@
 import { useState } from "react";
+
+//Styled
 import styled from "styled-components";
 
 // Images
@@ -7,18 +9,16 @@ import logo from "../assets/img/Logo.png";
 // Icons
 import insta from "../assets/icons/insta.svg";
 import instaHov from "../assets/icons/insta-hov.svg";
-
 import linked from "../assets/icons/linked.svg";
 import linkedHov from "../assets/icons/linked-hov.svg";
-
 import facebook from "../assets/icons/facebook.svg";
 import facebookHov from "../assets/icons/facebook-hov.svg";
-
 import ArrowUpRight from "../assets/icons/ArrowUpRight.svg";
 
 //Router
 import { Link } from "react-router-dom";
 
+//Modal
 import ContactFormModal from "../components/ContactFormModal.component";
 
 const Header = () => {
@@ -130,26 +130,31 @@ const StyledHeader = styled.header`
   z-index: 1000;
   background-color: white;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
   .d-flex {
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
+
   nav,
   nav > ul {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
   }
+
   ul > li {
     :hover {
       text-decoration: underline;
       color: var(--245daa);
     }
   }
+
   ul > li:not(:last-child) {
     margin-right: 24px;
   }
+
   .tel_number {
     font-family: var(--font-family);
     font-weight: 500;
@@ -157,11 +162,12 @@ const StyledHeader = styled.header`
     line-height: 150%;
     color: #232824;
   }
+
   .tel_text {
     font-family: var(--font-family);
     font-weight: 300;
-    font-size: 14px;
-    line-height: 129%;
+    font-size: 12px;
+    line-height: 150%;
     text-align: right;
     color: var(--464646);
   }

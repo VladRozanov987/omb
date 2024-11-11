@@ -24,11 +24,14 @@ const AboutSecondary = () => {
 
 const StyledAboutSecondary = styled.section`
   padding: 48px 0;
+
   .d-flex {
     align-items: center;
   }
+
   .text-block {
     margin-left: 77px;
+
     p {
       font-family: var(--font-family);
       font-weight: 300;

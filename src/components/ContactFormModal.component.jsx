@@ -1,8 +1,12 @@
 import React, { useState } from "react";
+
+//Styled
 import styled from "styled-components";
+
+//Icons
 import ArrowUp from "../assets/icons/ArrowUpRight.svg";
 import Download from "../assets/icons/Download.svg";
-import DeleteIcon from "../assets/icons/DeleteIcon.svg"; // предполагается, что иконка для удаления находится здесь
+import DeleteIcon from "../assets/icons/DeleteIcon.svg";
 
 const ContactFormModal = ({ isOpen, onClose }) => {
   const [formData, setFormData] = useState({
@@ -93,23 +97,29 @@ const ContactFormModal = ({ isOpen, onClose }) => {
               <input type="file" onChange={handleFileChange} multiple hidden />
               <img src={Download} alt="Upload" />
             </label>
-            <span>Загрузити додаткові матеріали</span>
+            <span>
+              Загрузити додаткові матеріали{" "}
+              <span className="orangeSpan">Відкрити</span>{" "}
+            </span>
           </div>
 
           <div className="file-list">
             {formData.files.length > 0 && (
               <ul>
                 {formData.files.map((file, index) => {
-                  const isImage = file.type.startsWith("image/"); // Проверка, является ли файл изображением
+                  const isImage = file.type.startsWith("image/");
                   return (
                     <li key={index}>
                       <div className="file-preview">
                         {isImage ? (
-                          <img
-                            src={URL.createObjectURL(file)}
-                            alt={file.name}
-                            className="file-img"
-                          />
+                          <>
+                            <img
+                              src={URL.createObjectURL(file)}
+                              alt={file.name}
+                              className="file-img"
+                            />
+                            <span>{file.name}</span>
+                          </>
                         ) : (
                           <span>{file.name}</span>
                         )}
@@ -164,6 +174,7 @@ const ModalContent = styled.div`
     text-align: center;
     color: #fff;
   }
+
   p {
     font-family: var(--font-family);
     font-weight: 400;
@@ -261,8 +272,19 @@ const ModalContent = styled.div`
 
   .upload-container {
     justify-content: start;
+
     span {
       margin-left: 16px;
+    }
+
+    .orangeSpan {
+      font-family: var(--second-family);
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 143%;
+      text-decoration: underline;
+      text-decoration-skip-ink: none;
+      color: var(--ffc50a);
     }
   }
 
@@ -273,6 +295,7 @@ const ModalContent = styled.div`
     line-height: 143%;
     color: #fff;
   }
+
   input::placeholder,
   textarea::placeholder {
     font-family: var(--second-family);

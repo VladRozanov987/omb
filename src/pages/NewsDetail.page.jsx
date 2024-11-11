@@ -1,3 +1,6 @@
+import React, { useEffect } from "react";
+import { useParams } from "react-router-dom";
+
 //Styled
 import styled from "styled-components";
 
@@ -10,8 +13,7 @@ import X from "../assets/icons/x.svg";
 import facebook from "../assets/icons/facebook.svg";
 import telegram from "../assets/icons/telegram.svg";
 
-import React, { useEffect } from "react";
-import { useParams } from "react-router-dom";
+//Data
 import { data as newsData } from "../data/News.data";
 
 const NewsDetail = () => {
@@ -113,15 +115,19 @@ const StyledWrapper = styled.div`
   flex-direction: column;
   max-width: 1020px;
   margin: 0 auto;
+
   h2 {
     margin-bottom: 24px;
   }
+
   span {
     margin-bottom: 32px;
   }
+
   img {
     margin-bottom: 32px;
   }
+
   .news-text {
     font-family: var(--font-family);
     font-weight: 300;
@@ -130,6 +136,7 @@ const StyledWrapper = styled.div`
     color: var(--1c1f1c);
     margin-bottom: 32px;
   }
+
   .news-title {
     font-family: var(--font-family);
     font-weight: 500;
@@ -138,10 +145,13 @@ const StyledWrapper = styled.div`
     color: var(--1c1f1c);
     margin-bottom: 16px;
   }
+
   .share {
     border-top: 1px solid #b9b9b9;
     margin-top: 64px;
     padding-top: 24px;
+    align-items: center;
+    justify-content: start;
 
     p {
       font-family: var(--font-family);
@@ -149,14 +159,9 @@ const StyledWrapper = styled.div`
       font-size: 16px;
       line-height: 200%;
       color: #000;
-    }
-  }
-  .share {
-    align-items: center;
-    justify-content: start;
-    p {
       margin-right: 30px;
     }
+
     img {
       width: 24px;
       margin: 0 40px 0 0;

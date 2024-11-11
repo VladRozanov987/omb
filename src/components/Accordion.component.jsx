@@ -1,5 +1,9 @@
 import React, { useState } from "react";
+
+//Styled
 import styled from "styled-components";
+
+//Data
 import { accordionData } from "../data/Accordion.data";
 
 const AccordionList = () => {
@@ -46,6 +50,7 @@ const StyledAccordionList = styled.section`
     align-items: center;
     padding: 16px;
     cursor: pointer;
+
     h3 {
       font-family: var(--font-family);
       font-weight: 500;

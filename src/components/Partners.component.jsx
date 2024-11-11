@@ -37,6 +37,7 @@ const Partners = () => {
 
 const StyledPartners = styled.section`
   padding-bottom: 128px;
+
   .partners-grid {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
@@ -49,7 +50,6 @@ const StyledPartners = styled.section`
     align-items: center;
     justify-content: center;
     padding: 16px;
-    background-color: #f8f8f8;
     border-radius: 8px;
   }
 

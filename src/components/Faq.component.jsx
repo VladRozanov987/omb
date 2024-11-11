@@ -26,6 +26,7 @@ const Faq = () => {
 
 const StyledFaq = styled.section`
   padding: 128px 0;
+
   .container {
     display: flex;
   }
@@ -34,10 +35,12 @@ const StyledFaq = styled.section`
     max-width: 443px;
     width: 443px;
     margin-right: 161px;
+
     h2 {
       max-width: 400px;
       margin-bottom: 48px;
     }
+
     p {
       max-width: 430px;
       font-family: var(--font-family);

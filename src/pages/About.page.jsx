@@ -6,6 +6,8 @@ import aboutImg from "../assets/img/about.jpg";
 
 //Icons
 import qm from "../assets/icons/qm.svg";
+
+//Components
 import AboutSecondary from "../components/AboutSecondary.component";
 import Council from "../components/Council.component";
 import Banner from "../components/Banner.component";
@@ -72,6 +74,7 @@ const StyledAbout = styled.section`
       background-size: contain;
       z-index: -1;
     }
+
     h4 {
       font-family: var(--font-family);
       font-weight: 400;
@@ -80,12 +83,14 @@ const StyledAbout = styled.section`
       color: var(--1c1f1c);
       margin-bottom: 48px;
     }
+
     h5 {
       font-family: var(--font-family);
       font-weight: 400;
       font-size: 20px;
       color: var(--1c1f1c);
     }
+
     p {
       font-family: var(--font-family);
       font-weight: 300;
@@ -93,6 +98,7 @@ const StyledAbout = styled.section`
       line-height: 171%;
       color: #6e6e6e;
     }
+
     .text-container {
       max-width: 1020px;
       display: flex;
