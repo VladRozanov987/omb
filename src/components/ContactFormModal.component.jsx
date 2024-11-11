@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 //Styled
 import styled from "styled-components";
@@ -7,6 +7,7 @@ import styled from "styled-components";
 import ArrowUp from "../assets/icons/ArrowUpRight.svg";
 import Download from "../assets/icons/Download.svg";
 import DeleteIcon from "../assets/icons/DeleteIcon.svg";
+import select from "../assets/icons/select.svg";
 
 const ContactFormModal = ({ isOpen, onClose }) => {
   const [formData, setFormData] = useState({
@@ -16,6 +17,17 @@ const ContactFormModal = ({ isOpen, onClose }) => {
     message: "",
     files: [],
   });
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.classList.add("no-scroll");
+    } else {
+      document.body.classList.remove("no-scroll");
+    }
+    return () => {
+      document.body.classList.remove("no-scroll");
+    };
+  }, [isOpen]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -48,100 +60,109 @@ const ContactFormModal = ({ isOpen, onClose }) => {
         <button className="close-button" onClick={onClose}>
           ×
         </button>
-        <h4>Задайте питання омбудсмену</h4>
-        <p>
-          Головний документ, яким керується Омбудсман України — Конституція
-          України. Відповідно до неї Уповноважений має доступ до місць
-          несвободи.
-        </p>
-        <form onSubmit={handleSubmit}>
-          <div className="d-flex">
-            <input
-              type="text"
-              name="name"
-              placeholder="Ваше ім’я*"
-              value={formData.name}
+        <ModalContentInner>
+          <h4>Задайте питання омбудсмену</h4>
+          <p>
+            Головний документ, яким керується Омбудсман України — Конституція
+            України. Відповідно до неї Уповноважений має доступ до місць
+            несвободи.
+          </p>
+          <form onSubmit={handleSubmit}>
+            <div className="d-flex">
+              <input
+                className="marginInput"
+                type="text"
+                name="name"
+                placeholder="Ваше ім’я*"
+                value={formData.name}
+                onChange={handleChange}
+                required
+              />
+              <input
+                type="tel"
+                name="phone"
+                placeholder="Ваш телефон*"
+                value={formData.phone}
+                onChange={handleChange}
+                required
+              />
+            </div>
+
+            <select
+              className="custom-select"
+              name="reason"
+              value={formData.reason}
               onChange={handleChange}
               required
-            />
-            <input
-              type="tel"
-              name="phone"
-              placeholder="Ваш телефон*"
-              value={formData.phone}
+            >
+              <option value="">Тема запиту</option>
+              <option value="reason1">Тема 1</option>
+              <option value="reason2">Тема 2</option>
+              <option value="reason3">Тема 3</option>
+            </select>
+            <textarea
+              name="message"
+              placeholder="Ваше повідомлення"
+              value={formData.message}
               onChange={handleChange}
-              required
             />
-          </div>
 
-          <select
-            name="reason"
-            value={formData.reason}
-            onChange={handleChange}
-            required
-          >
-            <option value="">Тема запиту</option>
-            <option value="reason1">Тема 1</option>
-            <option value="reason2">Тема 2</option>
-            <option value="reason3">Тема 3</option>
-          </select>
-          <textarea
-            name="message"
-            placeholder="Ваше повідомлення"
-            value={formData.message}
-            onChange={handleChange}
-          />
+            <div className="upload-container">
+              <label className="upload-btn">
+                <input
+                  type="file"
+                  onChange={handleFileChange}
+                  multiple
+                  hidden
+                />
+                <img src={Download} alt="Upload" />
+              </label>
+              <span>
+                Загрузити додаткові матеріали{" "}
+                <span className="orangeSpan">Відкрити</span>{" "}
+              </span>
+            </div>
 
-          <div className="upload-container d-flex">
-            <label className="upload-btn">
-              <input type="file" onChange={handleFileChange} multiple hidden />
-              <img src={Download} alt="Upload" />
-            </label>
-            <span>
-              Загрузити додаткові матеріали{" "}
-              <span className="orangeSpan">Відкрити</span>{" "}
-            </span>
-          </div>
-
-          <div className="file-list">
-            {formData.files.length > 0 && (
-              <ul>
-                {formData.files.map((file, index) => {
-                  const isImage = file.type.startsWith("image/");
-                  return (
-                    <li key={index}>
-                      <div className="file-preview">
-                        {isImage ? (
-                          <>
-                            <img
-                              src={URL.createObjectURL(file)}
-                              alt={file.name}
-                              className="file-img"
-                            />
+            <div className="file-list">
+              {formData.files.length > 0 && (
+                <ul>
+                  {formData.files.map((file, index) => {
+                    const isImage = file.type.startsWith("image/");
+                    return (
+                      <li key={index}>
+                        <div className="file-preview">
+                          {isImage ? (
+                            <>
+                              <img
+                                src={URL.createObjectURL(file)}
+                                alt={file.name}
+                                className="file-img"
+                              />
+                              <span>{file.name}</span>
+                            </>
+                          ) : (
                             <span>{file.name}</span>
-                          </>
-                        ) : (
-                          <span>{file.name}</span>
-                        )}
-                      </div>
-                      <button
-                        type="button"
-                        className="delete-btn"
-                        onClick={() => handleRemoveFile(file)}
-                      >
-                        <img src={DeleteIcon} alt="Delete" />
-                      </button>
-                    </li>
-                  );
-                })}
-              </ul>
-            )}
-          </div>
-          <button className="btn-primary" type="submit">
-            Відправити питання
-            <img src={ArrowUp} alt="ArrowUp" />
-          </button>
-        </form>
+                          )}
+                        </div>
+                        <button
+                          type="button"
+                          className="delete-btn"
+                          onClick={() => handleRemoveFile(file)}
+                        >
+                          <img src={DeleteIcon} alt="Delete" />
+                        </button>
+                      </li>
+                    );
+                  })}
+                </ul>
+              )}
+            </div>
+            <button className="btn-primary" type="submit">
+              Відправити питання
+              <img src={ArrowUp} alt="ArrowUp" />
+            </button>
+          </form>
+        </ModalContentInner>
       </ModalContent>
     </ModalOverlay>
   );
@@ -160,12 +181,19 @@ const ModalOverlay = styled.div`
   z-index: 1000;
 `;
 
+const ModalContentInner = styled.div`
+  overflow-y: auto;
+  max-height: 70vh;
+  padding-top: 20px;
+`;
+
 const ModalContent = styled.div`
   background: var(--245daa);
   padding: 40px;
   width: 782px;
   border-radius: 24px;
   position: relative;
+  max-height: 80vh;
 
   h4 {
     font-family: var(--font-family);
@@ -185,18 +213,42 @@ const ModalContent = styled.div`
     margin-bottom: 46px;
   }
 
-  .d-flex > input:not(:last-child) {
+  .upload-container {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+  }
+
+  .upload-btn {
+    cursor: pointer;
+  }
+
+  .marginInput {
     margin-right: 24px;
   }
 
   .close-button {
     position: absolute;
-    top: 10px;
-    right: 10px;
-    background: none;
-    border: none;
-    font-size: 24px;
+    top: -20px;
+    right: -30px;
+    width: 35px;
+    height: 35px;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+    color: #000000;
     cursor: pointer;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.2s, transform 0.2s;
+
+    &:hover {
+      background-color: #f0f0f0;
+      transform: scale(1.1);
+    }
   }
 
   form {
@@ -226,6 +278,15 @@ const ModalContent = styled.div`
       display: flex;
       align-self: center;
     }
+
+    .custom-select {
+      appearance: none;
+      -moz-appearance: none;
+      -webkit-appearance: none;
+      background-image: url(${select});
+      background-repeat: no-repeat;
+      background-position: right 10px center;
+    }
   }
 
   .file-list {
@@ -240,9 +301,8 @@ const ModalContent = styled.div`
       li {
         display: flex;
         justify-content: space-between;
-        margin-bottom: 10px;
         align-items: center;
-        margin: 0;
+        margin: 0 0 10px 0;
 
         .file-preview {
           display: flex;

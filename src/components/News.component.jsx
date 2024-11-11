@@ -57,6 +57,7 @@ const StyledNews = styled.section`
     gap: 48px;
 
     img {
+      max-width: 100%;
       margin-bottom: 16px;
     }
   }

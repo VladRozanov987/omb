@@ -28,7 +28,7 @@ const Banner = () => {
 };
 
 const StyledBanner = styled.div`
-  padding: 128px 0;
+  padding: 128px 80px;
 
   .container {
     border-radius: 24px;

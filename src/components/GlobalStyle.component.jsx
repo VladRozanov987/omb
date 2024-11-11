@@ -114,6 +114,10 @@ const GlobalStyle = createGlobalStyle`
     line-height: 229%;
     color: var(--464646);
   }
+
+  .no-scroll {
+    overflow: hidden;
+  }
 `;
 
 export default GlobalStyle;
