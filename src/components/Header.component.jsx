@@ -22,6 +22,18 @@ import { Link } from "react-router-dom";
 import ContactFormModal from "../components/ContactFormModal.component";
 
 const Header = () => {
+  const handleScrollToQuestions = () => {
+    if (typeof window.scrollToQuestions === "function") {
+      window.scrollToQuestions();
+    }
+  };
+
+  const handleScrollToFooter = () => {
+    if (typeof window.scrollToFooter === "function") {
+      window.scrollToFooter();
+    }
+  };
+
   const [hoveredIcons, setHoveredIcons] = useState({
     insta: false,
     linked: false,
@@ -44,7 +56,9 @@ const Header = () => {
   return (
     <StyledHeader>
       <div className="container d-flex">
-        <img src={logo} alt="Logo" />
+        <Link to="/">
+          <img src={logo} alt="Logo" />
+        </Link>
 
         <ul>
           <li>
@@ -54,13 +68,13 @@ const Header = () => {
             <Link to="/about">Про нас</Link>
           </li>
           <li>
-            <a href="#">Питання</a>
+            <a onClick={handleScrollToQuestions}>Питання</a>
           </li>
           <li>
             <Link to="/news">Новини</Link>
           </li>
           <li>
-            <a href="#">Контакти</a>
+            <a onClick={handleScrollToFooter}>Контакти</a>
           </li>
         </ul>
 

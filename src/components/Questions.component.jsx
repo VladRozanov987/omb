@@ -7,25 +7,44 @@ import AccordionList from "./Accordion.component";
 //Icons
 import ArrowUp from "../assets/icons/ArrowUpRightW.svg";
 
+//Modal
+import ContactFormModal from "./ContactFormModal.component";
+
+import { useState } from "react";
+
 const Questions = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
   return (
     <StyledQuestions>
       <div className="container d-flex">
         <div className="questions-aside">
-          <h2>Перелік питань, за якими можна звернутись до омбудсмена</h2>
+          <h2>Основні категорії прав та принципи, які захищає Уповноважений</h2>
           <p>
-            Головний документ, яким керується Омбудсман України — Конституція
-            України. Відповідно до неї Уповноважений має доступ до місць
-            несвободи,{" "}
+            Ви можете звернутися з питаннями щодо соціального захисту, прав на
+            освіту, економічної підтримки та інших важливих аспектів вашого
+            життя за межами України. Захистимо ваші права разом!
           </p>
-          <button className="btn-secondary">
-            Зв’язатись з омбудсменом <img src={ArrowUp} alt="ArrowUp" />{" "}
+          <button className="btn-secondary" onClick={openModal}>
+            Зв’язатись з омбудсменом <img src={ArrowUp} alt="ArrowUp" />
           </button>
         </div>
         <div className="accordion-container">
           <AccordionList />
         </div>
       </div>
+
+      {isModalOpen && (
+        <ContactFormModal isOpen={isModalOpen} onClose={closeModal} />
+      )}
     </StyledQuestions>
   );
 };

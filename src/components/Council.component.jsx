@@ -8,6 +8,7 @@ import { data } from "../data/Council.data";
 
 //Icons
 import ArrowUp from "../assets/icons/ArrowUpRightW.svg";
+import { Link } from "react-router-dom";
 
 const Council = ({ title = "Рада експертів", isAboutPage = false }) => {
   const [filter, setFilter] = useState("All");
@@ -56,10 +57,9 @@ const Council = ({ title = "Рада експертів", isAboutPage = false })
         </div>
 
         {!isAboutPage && (
-          <button className="council-btn btn-secondary">
-            Детальніше про раду
-            <img src={ArrowUp} alt="" />
-          </button>
+          <Link to="/about" className="council-btn btn-secondary">
+            Детальніше про Раду <img src={ArrowUp} alt="ArrowUp" />
+          </Link>
         )}
       </div>
     </StyledCouncil>
@@ -167,6 +167,10 @@ const StyledCouncil = styled.section`
   .council-btn {
     display: flex;
     justify-self: center;
+    border-radius: 16px;
+    img {
+      margin-left: 4px;
+    }
   }
 `;
 

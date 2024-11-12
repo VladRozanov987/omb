@@ -2,22 +2,21 @@
 import styled from "styled-components";
 
 //Data
-import AccordionList from "./Accordion.component";
+import FaqList from "./FaqList.component";
 
 const Faq = () => {
   return (
     <StyledFaq>
       <div className="container">
         <div className="faq-aside">
-          <h2>FAQ</h2>
+          <h2>Відповіді на часті питання</h2>
           <p>
-            Головний документ, яким керується Омбудсман України — Конституція
-            України. Відповідно до неї Уповноважений має доступ до місць
-            несвободи,{" "}
+            У цьому розділі зібрано відповіді на найактуальніші питання, з якими
+            можуть стикатися українці, які перебувають у Польщі
           </p>
         </div>
         <div className="accordion-container">
-          <AccordionList />
+          <FaqList />
         </div>
       </div>
     </StyledFaq>

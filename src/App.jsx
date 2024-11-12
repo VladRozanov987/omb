@@ -1,5 +1,6 @@
 import { BrowserRouter as Router } from "react-router-dom";
 import { Route, Routes } from "react-router-dom";
+import { useRef, useEffect } from "react";
 
 //Components
 import Header from "./components/Header.component";
@@ -18,6 +19,16 @@ import GlobalStyle from "./components/GlobalStyle.component";
 import ScrollToTop from "./hooks/ScrollToTop";
 
 function App() {
+  const footerRef = useRef(null);
+
+  useEffect(() => {
+    window.scrollToFooter = () => {
+      if (footerRef.current) {
+        footerRef.current.scrollIntoView({ behavior: "smooth" });
+      }
+    };
+  }, []);
+
   return (
     <Router>
       <ScrollToTop />
@@ -30,7 +41,9 @@ function App() {
           <Route path="/news" element={<AllNewsPage />} />
           <Route path="/news/:id" element={<NewsDetail />} />
         </Routes>
-        <Footer />
+        <div ref={footerRef}>
+          <Footer />
+        </div>
       </div>
     </Router>
   );

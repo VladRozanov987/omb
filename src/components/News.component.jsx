@@ -19,24 +19,22 @@ const News = ({ title = "Останні новини", limit, showButton }) => {
         <div className="news-container d-flex">
           <h2>{title}</h2>
           {showButton && (
-            <button className="btn-secondary">
+            <Link to="/news" className="btn-secondary">
               Переглянути всі новини <img src={arrowUp} alt="arrowUp" />
-            </button>
+            </Link>
           )}
         </div>
 
         <div className="news-items">
           {newsToDisplay.map(({ id, name, text, date, image }) => (
-            <div key={id} className="news-item">
+            <Link key={id} to={`/news/${id}`} className="news-item">
               <img src={image} alt={name} className="news-image" />
               <div className="news-content">
-                <h3>
-                  <Link to={`/news/${id}`}>{name}</Link>
-                </h3>
+                <h3>{name}</h3>
                 <p>{text}</p>
                 <span className="news-date">{date}</span>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
@@ -47,6 +45,16 @@ const News = ({ title = "Останні новини", limit, showButton }) => {
 const StyledNews = styled.section`
   .news-container {
     justify-content: space-between;
+
+    .btn-secondary {
+      border-radius: 16px;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      img {
+        margin-left: 4px;
+      }
+    }
   }
 
   .news-items {
@@ -60,6 +68,14 @@ const StyledNews = styled.section`
       max-width: 100%;
       margin-bottom: 16px;
     }
+  }
+
+  .news-item {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   .news-content {

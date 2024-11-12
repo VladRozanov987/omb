@@ -1,5 +1,6 @@
 //Styled
 import styled from "styled-components";
+import { useState } from "react";
 
 //Img
 import bannerBg from "../assets/img/banner.jpg";
@@ -7,7 +8,15 @@ import bannerBg from "../assets/img/banner.jpg";
 //Icons
 import arrowUp from "../assets/icons/ArrowUpRight.svg";
 
+// Modal
+import ContactFormModal from "./ContactFormModal.component";
+
 const Banner = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => setIsModalOpen(true);
+  const closeModal = () => setIsModalOpen(false);
+
   return (
     <StyledBanner>
       <div className="container d-flex">
@@ -15,14 +24,15 @@ const Banner = () => {
           <h4>Виникли питання?</h4>
           <p>
             Головний документ, яким керується Омбудсман України — Конституція
-            України. Відповідно до неї Уповноважений має доступ до місць
+            України. Відповідно до неї Уповноважений має доступ до місць
             несвободи,{" "}
           </p>
         </div>
-        <button className="btn-primary">
+        <button className="btn-primary" onClick={openModal}>
           Зв’язатись з омбудсменом <img src={arrowUp} alt="ArrowUp" />{" "}
         </button>
       </div>
+      <ContactFormModal isOpen={isModalOpen} onClose={closeModal} />
     </StyledBanner>
   );
 };

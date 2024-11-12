@@ -7,22 +7,25 @@ import ArrowUpRightW from "../assets/icons/ArrowUpRightW.svg";
 //Img
 import aboutImg from "../assets/img/about.jpg";
 
+//Router
+import { Link } from "react-router-dom";
+
 const MainSection = () => {
   return (
     <StyledMain>
       <div className="container">
         <div className="main-aside">
           <h1>
-            Захист прав <br></br> і свобод громадян пріоритет держави
+            Захист прав <br /> і свобод громадян пріоритет держави
           </h1>
           <p>
-            Офіс Омбудсмана України діє як посередник між людиною <br></br> та
-            державою. Це незалежна інституція, яка покликана <br></br> захищати
+            Офіс Омбудсмана України діє як посередник між людиною <br /> та
+            державою. Це незалежна інституція, яка покликана <br /> захищати
             права громадян, які до неї звертаються.
           </p>
-          <button className="btn-secondary">
+          <Link to="/about" className="btn-secondary">
             Детальніше <img src={ArrowUpRightW} alt="ArrowUpRight" />
-          </button>
+          </Link>
           <div className="main-name">
             <h3>Марчук Вероніка Олена</h3>
             <p>
@@ -58,6 +61,16 @@ const StyledMain = styled.main`
     max-width: 546px;
     margin-top: 32px;
     margin-bottom: 40px;
+  }
+
+  .btn-secondary {
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    width: 150px;
+    img {
+      margin-left: 4px;
+    }
   }
 
   .main-name {

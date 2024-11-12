@@ -99,6 +99,7 @@ const GlobalStyle = createGlobalStyle`
   }
   
   a {
+    cursor: pointer;
     font-family: var(--second-family);
     font-weight: 400;
     font-size: 14px;

@@ -4,9 +4,9 @@ import React, { useState } from "react";
 import styled from "styled-components";
 
 //Data
-import { accordionData } from "../data/Accordion.data";
+import { FaqData } from "../data/FAQ.data";
 
-const AccordionList = () => {
+const FaqList = () => {
   const [openAccordion, setOpenAccordion] = useState(null);
 
   const toggleAccordion = (id) => {
@@ -15,7 +15,7 @@ const AccordionList = () => {
 
   return (
     <StyledAccordionList>
-      {accordionData.map(({ id, title, content }) => (
+      {FaqData.map(({ id, title, content }) => (
         <div key={id} className="accordion-item">
           <div className="accordion-header" onClick={() => toggleAccordion(id)}>
             <h3>{title}</h3>
@@ -87,4 +87,4 @@ const StyledAccordionList = styled.section`
   }
 `;
 
-export default AccordionList;
+export default FaqList;
