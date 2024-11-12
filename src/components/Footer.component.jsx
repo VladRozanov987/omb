@@ -76,8 +76,8 @@ const Footer = () => {
         <div className="footer-text">
           <div className="footer-text-left">
             <div className="text-block">
-              <h3>Україна, 01008, м. Київ,</h3>
-              <h3>вул. Інститутська, 21/8</h3>
+              <h3>Варшава, 02-797, Польща</h3>
+              <h3>алея Єрозолімські 109, оф.70</h3>
             </div>
             <div className="text-block">
               <span>Громадська приймальня працює:</span>
