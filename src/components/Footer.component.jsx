@@ -80,6 +80,15 @@ const Footer = () => {
               <h3>алея Єрозолімські 109, оф.70</h3>
             </div>
             <div className="text-block">
+              <h3>Контакт офісу у Варшаві</h3>
+              <a className="mail-to" href="mailto:ombudsman@ombudsman.pl">
+                ombudsman@ombudsman.pl
+              </a>
+              <a className="tel_number" href="tel:+48605911005">
+                +48 605 110 05
+              </a>
+            </div>
+            <div className="text-block">
               <span>Громадська приймальня працює:</span>
               <h3>понеділок - п'ятниця з 9:00-17:00</h3>
               <h3>субота та неділя — вихідні</h3>
