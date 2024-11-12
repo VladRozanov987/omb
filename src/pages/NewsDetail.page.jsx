@@ -28,6 +28,27 @@ const NewsDetail = () => {
     return <h2>Новина не знайдена</h2>;
   }
 
+  const shareOnFacebook = () => {
+    const facebookUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
+      window.location.href
+    )}`;
+    window.open(facebookUrl, "_blank", "width=600,height=400");
+  };
+
+  const shareOnTwitter = () => {
+    const twitterUrl = `https://twitter.com/intent/tweet?url=${encodeURIComponent(
+      window.location.href
+    )}&text=${encodeURIComponent(newsItem.name)}`;
+    window.open(twitterUrl, "_blank", "width=600,height=400");
+  };
+
+  const shareOnTelegram = () => {
+    const telegramUrl = `https://t.me/share/url?url=${encodeURIComponent(
+      window.location.href
+    )}&text=${encodeURIComponent(newsItem.name)}`;
+    window.open(telegramUrl, "_blank", "width=600,height=400");
+  };
+
   return (
     <StyledNews>
       <div className="container">
@@ -92,9 +113,24 @@ const NewsDetail = () => {
           <div className="share d-flex">
             <p>Поділитись новиною:</p>
 
-            <img src={X} alt="X" />
-            <img src={facebook} alt="facebook" />
-            <img src={telegram} alt="telegram" />
+            <img
+              className="share-btn"
+              src={X}
+              alt="X"
+              onClick={shareOnTwitter}
+            />
+            <img
+              className="share-btn"
+              src={facebook}
+              alt="facebook"
+              onClick={shareOnFacebook}
+            />
+            <img
+              className="share-btn"
+              src={telegram}
+              alt="telegram"
+              onClick={shareOnTelegram}
+            />
           </div>
         </StyledWrapper>
       </div>
@@ -126,6 +162,10 @@ const StyledWrapper = styled.div`
 
   img {
     margin-bottom: 32px;
+  }
+
+  .share-btn {
+    cursor: pointer;
   }
 
   .news-text {
