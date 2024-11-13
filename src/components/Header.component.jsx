@@ -16,16 +16,16 @@ import facebookHov from "../assets/icons/facebook-hov.svg";
 import ArrowUpRight from "../assets/icons/ArrowUpRight.svg";
 
 //Router
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 //Modal
 import ContactFormModal from "../components/ContactFormModal.component";
 
 const Header = () => {
+  const navigate = useNavigate();
+
   const handleScrollToQuestions = () => {
-    if (typeof window.scrollToQuestions === "function") {
-      window.scrollToQuestions();
-    }
+    navigate("/", { state: { scrollTo: "questions" } });
   };
 
   const handleScrollToFooter = () => {

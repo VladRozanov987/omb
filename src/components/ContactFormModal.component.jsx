@@ -1,9 +1,5 @@
 import React, { useEffect, useState } from "react";
-
-//Styled
 import styled from "styled-components";
-
-//Icons
 import ArrowUp from "../assets/icons/ArrowUpRight.svg";
 import Download from "../assets/icons/Download.svg";
 import DeleteIcon from "../assets/icons/DeleteIcon.svg";
@@ -17,6 +13,8 @@ const ContactFormModal = ({ isOpen, onClose }) => {
     message: "",
     files: [],
   });
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   useEffect(() => {
     if (isOpen) {
@@ -46,10 +44,40 @@ const ContactFormModal = ({ isOpen, onClose }) => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    onClose();
+    setIsSubmitting(true);
+
+    const formDataToSend = new FormData();
+    formDataToSend.append("name", formData.name);
+    formDataToSend.append("phone", formData.phone);
+    formDataToSend.append("reason", formData.reason);
+    formDataToSend.append("message", formData.message);
+
+    formData.files.forEach((file, index) => {
+      formDataToSend.append(`files[${index}]`, file);
+    });
+
+    try {
+      const response = await fetch("/form.php", {
+        method: "POST",
+        body: formDataToSend,
+      });
+
+      if (response.ok) {
+        console.log("Form successfully submitted");
+        alert("Ваш запит був успішно виконаний.");
+        onClose();
+      } else {
+        console.error("Form submission error");
+        alert("Сталась помилка при передачі запиту.");
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      alert("Помилка відправки форми. Будь ласка спробуйте ще раз.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   if (!isOpen) return null;
@@ -157,8 +185,12 @@ const ContactFormModal = ({ isOpen, onClose }) => {
                 </ul>
               )}
             </div>
-            <button className="btn-primary" type="submit">
-              Відправити питання
+            <button
+              className="btn-primary"
+              type="submit"
+              disabled={isSubmitting}
+            >
+              {isSubmitting ? "Надсилання..." : "Відправити питання"}
               <img src={ArrowUp} alt="ArrowUp" />
             </button>
           </form>

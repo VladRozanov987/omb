@@ -1,4 +1,5 @@
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 
 // Components
 import MainSection from "../components/MainSection.component";
@@ -12,14 +13,26 @@ import Partners from "../components/Partners.component";
 
 const MainPage = () => {
   const questionsRef = useRef(null);
+  const location = useLocation();
+  const [lastScrollTo, setLastScrollTo] = useState(null);
 
   useEffect(() => {
-    window.scrollToQuestions = () => {
+    if (
+      location.state?.scrollTo === "questions" &&
+      location.state.scrollTo !== lastScrollTo
+    ) {
       if (questionsRef.current) {
         questionsRef.current.scrollIntoView({ behavior: "smooth" });
+        setLastScrollTo(location.state.scrollTo);
       }
-    };
-  }, []);
+    }
+  }, [location, lastScrollTo]);
+
+  useEffect(() => {
+    if (location.state?.scrollTo === "questions" && questionsRef.current) {
+      questionsRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [location]);
 
   return (
     <>
