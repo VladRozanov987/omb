@@ -10,16 +10,16 @@ import qm from "../assets/icons/qm.svg";
 const Photo = () => {
   return (
     <StyledPhoto>
+      <div className="main-img">
+        <img src={people} alt="people" />
+      </div>
       <div className="container">
-        <div className="main-img">
-          <img src={people} alt="people" />
-        </div>
         <div className="main-expl">
-          <h2>
+          <h3>
             Офіс Омбудсмана України діє як посередник між людиною <br /> та
             державою. Це незалежна інституція, яка покликана <br /> захищати
             права громадян, які до неї звертаються.
-          </h2>
+          </h3>
         </div>
       </div>
     </StyledPhoto>
@@ -32,8 +32,8 @@ const StyledPhoto = styled.section`
 
   .main-img {
     margin: 80px 0 130px 0;
-    z-index: 9;
-
+    display: flex;
+    justify-content: center;
     img {
       max-width: 100%;
     }
@@ -46,7 +46,7 @@ const StyledPhoto = styled.section`
     position: relative;
     text-align: center;
 
-    h2 {
+    h3 {
       font-family: var(--font-family);
       font-weight: 400;
       font-size: 32px;
@@ -67,6 +67,25 @@ const StyledPhoto = styled.section`
     background-image: url(${qm});
     background-size: cover;
     background-position: center;
+  }
+
+  @media screen and (max-width: 768px) {
+    .main-img {
+      margin: 56px 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      img {
+        max-width: 200%;
+      }
+    }
+    .main-expl {
+      h3 {
+        font-size: 20px;
+        line-height: 160%;
+      }
+    }
   }
 `;
 

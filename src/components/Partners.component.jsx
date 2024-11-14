@@ -38,6 +38,10 @@ const Partners = () => {
 const StyledPartners = styled.section`
   padding-bottom: 128px;
 
+  @media screen and (max-width: 320px) {
+    padding-bottom: 20px;
+  }
+
   .partners-grid {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
@@ -57,6 +61,13 @@ const StyledPartners = styled.section`
     max-width: 100%;
     height: auto;
     object-fit: contain;
+  }
+
+  @media screen and (max-width: 320px) {
+    .partners-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px 24px;
+    }
   }
 `;
 

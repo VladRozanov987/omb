@@ -1,14 +1,10 @@
 import React, { useState } from "react";
-
-//Styled
 import styled from "styled-components";
-
-//Data
 import { data } from "../data/Council.data";
-
-//Icons
 import ArrowUp from "../assets/icons/ArrowUpRightW.svg";
 import { Link } from "react-router-dom";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
 
 const Council = ({ title = "Рада експертів", isAboutPage = false }) => {
   const [filter, setFilter] = useState("All");
@@ -25,35 +21,60 @@ const Council = ({ title = "Рада експертів", isAboutPage = false })
       <div className="container">
         <div className={`header d-flex ${isAboutPage ? "centered" : ""}`}>
           <h2>{title}</h2>
-          {!isAboutPage && (
-            <div className="filters d-flex">
-              <FilterButtons
-                filter={filter}
-                onFilterChange={handleFilterChange}
-              />
-            </div>
-          )}
         </div>
 
-        {isAboutPage && (
-          <div className="filters d-flex">
+        <div className="filters d-flex">
+          {/* Показываем кнопки фильтров на десктопе, и выпадающий список на мобильных устройствах */}
+          <div className="filter-buttons-desktop">
             <FilterButtons
               filter={filter}
               onFilterChange={handleFilterChange}
             />
           </div>
-        )}
+          <div className="filter-select-mobile">
+            <MobileFilterSelect
+              filter={filter}
+              onFilterChange={handleFilterChange}
+            />
+          </div>
+        </div>
 
-        <div className="cards-container">
-          {filteredData.map((item) => (
-            <div key={item.id} className="card d-flex">
-              <img src={item.image} alt={item.name} />
-              <div className="card-text">
-                <h3>{item.name}</h3>
-                <p>{item.text}</p>
+        {/* Статичная сетка для десктопа и слайдер для мобильных устройств */}
+        <div className="content-container">
+          <div className="cards-container">
+            {filteredData.slice(0, 6).map((item) => (
+              <div key={item.id} className="card d-flex">
+                <img src={item.image} alt={item.name} />
+                <div className="card-text">
+                  <h3>{item.name}</h3>
+                  <p>{item.text}</p>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
+
+          <div className="slider-container">
+            <Swiper
+              spaceBetween={16}
+              slidesPerView={1}
+              loop={true}
+              breakpoints={{
+                768: { slidesPerView: 1 },
+              }}
+            >
+              {filteredData.map((item) => (
+                <SwiperSlide key={item.id}>
+                  <div className="card d-flex">
+                    <img src={item.image} alt={item.name} />
+                    <div className="card-text">
+                      <h3>{item.name}</h3>
+                      <p>{item.text}</p>
+                    </div>
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
         </div>
 
         {!isAboutPage && (
@@ -88,6 +109,20 @@ const FilterButtons = ({ filter, onFilterChange }) => (
       )
     )}
   </>
+);
+
+const MobileFilterSelect = ({ filter, onFilterChange }) => (
+  <select
+    value={filter}
+    onChange={(e) => onFilterChange(e.target.value)}
+    className="mobile-filter"
+  >
+    <option value="All">Всі</option>
+    <option value="Coordinator">Координатори</option>
+    <option value="Help">Гум. допомога</option>
+    <option value="Entrepreneurs">Підприємці</option>
+    <option value="Volunteers">Волонтери</option>
+  </select>
 );
 
 const StyledCouncil = styled.section`
@@ -130,8 +165,12 @@ const StyledCouncil = styled.section`
   .cards-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    margin: 24px 0 40px 0;
     gap: 16px;
+    margin-bottom: 40px;
+  }
+
+  .slider-container {
+    display: none;
   }
 
   .card {
@@ -170,6 +209,45 @@ const StyledCouncil = styled.section`
     border-radius: 16px;
     img {
       margin-left: 4px;
+    }
+  }
+
+  .mobile-filter {
+    display: none;
+    margin-top: 20px;
+    padding: 10px;
+    width: 100%;
+    border-radius: 8px;
+    font-size: 14px;
+  }
+
+  .filter-buttons-desktop {
+    display: flex;
+  }
+
+  .filter-select-mobile {
+    display: none;
+  }
+
+  @media (max-width: 768px) {
+    .cards-container {
+      display: none;
+    }
+
+    .slider-container {
+      display: block;
+    }
+
+    .mobile-filter {
+      display: block;
+    }
+
+    .filter-buttons-desktop {
+      display: none;
+    }
+
+    .filter-select-mobile {
+      display: block;
     }
   }
 `;

@@ -204,6 +204,42 @@ const StyledFooter = styled.footer`
     line-height: 267%;
     color: var(--464646);
   }
+
+  @media screen and (max-width: 768px) {
+    .footer-links {
+      flex-direction: column;
+      align-items: baseline;
+      ul {
+        margin-top: 24px;
+        padding-left: 50px;
+      }
+    }
+    .footer-text-left {
+      h3 {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 171%;
+      }
+      .text-block {
+        a {
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 214%;
+        }
+        p {
+          font-weight: 300;
+          font-size: 14px;
+          line-height: 229%;
+        }
+      }
+      .copy {
+        display: none;
+      }
+    }
+    .footer-text-right {
+      display: none;
+    }
+  }
 `;
 
 export default Footer;

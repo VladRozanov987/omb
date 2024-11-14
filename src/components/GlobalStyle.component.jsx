@@ -28,6 +28,12 @@ const GlobalStyle = createGlobalStyle`
     padding: 0 60px 0 60px;
   }
 
+  @media screen and (max-width: 768px) {
+    .container {
+      padding: 0 12px;
+    }
+  }
+
   .d-flex {
     display: flex;
   }

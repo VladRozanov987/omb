@@ -23,9 +23,11 @@ const MainSection = () => {
             державою. Це незалежна інституція, яка покликана <br /> захищати
             права громадян, які до неї звертаються.
           </p>
-          <Link to="/about" className="btn-secondary">
-            Детальніше <img src={ArrowUpRightW} alt="ArrowUpRight" />
-          </Link>
+        </div>
+        <Link to="/about" className="btn-secondary">
+          Детальніше <img src={ArrowUpRightW} alt="ArrowUpRight" />
+        </Link>
+        <div>
           <div className="main-name">
             <h3>Марчук Вероніка Олена</h3>
             <p>
@@ -97,6 +99,32 @@ const StyledMain = styled.main`
       text-align: right;
       color: #6e6e6e;
       margin: 0;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    padding: 40px 0 56px 0;
+    min-height: auto;
+    .main-aside {
+      max-width: 217px;
+      h1 {
+        font-weight: 700;
+        font-size: 30px;
+        line-height: 107%;
+      }
+      p {
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 171%;
+        color: #6e6e6e;
+      }
+    }
+    .btn-secondary {
+      width: 100%;
+      justify-content: center;
+    }
+    .main-name {
+      display: none;
     }
   }
 `;
