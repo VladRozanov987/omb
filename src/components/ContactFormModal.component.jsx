@@ -96,7 +96,7 @@ const ContactFormModal = ({ isOpen, onClose }) => {
             несвободи.
           </p>
           <form onSubmit={handleSubmit}>
-            <div className="d-flex">
+            <div className="d-flex name-tel">
               <input
                 className="marginInput"
                 type="text"
@@ -395,6 +395,18 @@ const ModalContent = styled.div`
     font-size: 14px;
     line-height: 171%;
     color: var(--1c1f1c);
+  }
+  @media (max-width: 768px) {
+    width: 80%;
+    .name-tel {
+      flex-direction: column;
+      input {
+        margin: 8px 0;
+      }
+    }
+    .btn-primary {
+      width: 100%;
+    }
   }
 `;
 
