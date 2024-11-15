@@ -81,6 +81,37 @@ const StyledQuestions = styled.section`
     flex: 1;
     padding-left: 24px;
   }
+
+  @media screen and (max-width: 768px) {
+    padding-top: 56px;
+    .container {
+      flex-direction: column;
+    }
+    .questions-aside {
+      max-width: 100%;
+      width: auto;
+      h2 {
+        font-weight: 700;
+        font-size: 30px;
+        line-height: 107%;
+      }
+      p {
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 171%;
+        color: #6e6e6e;
+      }
+      .btn-secondary {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+      }
+    }
+    .accordion-container {
+      margin-top: 24px;
+      padding: 0;
+    }
+  }
 `;
 
 export default Questions;

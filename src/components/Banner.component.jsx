@@ -38,15 +38,15 @@ const Banner = () => {
 };
 
 const StyledBanner = styled.div`
-  padding: 128px 80px;
+  background-image: url(${bannerBg});
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 
   .container {
     border-radius: 24px;
     padding: 112px 80px;
-    background-image: url(${bannerBg});
-    background-position: center center;
-    background-size: cover;
-    background-repeat: no-repeat;
     align-items: center;
     justify-content: space-between;
 
@@ -77,6 +77,32 @@ const StyledBanner = styled.div`
       font-size: 16px;
       line-height: 187%;
       color: #fff;
+    }
+  }
+  @media (max-width: 768px) {
+    margin: 56px 0;
+    .container {
+      flex-direction: column;
+      padding: 56px 10px;
+    }
+    .banner-text {
+      h4 {
+        font-weight: 700;
+        font-size: 32px;
+        line-height: 125%;
+        margin-bottom: 16px;
+      }
+      p {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 171%;
+        margin-bottom: 32px;
+      }
+    }
+    .btn-primary {
+      width: 100%;
+      display: flex;
+      justify-content: center;
     }
   }
 `;

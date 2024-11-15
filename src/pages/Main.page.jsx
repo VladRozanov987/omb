@@ -39,13 +39,13 @@ const MainPage = () => {
       <MainSection />
       <Photo />
       <Council title="Рада експертів" isAboutPage={false} />
-      {/* <div ref={questionsRef}>
+      <div ref={questionsRef}>
         <Questions />
       </div>
       <Banner />
       <News limit={2} showButton={true} />
       <Faq />
-      <Partners /> */}
+      <Partners />
     </>
   );
 };

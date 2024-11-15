@@ -1,10 +1,21 @@
 import React, { useState } from "react";
-import styled from "styled-components";
-import { data } from "../data/Council.data";
-import ArrowUp from "../assets/icons/ArrowUpRightW.svg";
 import { Link } from "react-router-dom";
+
+//Styled
+import styled from "styled-components";
+
+//Data
+import { data } from "../data/Council.data";
+
+//Swiper
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination } from "swiper/modules";
 import "swiper/css";
+import "swiper/css/pagination";
+
+//Icons
+import ArrowUp from "../assets/icons/ArrowUpRightW.svg";
+import select from "../assets/icons/select.svg";
 
 const Council = ({ title = "Рада експертів", isAboutPage = false }) => {
   const [filter, setFilter] = useState("All");
@@ -19,7 +30,7 @@ const Council = ({ title = "Рада експертів", isAboutPage = false })
   return (
     <StyledCouncil isAboutPage={isAboutPage}>
       <div className="container">
-        <div className={`header d-flex ${isAboutPage ? "centered" : ""}`}>
+        <div className={`header-text d-flex ${isAboutPage ? "centered" : ""}`}>
           <h2>{title}</h2>
         </div>
 
@@ -58,6 +69,8 @@ const Council = ({ title = "Рада експертів", isAboutPage = false })
               spaceBetween={16}
               slidesPerView={1}
               loop={true}
+              pagination={{ clickable: true }}
+              modules={[Pagination]}
               breakpoints={{
                 768: { slidesPerView: 1 },
               }}
@@ -230,6 +243,11 @@ const StyledCouncil = styled.section`
   }
 
   @media (max-width: 768px) {
+    padding-top: 56px;
+    .header-text {
+      font-weight: 700;
+      font-size: 30px;
+    }
     .cards-container {
       display: none;
     }
@@ -248,6 +266,48 @@ const StyledCouncil = styled.section`
 
     .filter-select-mobile {
       display: block;
+      width: 100%;
+    }
+
+    .mobile-filter {
+      border-radius: 16px;
+      padding: 16px 24px;
+      background: #e8e8e8;
+      appearance: none;
+      -moz-appearance: none;
+      -webkit-appearance: none;
+      background-image: url(${select});
+      background-repeat: no-repeat;
+      background-position: right 20px center;
+      border: none;
+      outline: none;
+    }
+
+    .council-btn {
+      display: none;
+    }
+
+    .swiper-wrapper {
+      margin-bottom: 88px;
+    }
+    .card {
+      flex-direction: column;
+      text-align: center;
+    }
+    .swiper-pagination {
+      bottom: 48px;
+      text-align: center;
+    }
+
+    .swiper-pagination-bullet {
+      width: 10px;
+      height: 10px;
+      background-color: #e8e8e8;
+      opacity: 1;
+    }
+
+    .swiper-pagination-bullet-active {
+      background-color: var(--245daa);
     }
   }
 `;

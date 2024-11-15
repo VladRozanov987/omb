@@ -55,6 +55,27 @@ const StyledFaq = styled.section`
     margin-top: 38px;
     flex: 1;
   }
+
+  @media screen and (max-width: 768px) {
+    .container {
+      flex-direction: column;
+    }
+    .faq-aside {
+      max-width: 100%;
+      width: auto;
+      margin: 0;
+      h2 {
+        font-weight: 700;
+        font-size: 30px;
+        line-height: 107%;
+      }
+      p {
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 171%;
+      }
+    }
+  }
 `;
 
 export default Faq;
