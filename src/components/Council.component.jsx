@@ -293,6 +293,9 @@ const StyledCouncil = styled.section`
     .card {
       flex-direction: column;
       text-align: center;
+      img {
+        margin-right: 0;
+      }
     }
     .swiper-pagination {
       bottom: 48px;

@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 //Img
 import aboutImg from "../assets/img/about.jpg";
+import mobBG from "../assets/img/mobileBG.png";
 
 //Icons
 import qm from "../assets/icons/qm.svg";
@@ -18,20 +19,23 @@ const AboutPage = () => {
     <>
       <StyledAbout>
         <div className="container">
-          <h2>Про нас</h2>
           <div className="about-text">
-            <h4>
-              Кожен громадянин може подати звернення щодо <br /> порушення його
-              прав та отримати захист, адже саме <br /> Уповноважений Верховної
-              Ради України з прав людини <br /> здійснює парламентський контроль
-              за додержанням <br /> конституційних прав і свобод людини і
-              громадянина.
-            </h4>
-            <h5>Марчук Вероніка Олена </h5>
+            <h2>
+              Офіс Представника <br /> Уповноваженого <br /> Верховної Ради{" "}
+              <br />
+              України у Польщі{" "}
+            </h2>
             <p>
-              Представник Уповноваженого Верховної Ради <br /> України з прав
-              людини в Республіці Польща
+              Офіс Представника Уповноваженого Верховної Ради України з прав
+              людини в Республіці Польща покликаний захищати права та свободи
+              громадян України, які проживають або перебувають у Польщі. Діючи
+              як посередник між людиною та державою, наш офіс працює над тим,
+              щоб усі українці отримували справедливе ставлення, захищаючи їхні
+              права відповідно до законів України та міжнародного права.
             </p>
+          </div>
+          <div className="mobile-bg">
+            <img src={mobBG} alt="BG-image" />
           </div>
         </div>
       </StyledAbout>
@@ -44,6 +48,7 @@ const AboutPage = () => {
 };
 
 const StyledAbout = styled.section`
+  padding-top: 155px;
   margin-top: 100px;
   min-height: calc(100vh - 100px);
   background-image: url(${aboutImg});
@@ -51,59 +56,44 @@ const StyledAbout = styled.section`
   background-size: cover;
   background-repeat: no-repeat;
 
-  .container {
-    position: relative;
-    z-index: 1;
-    padding-top: 55px;
-  }
-
   .about-text {
-    position: relative;
-    margin-top: 150px;
-    max-width: 710px;
-
-    &::before {
-      content: "";
-      position: absolute;
-      top: -35px;
-      left: -60px;
-      width: 93px;
-      height: 70px;
-      background-image: url(${qm});
-      background-repeat: no-repeat;
-      background-size: contain;
-      z-index: -1;
-    }
-
-    h4 {
-      font-family: var(--font-family);
-      font-weight: 400;
-      font-size: 20px;
-      line-height: 200%;
-      color: var(--1c1f1c);
-      margin-bottom: 48px;
-    }
-
-    h5 {
-      font-family: var(--font-family);
-      font-weight: 400;
-      font-size: 20px;
-      color: var(--1c1f1c);
-    }
+    max-width: 658px;
 
     p {
-      font-family: var(--font-family);
+      margin-top: 32px;
       font-weight: 300;
-      font-size: 14px;
-      line-height: 171%;
+      font-size: 16px;
+      line-height: 187%;
       color: #6e6e6e;
     }
+  }
 
-    .text-container {
-      max-width: 1020px;
+  .mobile-bg {
+    display: none;
+  }
+
+  @media screen and (max-width: 768px) {
+    margin-top: 65px;
+    padding-top: 40px;
+    min-height: auto;
+    background-image: none;
+    .about-text {
+      max-width: auto;
+      h2 {
+        font-weight: 700;
+        font-size: 30px !important;
+        line-height: 107%;
+      }
+      p {
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 171%;
+      }
+    }
+    .mobile-bg {
       display: flex;
-      flex-direction: column;
-      justify-self: center;
+      align-items: center;
+      justify-content: center;
     }
   }
 `;

@@ -86,6 +86,7 @@ const News = ({ title = "Останні новини", limit, showButton }) => {
 };
 
 const StyledNews = styled.section`
+  padding-top: 128px;
   .news-container {
     justify-content: space-between;
 
@@ -162,6 +163,7 @@ const StyledNews = styled.section`
   }
 
   @media (max-width: 768px) {
+    padding-top: 0;
     .news-items-desktop {
       display: none;
     }
@@ -175,6 +177,12 @@ const StyledNews = styled.section`
     }
     .news-items-mobile {
       display: block;
+      margin-top: 24px;
+    }
+    h2 {
+      font-weight: 700;
+      font-size: 30px;
+      line-height: 107%;
     }
     .news-content {
       h3 {

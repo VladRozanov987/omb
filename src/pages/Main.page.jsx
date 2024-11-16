@@ -39,12 +39,12 @@ const MainPage = () => {
       <MainSection />
       <Photo />
       <Council title="Рада експертів" isAboutPage={false} />
-      <div ref={questionsRef}>
-        <Questions />
-      </div>
+      <Questions />
       <Banner />
       <News limit={2} showButton={true} />
-      <Faq />
+      <div ref={questionsRef}>
+        <Faq />
+      </div>
       <Partners />
     </>
   );

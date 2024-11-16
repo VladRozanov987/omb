@@ -169,7 +169,7 @@ const Header = () => {
             <li>
               <a
                 onClick={() => {
-                  handleScrollToQuestions();
+                  handleScrollToFooter();
                   closeMenu();
                 }}
               >
@@ -221,7 +221,13 @@ const Header = () => {
             </a>
             <p className="tel_text">(гаряча лінія)</p>
           </div>
-          <button className="mob-menu-btn" onClick={openModal}>
+          <button
+            className="mob-menu-btn"
+            onClick={() => {
+              closeMenu();
+              openModal();
+            }}
+          >
             Зв’язатись з омбудсменом
             <img className="arrow-icon" src={ArrowUpRight} alt="ArrowUpRight" />
           </button>

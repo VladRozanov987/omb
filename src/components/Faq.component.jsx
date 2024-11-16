@@ -57,6 +57,7 @@ const StyledFaq = styled.section`
   }
 
   @media screen and (max-width: 768px) {
+    padding: 56px 0;
     .container {
       flex-direction: column;
     }
@@ -68,11 +69,13 @@ const StyledFaq = styled.section`
         font-weight: 700;
         font-size: 30px;
         line-height: 107%;
+        margin-bottom: 24px;
       }
       p {
         font-weight: 300;
         font-size: 14px;
         line-height: 171%;
+        margin-bottom: 24px;
       }
     }
   }

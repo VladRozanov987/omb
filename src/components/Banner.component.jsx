@@ -38,6 +38,7 @@ const Banner = () => {
 };
 
 const StyledBanner = styled.div`
+  margin-top: 128px;
   background-image: url(${bannerBg});
   background-position: center center;
   background-size: cover;

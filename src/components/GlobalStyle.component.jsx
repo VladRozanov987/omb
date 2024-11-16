@@ -85,6 +85,7 @@ const GlobalStyle = createGlobalStyle`
     font-family: var(--font-family);
     font-weight: 700;
     font-size: 56px;
+    line-height: 114%;
     background: linear-gradient(180deg, #245daa 0%, #e0d29d 100%);
     background-clip: text;
     -webkit-background-clip: text;

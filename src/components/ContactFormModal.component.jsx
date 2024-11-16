@@ -405,7 +405,10 @@ const ModalContent = styled.div`
       }
     }
     .btn-primary {
-      width: 100%;
+      width: 100% !important;
+    }
+    .orangeSpan {
+      margin-left: 0 !important;
     }
   }
 `;

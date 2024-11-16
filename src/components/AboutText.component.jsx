@@ -27,7 +27,8 @@ const AboutText = () => {
 };
 
 const StyledAboutText = styled.section`
-  padding: 0 0 128px 0;
+  text-align: center;
+  padding: 80px 0 128px 0;
 
   .container {
     padding: 0 150px;
@@ -42,6 +43,12 @@ const StyledAboutText = styled.section`
 
     p:not(:last-child) {
       margin-bottom: 24px;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    padding: 0 12px 56px 12px;
+    .container {
+      padding: 0;
     }
   }
 `;
