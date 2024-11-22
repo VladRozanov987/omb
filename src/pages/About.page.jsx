@@ -2,7 +2,7 @@
 import styled from "styled-components";
 
 //Img
-import aboutImg from "../assets/img/about.jpg";
+import mainBG from "../assets/img/main-bg.jpg";
 import mobBG from "../assets/img/mobileBG.png";
 
 //Icons
@@ -51,7 +51,7 @@ const StyledAbout = styled.section`
   padding-top: 155px;
   margin-top: 100px;
   min-height: calc(100vh - 100px);
-  background-image: url(${aboutImg});
+  background-image: url(${mainBG});
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;

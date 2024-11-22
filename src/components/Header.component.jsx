@@ -71,19 +71,29 @@ const Header = () => {
         <div className="desctop-menu d-flex">
           <ul>
             <li>
-              <Link to="/">Головна</Link>
+              <Link className="link" to="/">
+                Головна
+              </Link>
             </li>
             <li>
-              <Link to="/about">Про нас</Link>
+              <Link className="link" to="/about">
+                Про нас
+              </Link>
             </li>
             <li>
-              <a onClick={handleScrollToQuestions}>Питання</a>
+              <a className="link" onClick={handleScrollToQuestions}>
+                Питання
+              </a>
             </li>
             <li>
-              <Link to="/news">Новини</Link>
+              <Link className="link" to="/news">
+                Новини
+              </Link>
             </li>
             <li>
-              <a onClick={handleScrollToFooter}>Контакти</a>
+              <a className="link" onClick={handleScrollToFooter}>
+                Контакти
+              </a>
             </li>
           </ul>
 
@@ -265,6 +275,32 @@ const StyledHeader = styled.header`
     li:not(:last-child) {
       margin-right: 24px;
     }
+  }
+
+  .link {
+    transition: all 0.3s ease-in-out;
+  }
+
+  .link:hover {
+    text-decoration: underline;
+    color: var(--245daa);
+  }
+
+  .tel_number {
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    color: #232824;
+  }
+
+  .tel_text {
+    font-family: var(--font-family);
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 150%;
+    text-align: right;
+    color: var(--464646);
   }
 
   //Mobile

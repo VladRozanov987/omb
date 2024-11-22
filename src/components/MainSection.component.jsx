@@ -5,7 +5,8 @@ import styled from "styled-components";
 import ArrowUpRightW from "../assets/icons/ArrowUpRightW.svg";
 
 //Img
-import aboutImg from "../assets/img/about.jpg";
+import BG from "../assets/img/BG.jpg";
+import test from "../assets/img/test.png";
 
 //Router
 import { Link } from "react-router-dom";
@@ -24,15 +25,16 @@ const MainSection = () => {
             права громадян, які до неї звертаються.
           </p>
         </div>
-        <Link to="/about" className="btn-secondary">
-          Детальніше <img src={ArrowUpRightW} alt="ArrowUpRight" />
-        </Link>
-        <div>
+        <div className="wrapper">
+          <Link to="/about" className="btn-secondary">
+            Детальніше <img src={ArrowUpRightW} alt="ArrowUpRight" />
+          </Link>
+
           <div className="main-name">
             <h3>Марчук Вероніка Олена</h3>
             <p>
-              Представник Уповноваженого Верховної Ради <br /> України з прав
-              людини в Республіці Польща
+              Представник Уповноваженого Верховної Ради України з прав людини в
+              Республіці Польща
             </p>
           </div>
         </div>
@@ -45,10 +47,11 @@ const StyledMain = styled.main`
   margin-top: 100px;
   padding-top: 150px;
   min-height: calc(100vh - 100px);
-  background-image: url(${aboutImg});
+  background-image: url(${BG});
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  position: relative;
 
   h1 {
     max-width: 780px;
@@ -103,8 +106,31 @@ const StyledMain = styled.main`
   }
 
   @media screen and (max-width: 768px) {
-    padding: 40px 0 56px 0;
+    background-image: url(${test});
+    padding-top: 40px;
     min-height: auto;
+    margin-top: 65px;
+    .wrapper {
+      display: flex;
+      flex-direction: column-reverse;
+    }
+    .main-name {
+      margin-top: 0;
+      margin-bottom: 27px;
+      max-width: 215px;
+      h3 {
+        font-weight: 400;
+        font-size: 14px;
+        text-align: left;
+        color: var(--1c1f1c);
+      }
+      p {
+        font-weight: 400;
+        font-size: 14px;
+        text-align: left;
+        color: #6e6e6e;
+      }
+    }
     .main-aside {
       max-width: 217px;
       h1 {
@@ -120,11 +146,9 @@ const StyledMain = styled.main`
       }
     }
     .btn-secondary {
+      margin-top: 60px;
       width: 100%;
       justify-content: center;
-    }
-    .main-name {
-      display: none;
     }
   }
 `;
