@@ -44,13 +44,11 @@ const StyledBanner = styled.div`
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
-
   .container {
     border-radius: 24px;
     padding: 112px 80px;
     align-items: center;
     justify-content: space-between;
-
     button {
       padding: 16px 24px;
       font-family: var(--second-family);
@@ -63,7 +61,6 @@ const StyledBanner = styled.div`
 
   .banner-text {
     max-width: 689px;
-
     h4 {
       font-family: var(--font-family);
       font-weight: 700;
@@ -71,7 +68,6 @@ const StyledBanner = styled.div`
       line-height: 114%;
       color: #fff;
     }
-
     p {
       font-family: var(--font-family);
       font-weight: 400;

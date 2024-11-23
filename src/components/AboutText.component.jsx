@@ -32,7 +32,6 @@ const StyledAboutText = styled.section`
 
   .container {
     padding: 0 150px;
-
     p {
       font-family: var(--font-family);
       font-weight: 300;
@@ -40,7 +39,6 @@ const StyledAboutText = styled.section`
       line-height: 187%;
       color: var(--1c1f1c);
     }
-
     p:not(:last-child) {
       margin-bottom: 24px;
     }

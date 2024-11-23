@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 //Styled
 import styled from "styled-components";
@@ -14,7 +14,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 
 //Icons
-import ArrowUp from "../assets/icons/ArrowUpRightW.svg";
+// import ArrowUp from "../assets/icons/ArrowUpRightW.svg";
 import select from "../assets/icons/select.svg";
 
 const Council = ({ title = "Рада експертів", isAboutPage = false }) => {
@@ -35,7 +35,6 @@ const Council = ({ title = "Рада експертів", isAboutPage = false })
         </div>
 
         <div className="filters d-flex">
-          {/* Показываем кнопки фильтров на десктопе, и выпадающий список на мобильных устройствах */}
           <div className="filter-buttons-desktop">
             <FilterButtons
               filter={filter}
@@ -50,7 +49,6 @@ const Council = ({ title = "Рада експертів", isAboutPage = false })
           </div>
         </div>
 
-        {/* Статичная сетка для десктопа и слайдер для мобильных устройств */}
         <div className="content-container">
           <div className="cards-container">
             {filteredData.slice(0, 6).map((item) => (
@@ -90,11 +88,11 @@ const Council = ({ title = "Рада експертів", isAboutPage = false })
           </div>
         </div>
 
-        {!isAboutPage && (
-          <Link to="/about" className="council-btn btn-secondary">
-            Детальніше про Раду <img src={ArrowUp} alt="ArrowUp" />
-          </Link>
-        )}
+        {/*{!isAboutPage && (*/}
+        {/*  <Link to="/about" className="council-btn btn-secondary">*/}
+        {/*    Детальніше про Раду <img src={ArrowUp} alt="ArrowUp" />*/}
+        {/*  </Link>*/}
+        {/*)}*/}
       </div>
     </StyledCouncil>
   );
@@ -146,7 +144,7 @@ const StyledCouncil = styled.section`
     ${({ isAboutPage }) =>
       isAboutPage
         ? "justify-content: flex-start;"
-        : "justify-content: space-between;"}
+        : "justify-content: flex-start;"}
 
     h2 {
       margin-bottom: 24px;
@@ -200,6 +198,9 @@ const StyledCouncil = styled.section`
   }
 
   .card-text {
+    align-self: normal;
+    padding-top: 20%;
+
     h3 {
       font-family: var(--font-family);
       font-weight: 400;
@@ -250,6 +251,9 @@ const StyledCouncil = styled.section`
     }
     .cards-container {
       display: none;
+    }
+    .card-text {
+      padding-top: 16px;
     }
 
     .slider-container {

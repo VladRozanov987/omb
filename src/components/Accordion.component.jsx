@@ -75,14 +75,12 @@ const StyledAccordionList = styled.section`
     margin-bottom: 16px;
     border-bottom: 1px solid #ccc;
   }
-
   .accordion-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 16px;
     cursor: pointer;
-
     h3 {
       font-family: var(--font-family);
       font-weight: 500;
@@ -91,25 +89,21 @@ const StyledAccordionList = styled.section`
       color: var(--1c1f1c);
     }
   }
-
   .accordion-icon {
     font-size: 24px;
     color: #333;
     margin-left: 12px;
   }
-
   .accordion-body {
     padding: 16px;
     border-top: 1px solid #ccc;
     border-radius: 0 0 8px 8px;
   }
-
   .accordion-list {
     display: flex;
     flex-direction: column;
     list-style-type: disc;
   }
-
   li {
     margin: 8px 0;
     font-family: var(--font-family);
@@ -117,7 +111,6 @@ const StyledAccordionList = styled.section`
     font-size: 14px;
     color: var(--464646);
   }
-
   .expand-btn {
     display: none;
   }

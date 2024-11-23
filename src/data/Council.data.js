@@ -113,4 +113,4 @@ export const data = [
     image: slide14,
     type: "Help",
   },
-];
+].sort(() => Math.random() - 0.5);

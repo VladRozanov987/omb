@@ -26,9 +26,9 @@ const MainSection = () => {
           </p>
         </div>
         <div className="wrapper">
-          <Link to="/about" className="btn-secondary">
-            Детальніше <img src={ArrowUpRightW} alt="ArrowUpRight" />
-          </Link>
+          {/*<Link to="/about" className="btn-secondary">*/}
+          {/*  Детальніше <img src={ArrowUpRightW} alt="ArrowUpRight" />*/}
+          {/*</Link>*/}
 
           <div className="main-name">
             <h3>Марчук Вероніка Олена</h3>
@@ -132,7 +132,7 @@ const StyledMain = styled.main`
       }
     }
     .main-aside {
-      max-width: 217px;
+      max-width: 190px;
       h1 {
         font-weight: 700;
         font-size: 30px;

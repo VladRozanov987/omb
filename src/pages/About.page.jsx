@@ -58,7 +58,6 @@ const StyledAbout = styled.section`
 
   .about-text {
     max-width: 658px;
-
     p {
       margin-top: 32px;
       font-weight: 300;
@@ -67,7 +66,6 @@ const StyledAbout = styled.section`
       color: #6e6e6e;
     }
   }
-
   .mobile-bg {
     display: none;
   }

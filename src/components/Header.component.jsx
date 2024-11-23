@@ -7,10 +7,11 @@ import styled from "styled-components";
 import logo from "../assets/img/Logo.png";
 
 // Icons
-import insta from "../assets/icons/insta.svg";
-import instaHov from "../assets/icons/insta-hov.svg";
-import linked from "../assets/icons/linked.svg";
-import linkedHov from "../assets/icons/linked-hov.svg";
+// import insta from "../assets/icons/insta.svg";
+// import instaHov from "../assets/icons/insta-hov.svg";
+// import linked from "../assets/icons/linked.svg";
+// import linkedHov from "../assets/icons/linked-hov.svg";
+import telegram from "../assets/icons/telegram.svg";
 import facebook from "../assets/icons/facebook.svg";
 import facebookHov from "../assets/icons/facebook-hov.svg";
 import ArrowUpRight from "../assets/icons/ArrowUpRight.svg";
@@ -75,11 +76,11 @@ const Header = () => {
                 Головна
               </Link>
             </li>
-            <li>
-              <Link className="link" to="/about">
-                Про нас
-              </Link>
-            </li>
+            {/*<li>*/}
+            {/*  <Link className="link" to="/about">*/}
+            {/*    Про нас*/}
+            {/*  </Link>*/}
+            {/*</li>*/}
             <li>
               <a className="link" onClick={handleScrollToQuestions}>
                 Питання
@@ -98,33 +99,30 @@ const Header = () => {
           </ul>
 
           <ul>
+            {/*<li>*/}
+            {/*  <a*/}
+            {/*    href="#"*/}
+            {/*    onMouseEnter={() => handleMouseEnter("insta")}*/}
+            {/*    onMouseLeave={() => handleMouseLeave("insta")}*/}
+            {/*  >*/}
+            {/*    <img*/}
+            {/*      src={hoveredIcons.insta ? instaHov : insta}*/}
+            {/*      alt="Instagram"*/}
+            {/*    />*/}
+            {/*  </a>*/}
+            {/*</li>*/}
             <li>
               <a
-                href="#"
-                onMouseEnter={() => handleMouseEnter("insta")}
-                onMouseLeave={() => handleMouseLeave("insta")}
+                href="https://t.me/ombudsman_pl"
+                // onMouseEnter={() => handleMouseEnter("linked")}
+                // onMouseLeave={() => handleMouseLeave("linked")}
               >
-                <img
-                  src={hoveredIcons.insta ? instaHov : insta}
-                  alt="Instagram"
-                />
+                <img src={telegram} alt="telegram" width={21} height={21} />
               </a>
             </li>
             <li>
               <a
-                href="#"
-                onMouseEnter={() => handleMouseEnter("linked")}
-                onMouseLeave={() => handleMouseLeave("linked")}
-              >
-                <img
-                  src={hoveredIcons.linked ? linkedHov : linked}
-                  alt="Linkedin"
-                />
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
+                href="https://www.facebook.com/profile.php?id=61568834698026"
                 onMouseEnter={() => handleMouseEnter("facebook")}
                 onMouseLeave={() => handleMouseLeave("facebook")}
               >
@@ -156,11 +154,11 @@ const Header = () => {
                 Головна
               </Link>
             </li>
-            <li>
-              <Link onClick={closeMenu} to="/about">
-                Про нас
-              </Link>
-            </li>
+            {/*<li>*/}
+            {/*  <Link onClick={closeMenu} to="/about">*/}
+            {/*    Про нас*/}
+            {/*  </Link>*/}
+            {/*</li>*/}
             <li>
               <a
                 onClick={() => {
@@ -189,31 +187,16 @@ const Header = () => {
             <ul className="mob-menu-social">
               <li>
                 <a
-                  href="#"
-                  onMouseEnter={() => handleMouseEnter("insta")}
-                  onMouseLeave={() => handleMouseLeave("insta")}
-                >
-                  <img
-                    src={hoveredIcons.insta ? instaHov : insta}
-                    alt="Instagram"
-                  />
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
+                  href="https://t.me/ombudsman_pl"
                   onMouseEnter={() => handleMouseEnter("linked")}
                   onMouseLeave={() => handleMouseLeave("linked")}
                 >
-                  <img
-                    src={hoveredIcons.linked ? linkedHov : linked}
-                    alt="Linkedin"
-                  />
+                  <img src={telegram} alt="Telegram" width={21} height={21} />
                 </a>
               </li>
               <li>
                 <a
-                  href="#"
+                  href="https://www.facebook.com/profile.php?id=61568834698026"
                   onMouseEnter={() => handleMouseEnter("facebook")}
                   onMouseLeave={() => handleMouseLeave("facebook")}
                 >
@@ -393,6 +376,9 @@ const StyledHeader = styled.header`
     }
     .logo {
       width: 164px;
+    }
+    .tel_text {
+      text-align: left;
     }
 
     .desctop-menu {

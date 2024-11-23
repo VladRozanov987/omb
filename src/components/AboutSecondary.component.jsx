@@ -53,16 +53,13 @@ const AboutSecondary = () => {
 
 const StyledAboutSecondary = styled.section`
   padding: 48px 0;
-
   .d-flex {
     align-items: center;
   }
-
   .first-img {
     max-width: 100%;
     margin-right: 65px;
   }
-
   .text-block {
     p {
       font-family: var(--font-family);

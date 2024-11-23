@@ -226,7 +226,6 @@ const ModalContent = styled.div`
   border-radius: 24px;
   position: relative;
   max-height: 80vh;
-
   h4 {
     font-family: var(--font-family);
     font-weight: 700;
@@ -234,7 +233,6 @@ const ModalContent = styled.div`
     text-align: center;
     color: #fff;
   }
-
   p {
     font-family: var(--font-family);
     font-weight: 400;
@@ -244,21 +242,17 @@ const ModalContent = styled.div`
     color: #fff;
     margin-bottom: 46px;
   }
-
   .upload-container {
     display: flex;
     align-items: center;
     justify-content: start;
   }
-
   .upload-btn {
     cursor: pointer;
   }
-
   .marginInput {
     margin-right: 24px;
   }
-
   .close-button {
     position: absolute;
     top: -20px;
@@ -276,7 +270,6 @@ const ModalContent = styled.div`
     border: 1px solid #ccc;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     transition: background-color 0.2s, transform 0.2s;
-
     &:hover {
       background-color: #f0f0f0;
       transform: scale(1.1);
@@ -286,7 +279,6 @@ const ModalContent = styled.div`
   form {
     display: flex;
     flex-direction: column;
-
     input,
     select,
     textarea {
@@ -297,20 +289,16 @@ const ModalContent = styled.div`
       border: 1px solid #ccc;
       border-radius: 16px;
     }
-
     textarea {
       height: 150px;
     }
-
     input[type="file"] {
       margin-bottom: 15px;
     }
-
     button {
       display: flex;
       align-self: center;
     }
-
     .custom-select {
       appearance: none;
       -moz-appearance: none;
@@ -323,37 +311,31 @@ const ModalContent = styled.div`
 
   .file-list {
     margin-top: 15px;
-
     ul {
       list-style: none;
       padding: 0;
       display: flex;
       flex-direction: column;
-
       li {
         display: flex;
         justify-content: space-between;
         align-items: center;
         margin: 0 0 10px 0;
-
         .file-preview {
           display: flex;
           align-items: center;
         }
-
         .file-img {
           width: 40px;
           height: 40px;
           object-fit: cover;
           margin-right: 10px;
         }
-
         .delete-btn {
           background: none;
           border: none;
           cursor: pointer;
         }
-
         .delete-btn img {
           width: 50px;
           height: 50px;
@@ -364,11 +346,9 @@ const ModalContent = styled.div`
 
   .upload-container {
     justify-content: start;
-
     span {
       margin-left: 16px;
     }
-
     .orangeSpan {
       font-family: var(--second-family);
       font-weight: 500;
@@ -379,7 +359,6 @@ const ModalContent = styled.div`
       color: var(--ffc50a);
     }
   }
-
   span {
     font-family: var(--second-family);
     font-weight: 400;
@@ -387,7 +366,6 @@ const ModalContent = styled.div`
     line-height: 143%;
     color: #fff;
   }
-
   input::placeholder,
   textarea::placeholder {
     font-family: var(--second-family);

@@ -7,10 +7,11 @@ import styled from "styled-components";
 import Logo from "../assets/img/Logo.png";
 
 // Icons
-import insta from "../assets/icons/insta.svg";
-import instaHov from "../assets/icons/insta-hov.svg";
-import linked from "../assets/icons/linked.svg";
-import linkedHov from "../assets/icons/linked-hov.svg";
+// import insta from "../assets/icons/insta.svg";
+// import instaHov from "../assets/icons/insta-hov.svg";
+// import linked from "../assets/icons/linked.svg";
+// import linkedHov from "../assets/icons/linked-hov.svg";
+import telegram from "../assets/icons/telegram.svg";
 import facebook from "../assets/icons/facebook.svg";
 import facebookHov from "../assets/icons/facebook-hov.svg";
 
@@ -35,33 +36,30 @@ const Footer = () => {
         <div className="footer-links">
           <img src={Logo} alt="Logo" />
           <ul>
+            {/*<li>*/}
+            {/*  <a*/}
+            {/*    href=""*/}
+            {/*    onMouseEnter={() => handleMouseEnter("insta")}*/}
+            {/*    onMouseLeave={() => handleMouseLeave("insta")}*/}
+            {/*  >*/}
+            {/*    <img*/}
+            {/*      src={hoveredIcons.insta ? instaHov : insta}*/}
+            {/*      alt="Instagram"*/}
+            {/*    />*/}
+            {/*  </a>*/}
+            {/*</li>*/}
             <li>
               <a
-                href=""
-                onMouseEnter={() => handleMouseEnter("insta")}
-                onMouseLeave={() => handleMouseLeave("insta")}
+                href="https://t.me/ombudsman_pl"
+                // onMouseEnter={() => handleMouseEnter("linked")}
+                // onMouseLeave={() => handleMouseLeave("linked")}
               >
-                <img
-                  src={hoveredIcons.insta ? instaHov : insta}
-                  alt="Instagram"
-                />
+                <img src={telegram} alt="Telegram" width={21} height={21}/>
               </a>
             </li>
             <li>
               <a
-                href=""
-                onMouseEnter={() => handleMouseEnter("linked")}
-                onMouseLeave={() => handleMouseLeave("linked")}
-              >
-                <img
-                  src={hoveredIcons.linked ? linkedHov : linked}
-                  alt="Linkedin"
-                />
-              </a>
-            </li>
-            <li>
-              <a
-                href=""
+                href="https://www.facebook.com/profile.php?id=61568834698026"
                 onMouseEnter={() => handleMouseEnter("facebook")}
                 onMouseLeave={() => handleMouseLeave("facebook")}
               >
@@ -94,15 +92,15 @@ const Footer = () => {
               <h3>субота та неділя — вихідні</h3>
             </div>
             <div className="text-block">
-              <a className="tel_number" href="tel:+0 800 501 720">
+              <a className="tel_number" href="tel:+0800501720">
                 0 800 501 720 <span>(гаряча лінія)</span>
               </a>
-              <a className="tel_number" href="tel:+044 299 74 08">
+              <a className="tel_number" href="tel:+0442997408">
                 044 299 74 08
               </a>
             </div>
             <div className="text-block">
-              <a className="mail-to" href="mailto:hotline@ombudsman.gov.ua ">
+              <a className="mail-to" href="mailto:hotline@ombudsman.gov.ua">
                 hotline@ombudsman.gov.ua 
               </a>
               <p>виключно для електронних звернень </p>
@@ -128,7 +126,7 @@ const Footer = () => {
                 Житомирській області
               </span>
               <h3>Козиренко Микита Валерійович</h3>
-              <a className="tel_number" href="tel:+38 093 000 00 00">
+              <a className="tel_number" href="tel:+380930000000">
                 +38 093 000 00 00
               </a>
               <a className="mail-to" href="mailto:shutenko@ombudsman.gov.ua">
@@ -138,21 +136,21 @@ const Footer = () => {
             <div className="text-block">
               <span>Представник в Рівненській області</span>
               <h3>Луференко Владислав Олександрович</h3>
-              <a className="tel_number" href="tel:+38 093 000 00 00">
+              <a className="tel_number" href="tel:+380930000000">
                 +38 093 000 00 00
               </a>
             </div>
             <div className="text-block">
               <span>Представник в Житомирській області</span>
               <h3>Перетятько Олександр Ілліч</h3>
-              <a className="tel_number" href="tel:+38 093 000 00 00">
+              <a className="tel_number" href="tel:+380930000000">
                 +38 093 000 00 00
               </a>
             </div>
             <div className="text-block">
               <span>Представник в Рівненській області</span>
               <h3>Козиренко Микита Валерійович</h3>
-              <a className="tel_number" href="tel:+38 093 000 00 00">
+              <a className="tel_number" href="tel:+380930000000">
                 +38 093 000 00 00
               </a>
             </div>

@@ -38,12 +38,12 @@ const News = ({ title = "Останні новини", limit, showButton }) => {
         <div
           className={`news-items-desktop ${isAllNewsPage ? "grid-column" : ""}`}
         >
-          {newsToDisplay.map(({ id, name, text, date, image }) => (
+          {newsToDisplay.map(({ id, name, short, date, image }) => (
             <Link key={id} to={`/news/${id}`} className="news-item">
               <img src={image} alt={name} className="news-image" />
               <div className="news-content">
                 <h3>{name}</h3>
-                <p>{text}</p>
+                <p>{short}</p>
                 <span className="news-date">{date}</span>
               </div>
             </Link>
@@ -60,13 +60,13 @@ const News = ({ title = "Останні новини", limit, showButton }) => {
               slidesPerView={1}
               loop
             >
-              {newsToDisplay.map(({ id, name, text, date, image }) => (
+              {newsToDisplay.map(({ id, name, short, date, image }) => (
                 <SwiperSlide key={id}>
                   <Link to={`/news/${id}`} className="news-item">
                     <img src={image} alt={name} className="news-image" />
                     <div className="news-content">
                       <h3>{name}</h3>
-                      <p>{text}</p>
+                      <p>{short}</p>
                       <span className="news-date">{date}</span>
                     </div>
                   </Link>
@@ -132,6 +132,10 @@ const StyledNews = styled.section`
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+  }
+    
+  .news-image {
+    border-radius: 32px;
   }
 
   .news-content {
