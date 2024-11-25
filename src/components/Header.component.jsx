@@ -143,7 +143,7 @@ const Header = () => {
         </div>
 
         <button className="btn-primary" onClick={openModal}>
-          <span className="button-text">Зв’язатись з омбудсменом</span>
+          <span className="button-text">Зв’язатись з омбудсманом</span>
           <img className="arrow-icon" src={ArrowUpRight} alt="ArrowUpRight" />
         </button>
 
@@ -221,7 +221,7 @@ const Header = () => {
               openModal();
             }}
           >
-            Зв’язатись з омбудсменом
+            Зв’язатись з омбудсманом
             <img className="arrow-icon" src={ArrowUpRight} alt="ArrowUpRight" />
           </button>
         </div>

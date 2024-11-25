@@ -29,7 +29,7 @@ const Banner = () => {
           </p>
         </div>
         <button className="btn-primary" onClick={openModal}>
-          Зв’язатись з омбудсменом <img src={arrowUp} alt="ArrowUp" />{" "}
+          Зв’язатись з омбудсмеаном <img src={arrowUp} alt="ArrowUp" />{" "}
         </button>
       </div>
       <ContactFormModal isOpen={isModalOpen} onClose={closeModal} />

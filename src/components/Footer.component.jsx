@@ -54,7 +54,7 @@ const Footer = () => {
                 // onMouseEnter={() => handleMouseEnter("linked")}
                 // onMouseLeave={() => handleMouseLeave("linked")}
               >
-                <img src={telegram} alt="Telegram" width={21} height={21}/>
+                <img src={telegram} alt="Telegram" width={21} height={21} />
               </a>
             </li>
             <li>
@@ -106,7 +106,7 @@ const Footer = () => {
               <p>виключно для електронних звернень </p>
             </div>
             <div className="text-block">
-              <a href="https://ombudsman.gov.ua/">Сайти Омбудсмена України</a>
+              <a href="https://ombudsman.gov.ua/">Сайти Омбудсмана України</a>
               <a href="https://poland.mfa.gov.ua/">
                 Сайт генконсульства України в Польщі
               </a>

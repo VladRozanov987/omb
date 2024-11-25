@@ -34,7 +34,7 @@ const Questions = () => {
             життя за межами України. Захистимо ваші права разом!
           </p>
           <button className="btn-secondary" onClick={openModal}>
-            Зв’язатись з омбудсменом <img src={ArrowUp} alt="ArrowUp" />
+            Зв’язатись з омбудсманом <img src={ArrowUp} alt="ArrowUp" />
           </button>
         </div>
         <div className="accordion-container">
