@@ -7,22 +7,10 @@ import AccordionList from "./Accordion.component";
 //Icons
 import ArrowUp from "../assets/icons/ArrowUpRightW.svg";
 
-//Modal
-import ContactFormModal from "./ContactFormModal.component";
-
-import { useState } from "react";
+//Router
+import { Link } from "react-router-dom";
 
 const Questions = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
-  const openModal = () => {
-    setIsModalOpen(true);
-  };
-
-  const closeModal = () => {
-    setIsModalOpen(false);
-  };
-
   return (
     <StyledQuestions>
       <div className="container d-flex">
@@ -33,18 +21,14 @@ const Questions = () => {
             освіту, економічної підтримки та інших важливих аспектів вашого
             життя за межами України. Захистимо ваші права разом!
           </p>
-          <button className="btn-secondary" onClick={openModal}>
-            Зв’язатись з омбудсманом <img src={ArrowUp} alt="ArrowUp" />
-          </button>
+          <Link to="/order" className="btn-secondary link-btn">
+            Порядок звернення до омбудсмана <img src={ArrowUp} alt="ArrowUp" />
+          </Link>
         </div>
         <div className="accordion-container">
           <AccordionList />
         </div>
       </div>
-
-      {isModalOpen && (
-        <ContactFormModal isOpen={isModalOpen} onClose={closeModal} />
-      )}
     </StyledQuestions>
   );
 };
@@ -80,6 +64,17 @@ const StyledQuestions = styled.section`
     margin-top: 128px;
     flex: 1;
     padding-left: 24px;
+  }
+
+  .link-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 355px;
+    border-radius: 16px;
+    img {
+      margin-left: 4px;
+    }
   }
 
   @media screen and (max-width: 768px) {

@@ -17,6 +17,7 @@ import GlobalStyle from "./components/GlobalStyle.component";
 
 //Hooks
 import ScrollToTop from "./hooks/ScrollToTop";
+import Order from "./pages/Order.page";
 
 function App() {
   const footerRef = useRef(null);
@@ -40,6 +41,7 @@ function App() {
           <Route path="/about" element={<AboutPage />} />
           <Route path="/news" element={<AllNewsPage />} />
           <Route path="/news/:id" element={<NewsDetail />} />
+          <Route path="/order" element={<Order />} />
         </Routes>
         <div ref={footerRef}>
           <Footer />
