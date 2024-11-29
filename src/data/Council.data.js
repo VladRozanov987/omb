@@ -21,96 +21,124 @@ export const data = [
     text: "Представник Уповноваженого Верховної Ради України з прав людини в Республіці Польща",
     image: slide1,
     type: "Coordinator",
+    fullDescription:
+      "Полное описание этого человека с его достижениями, историей и т.д.",
   },
   {
     id: 2,
     name: "Piotr Lewczyk ",
     text: "Ekspert ds gospodarczych i karnoskarbowych",
     image: slide2,
-    type: "Help",
+    type: "Expert",
+    fullDescription:
+      "Полное описание этого человека с его достижениями, историей и т.д.",
   },
   {
     id: 3,
     name: "Agnieszka Mazur ",
     text: "Ekspert ds współpracy ze studentami, koordynacji pomiędzy front line a ekspertami.",
     image: slide3,
-    type: "Entrepreneurs",
+    type: "Director",
+    fullDescription:
+      "Полное описание этого человека с его достижениями, историей и т.д.",
   },
   {
     id: 4,
     name: "Jacek-Dubois ",
     text: "Adwokat",
     image: slide4,
-    type: "Entrepreneurs",
+    type: "Expert",
+    fullDescription:
+      "Полное описание этого человека с его достижениями, историей и т.д.",
   },
   {
     id: 5,
     name: "Łukasz Fojutowski ",
     text: "Ekspert ds edukacji",
     image: slide5,
-    type: "Volunteers",
+    type: "Regional Director",
+    fullDescription:
+      "Полное описание этого человека с его достижениями, историей и т.д.",
   },
   {
     id: 6,
     name: "Tymoteusz Paprocki ",
     text: "ekspert ds. postępowania sądowego",
     image: slide6,
-    type: "Volunteers",
+    type: "Expert",
+    fullDescription:
+      "Полное описание этого человека с его достижениями, историей и т.д.",
   },
   {
     id: 7,
     name: "Olena Shtohryn ",
     text: "Ekpert ds prawa ukraińskiego",
     image: slide7,
-    type: "Entrepreneurs",
+    type: "Regional Director",
+    fullDescription:
+      "Полное описание этого человека с его достижениями, историей и т.д.",
   },
   {
     id: 8,
     name: "Anna Stozhko ",
     text: "Kierownik Przedstawicielstwa Ombudsmana Ukrainy w Polsce",
     image: slide8,
-    type: "Entrepreneurs",
+    type: "Director",
+    fullDescription:
+      "Полное описание этого человека с его достижениями, историей и т.д.",
   },
   {
     id: 9,
     name: "Agata Jasztal ",
     text: "Dyrektor generalny Przedstawicielstwa Ombudsmana Ukrainy w Polsce",
     image: slide9,
-    type: "Help",
+    type: "Director",
+    fullDescription:
+      "Полное описание этого человека с его достижениями, историей и т.д.",
   },
   {
     id: 10,
     name: "Piotr Puchalski ",
     text: "Ekspert ds pomocy społecznej",
     image: slide10,
-    type: "Help",
+    type: "Expert",
+    fullDescription:
+      "Полное описание этого человека с его достижениями, историей и т.д.",
   },
   {
     id: 11,
     name: "Anna Kolasińska ",
     text: "Ekspert ds pomocy humanitarnej",
     image: slide11,
-    type: "Coordinator",
+    type: "Volunteers",
+    fullDescription:
+      "Полное описание этого человека с его достижениями, историей и т.д.",
   },
   {
     id: 12,
     name: "Olena Kotseruba ",
     text: "Ekspert ds. współpracy z samorządami",
     image: slide12,
-    type: "Coordinator",
+    type: "Volunteers",
+    fullDescription:
+      "Полное описание этого человека с его достижениями, историей и т.д.",
   },
   {
     id: 13,
     name: "Mateusz Misiorny ",
     text: "Adwokat - ekspert ds uchodźców",
     image: slide13,
-    type: "Volunteers",
+    type: "Expert",
+    fullDescription:
+      "Полное описание этого человека с его достижениями, историей и т.д.",
   },
   {
     id: 14,
     name: "Oleksandr Holinshchak ",
     text: "Ekspert ds pomocy humanitarnej",
     image: slide14,
-    type: "Help",
+    type: "Expert",
+    fullDescription:
+      "Полное описание этого человека с его достижениями, историей и т.д.",
   },
 ].sort(() => Math.random() - 0.5);

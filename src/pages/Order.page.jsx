@@ -142,6 +142,8 @@ const StyledOrder = styled.section`
   .wrapper-img {
     position: relative;
     left: -105px;
+    border-radius: 30px;
+    max-width: 100%;
   }
 
   .wrapper-text {

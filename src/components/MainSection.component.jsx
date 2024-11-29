@@ -26,9 +26,9 @@ const MainSection = () => {
           </p>
         </div>
         <div className="wrapper">
-          {/*<Link to="/about" className="btn-secondary">*/}
-          {/*  Детальніше <img src={ArrowUpRightW} alt="ArrowUpRight" />*/}
-          {/*</Link>*/}
+          <Link to="/about" className="btn-secondary">
+            Детальніше <img src={ArrowUpRightW} alt="ArrowUpRight" />
+          </Link>
 
           <div className="main-name">
             <h3>Марчук Вероніка Олена</h3>

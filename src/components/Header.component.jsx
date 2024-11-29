@@ -76,11 +76,11 @@ const Header = () => {
                 Головна
               </Link>
             </li>
-            {/*<li>*/}
-            {/*  <Link className="link" to="/about">*/}
-            {/*    Про нас*/}
-            {/*  </Link>*/}
-            {/*</li>*/}
+            <li>
+              <Link className="link" to="/about">
+                Про нас
+              </Link>
+            </li>
             <li>
               <a className="link" onClick={handleScrollToQuestions}>
                 Питання

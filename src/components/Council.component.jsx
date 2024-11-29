@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 //Styled
 import styled from "styled-components";
@@ -14,14 +14,43 @@ import "swiper/css";
 import "swiper/css/pagination";
 
 //Icons
-// import ArrowUp from "../assets/icons/ArrowUpRightW.svg";
+import ArrowUp from "../assets/icons/ArrowUpRightW.svg";
 import select from "../assets/icons/select.svg";
 
+//PopUp
+const Popup = ({ person, onClose }) => {
+  return (
+    <StyledPopup>
+      <div className="popup-content">
+        <button className="close-button" onClick={onClose}>
+          ×
+        </button>
+        <div className="popup-content-inner">
+          <img className="person-image" src={person.image} alt={person.name} />
+          <div className="popup-body">
+            <h3>{person.name}</h3>
+            <p>{person.fullDescription}</p>
+          </div>
+        </div>
+      </div>
+    </StyledPopup>
+  );
+};
+
 const Council = ({ title = "Рада експертів", isAboutPage = false }) => {
-  const [filter, setFilter] = useState("All");
+  const [filter, setFilter] = useState("Director");
+  const [selectedPerson, setSelectedPerson] = useState(null);
 
   const handleFilterChange = (type) => {
     setFilter(type);
+  };
+
+  const handlePopupOpen = (person) => {
+    setSelectedPerson(person);
+  };
+
+  const handlePopupClose = () => {
+    setSelectedPerson(null);
   };
 
   const filteredData =
@@ -51,12 +80,18 @@ const Council = ({ title = "Рада експертів", isAboutPage = false })
 
         <div className="content-container">
           <div className="cards-container">
-            {filteredData.slice(0, 6).map((item) => (
+            {filteredData.map((item) => (
               <div key={item.id} className="card d-flex">
                 <img src={item.image} alt={item.name} />
                 <div className="card-text">
                   <h3>{item.name}</h3>
                   <p>{item.text}</p>
+                  <button
+                    className="popUp-btn"
+                    onClick={() => handlePopupOpen(item)}
+                  >
+                    Детальніше
+                  </button>
                 </div>
               </div>
             ))}
@@ -80,6 +115,12 @@ const Council = ({ title = "Рада експертів", isAboutPage = false })
                     <div className="card-text">
                       <h3>{item.name}</h3>
                       <p>{item.text}</p>
+                      <button
+                        className="btn btn-secondary"
+                        onClick={() => handlePopupOpen(item)} // Открыть попап
+                      >
+                        Подробнее
+                      </button>
                     </div>
                   </div>
                 </SwiperSlide>
@@ -88,37 +129,37 @@ const Council = ({ title = "Рада експертів", isAboutPage = false })
           </div>
         </div>
 
-        {/*{!isAboutPage && (*/}
-        {/*  <Link to="/about" className="council-btn btn-secondary">*/}
-        {/*    Детальніше про Раду <img src={ArrowUp} alt="ArrowUp" />*/}
-        {/*  </Link>*/}
-        {/*)}*/}
+        {!isAboutPage && (
+          <Link to="/about" className="council-btn btn-secondary">
+            Детальніше про Раду <img src={ArrowUp} alt="ArrowUp" />
+          </Link>
+        )}
       </div>
+
+      {selectedPerson && (
+        <Popup person={selectedPerson} onClose={handlePopupClose} />
+      )}
     </StyledCouncil>
   );
 };
 
 const FilterButtons = ({ filter, onFilterChange }) => (
   <>
-    {["All", "Coordinator", "Help", "Entrepreneurs", "Volunteers"].map(
-      (type) => (
-        <button
-          key={type}
-          className={`btn btn-secondary ${filter === type ? "active" : ""}`}
-          onClick={() => onFilterChange(type)}
-        >
-          {type === "All"
-            ? "Всі"
-            : type === "Coordinator"
-            ? "Координатори"
-            : type === "Help"
-            ? "Гум. допомога"
-            : type === "Entrepreneurs"
-            ? "Підприємці"
-            : "Волонтери"}
-        </button>
-      )
-    )}
+    {["Director", "Expert", "Regional Director", "Volunteers"].map((type) => (
+      <button
+        key={type}
+        className={`btn btn-secondary ${filter === type ? "active" : ""}`}
+        onClick={() => onFilterChange(type)}
+      >
+        {type === "Director"
+          ? "Директори"
+          : type === "Expert"
+          ? "Рада Експертів"
+          : type === "Regional Director"
+          ? "Регіональні Директори"
+          : "Волонтери"}
+      </button>
+    ))}
   </>
 );
 
@@ -128,10 +169,9 @@ const MobileFilterSelect = ({ filter, onFilterChange }) => (
     onChange={(e) => onFilterChange(e.target.value)}
     className="mobile-filter"
   >
-    <option value="All">Всі</option>
-    <option value="Coordinator">Координатори</option>
-    <option value="Help">Гум. допомога</option>
-    <option value="Entrepreneurs">Підприємці</option>
+    <option value="Director">Директори</option>
+    <option value="Expert">Рада Експертів</option>
+    <option value="Regional Director">Регіональні Директори</option>
     <option value="Volunteers">Волонтери</option>
   </select>
 );
@@ -157,6 +197,16 @@ const StyledCouncil = styled.section`
     font-family: var(--font-family);
     font-weight: 300;
     font-size: 14px;
+  }
+
+  .popUp-btn {
+    font-weight: 400;
+    font-size: 14px;
+    color: var(--245daa);
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background-color: transparent;
   }
 
   .btn:not(:last-child) {
@@ -200,6 +250,9 @@ const StyledCouncil = styled.section`
   .card-text {
     align-self: normal;
     padding-top: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 
     h3 {
       font-family: var(--font-family);
@@ -222,21 +275,20 @@ const StyledCouncil = styled.section`
     justify-self: center;
     border-radius: 16px;
     img {
-      margin-left: 4px;
+      margin-left: 12px;
     }
   }
 
-  .mobile-filter {
-    display: none;
-    margin-top: 20px;
-    padding: 10px;
-    width: 100%;
-    border-radius: 8px;
-    font-size: 14px;
+  .filters {
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
   }
 
   .filter-buttons-desktop {
     display: flex;
+    gap: 16px;
   }
 
   .filter-select-mobile {
@@ -244,77 +296,95 @@ const StyledCouncil = styled.section`
   }
 
   @media (max-width: 768px) {
-    padding-top: 56px;
-    .header-text {
-      font-weight: 700;
-      font-size: 30px;
-    }
-    .cards-container {
-      display: none;
-    }
-    .card-text {
-      padding-top: 16px;
-    }
-
     .slider-container {
       display: block;
     }
 
-    .mobile-filter {
+    .cards-container {
+      display: none;
+    }
+
+    .filter-select-mobile {
       display: block;
     }
 
     .filter-buttons-desktop {
       display: none;
     }
+  }
+`;
 
-    .filter-select-mobile {
-      display: block;
-      width: 100%;
+const StyledPopup = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+
+  .close-button {
+    position: absolute;
+    top: -30px;
+    right: -30px;
+    width: 30px;
+    height: 30px;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+    color: #000000;
+    cursor: pointer;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.2s, transform 0.2s;
+
+    &:hover {
+      background-color: #f0f0f0;
+      transform: scale(1.1);
+    }
+  }
+
+  .popup-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 800px;
+    display: flex;
+    align-items: flex-start;
+    position: relative;
+
+    .person-image {
+      width: 150px;
+      height: 150px;
+      border-radius: 8px;
+      object-fit: cover;
+      margin-right: 20px;
     }
 
-    .mobile-filter {
-      border-radius: 16px;
-      padding: 16px 24px;
-      background: #e8e8e8;
-      appearance: none;
-      -moz-appearance: none;
-      -webkit-appearance: none;
-      background-image: url(${select});
-      background-repeat: no-repeat;
-      background-position: right 20px center;
-      border: none;
-      outline: none;
-    }
+    .popup-body {
+      margin-top: 0;
+      flex: 1;
 
-    .council-btn {
-      display: none;
-    }
-
-    .swiper-wrapper {
-      margin-bottom: 88px;
-    }
-    .card {
-      flex-direction: column;
-      text-align: center;
-      img {
-        margin-right: 0;
+      h3 {
+        margin: 0;
+        font-size: 24px;
+        font-weight: bold;
+        color: #333;
       }
-    }
-    .swiper-pagination {
-      bottom: 48px;
-      text-align: center;
-    }
 
-    .swiper-pagination-bullet {
-      width: 10px;
-      height: 10px;
-      background-color: #e8e8e8;
-      opacity: 1;
-    }
-
-    .swiper-pagination-bullet-active {
-      background-color: var(--245daa);
+      p {
+        font-size: 16px;
+        color: #666;
+        line-height: 1.5;
+        margin-top: 10px;
+      }
     }
   }
 `;
