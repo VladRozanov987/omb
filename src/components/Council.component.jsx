@@ -15,7 +15,6 @@ import "swiper/css/pagination";
 
 //Icons
 import ArrowUp from "../assets/icons/ArrowUpRightW.svg";
-import select from "../assets/icons/select.svg";
 
 //PopUp
 const Popup = ({ person, onClose }) => {
@@ -116,10 +115,10 @@ const Council = ({ title = "Рада експертів", isAboutPage = false })
                       <h3>{item.name}</h3>
                       <p>{item.text}</p>
                       <button
-                        className="btn btn-secondary"
-                        onClick={() => handlePopupOpen(item)} // Открыть попап
+                        className="popUp-btn"
+                        onClick={() => handlePopupOpen(item)}
                       >
-                        Подробнее
+                        Детальніше
                       </button>
                     </div>
                   </div>
@@ -296,6 +295,7 @@ const StyledCouncil = styled.section`
   }
 
   @media (max-width: 768px) {
+    padding-top: 56px;
     .slider-container {
       display: block;
     }
@@ -306,10 +306,43 @@ const StyledCouncil = styled.section`
 
     .filter-select-mobile {
       display: block;
+      border-radius: 16px;
+      padding: 16px 24px;
+      background: #e8e8e8;
+      width: 100%;
+    }
+
+    .mobile-filter {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 171%;
+      color: var(--1c1f1c);
+      border: none;
+      outline: none;
+      background: transparent;
+      width: 100%;
+    }
+
+    .card {
+      flex-direction: column;
+      img {
+        margin: 0;
+      }
+    }
+
+    .card-text {
+      padding-top: 16px;
+      text-align: center;
     }
 
     .filter-buttons-desktop {
       display: none;
+    }
+
+    .popUp-btn {
+      display: flex;
+      justify-content: center;
+      margin: 12px 0 24px 0;
     }
   }
 `;
@@ -325,6 +358,7 @@ const StyledPopup = styled.div`
   justify-content: center;
   align-items: center;
   padding: 16px;
+  z-index: 999999999;
 
   .close-button {
     position: absolute;
@@ -359,10 +393,19 @@ const StyledPopup = styled.div`
     display: flex;
     align-items: flex-start;
     position: relative;
+    max-height: 90vh;
+
+    .popup-content-inner {
+      display: flex;
+      width: 100%;
+      max-height: 100%;
+      overflow-y: auto;
+    }
 
     .person-image {
-      width: 150px;
-      height: 150px;
+      width: 170px;
+      height: auto;
+      max-height: 100%;
       border-radius: 8px;
       object-fit: cover;
       margin-right: 20px;
@@ -371,6 +414,8 @@ const StyledPopup = styled.div`
     .popup-body {
       margin-top: 0;
       flex: 1;
+      max-height: 100%;
+      overflow-y: auto;
 
       h3 {
         margin: 0;
@@ -384,6 +429,24 @@ const StyledPopup = styled.div`
         color: #666;
         line-height: 1.5;
         margin-top: 10px;
+        word-wrap: break-word;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .popup-content-inner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        width: 100%;
+        max-height: 70vh;
+        overflow-y: auto;
+      }
+      .person-image {
+        margin: 0 0 20px 0;
+        max-width: 100%;
       }
     }
   }
