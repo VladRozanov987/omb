@@ -154,11 +154,11 @@ const Header = () => {
                 Головна
               </Link>
             </li>
-            {/*<li>*/}
-            {/*  <Link onClick={closeMenu} to="/about">*/}
-            {/*    Про нас*/}
-            {/*  </Link>*/}
-            {/*</li>*/}
+            <li>
+              <Link onClick={closeMenu} to="/about">
+                Про нас
+              </Link>
+            </li>
             <li>
               <a
                 onClick={() => {

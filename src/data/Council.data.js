@@ -20,7 +20,7 @@ export const data = [
     name: "Марчук Вероніка Олена ",
     text: "Представник Уповноваженого Верховної Ради України з прав людини в Республіці Польща",
     image: slide1,
-    type: "Coordinator",
+    type: "Expert",
     fullDescription: "Опис",
   },
   {
@@ -52,7 +52,7 @@ export const data = [
     name: "Łukasz Fojutowski ",
     text: "Ekspert ds edukacji",
     image: slide5,
-    type: "Regional Director",
+    type: "Expert",
     fullDescription: "Опис",
   },
   {
@@ -68,7 +68,7 @@ export const data = [
     name: "Olena Shtohryn ",
     text: "Ekpert ds prawa ukraińskiego",
     image: slide7,
-    type: "Regional Director",
+    type: "Expert",
     fullDescription: "Опис",
   },
   {
@@ -93,7 +93,7 @@ export const data = [
     name: "Piotr Puchalski ",
     text: "Ekspert ds pomocy społecznej",
     image: slide10,
-    type: "Regional Director",
+    type: "Expert",
     fullDescription: "Опис",
   },
   {
@@ -101,7 +101,7 @@ export const data = [
     name: "Anna Kolasińska ",
     text: "Ekspert ds pomocy humanitarnej",
     image: slide11,
-    type: "Volunteers",
+    type: "Expert",
     fullDescription: "Опис",
   },
   {
@@ -109,7 +109,7 @@ export const data = [
     name: "Olena Kotseruba ",
     text: "Ekspert ds. współpracy z samorządami",
     image: slide12,
-    type: "Volunteers",
+    type: "Expert",
     fullDescription: "Опис",
   },
   {

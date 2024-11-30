@@ -296,6 +296,19 @@ const StyledCouncil = styled.section`
 
   @media (max-width: 768px) {
     padding-top: 56px;
+
+    .header-text {
+      h2 {
+        font-weight: 700;
+        font-size: 30px;
+        line-height: 107%;
+      }
+    }
+
+    .council-btn {
+      display: none;
+    }
+
     .slider-container {
       display: block;
     }
