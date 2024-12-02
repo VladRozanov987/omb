@@ -15,6 +15,10 @@ import telegram from "../assets/icons/telegram.svg";
 import facebook from "../assets/icons/facebook.svg";
 import facebookHov from "../assets/icons/facebook-hov.svg";
 
+//Docs
+import personal from "../assets/docs/personal.docx";
+import politics from "../assets/docs/politics.pdf";
+
 const Footer = () => {
   const [hoveredIcons, setHoveredIcons] = useState({
     insta: false,
@@ -104,6 +108,22 @@ const Footer = () => {
                 hotline@ombudsman.gov.ua 
               </a>
               <p>виключно для електронних звернень </p>
+            </div>
+            <div className="text-block">
+              <a
+                className="download-link"
+                href={personal}
+                download="Про обробку персональних даних.docx"
+              >
+                Про обробку персональних даних
+              </a>
+              <a
+                className="download-link"
+                href={politics}
+                download="Політика захисту персональних даних.pdf"
+              >
+                Політика захисту персональних даних
+              </a>
             </div>
             <div className="text-block">
               <a href="https://ombudsman.gov.ua/">Сайти Омбудсмана України</a>
@@ -201,6 +221,10 @@ const StyledFooter = styled.footer`
     font-size: 12px;
     line-height: 267%;
     color: var(--464646);
+  }
+
+  .download-link {
+    font-weight: 400 !important;
   }
 
   @media screen and (max-width: 768px) {

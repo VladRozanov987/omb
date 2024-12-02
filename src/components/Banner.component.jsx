@@ -24,12 +24,11 @@ const Banner = () => {
           <h4>Виникли питання?</h4>
           <p>
             Головний документ, яким керується Омбудсман України — Конституція
-            України. Відповідно до неї Уповноважений має доступ до місць
-            несвободи.{" "}
+            України.
           </p>
         </div>
         <button className="btn-primary" onClick={openModal}>
-          Зв’язатись з омбудсманом <img src={arrowUp} alt="ArrowUp" />{" "}
+          Зв’язатись з Омбудсманом <img src={arrowUp} alt="ArrowUp" />{" "}
         </button>
       </div>
       <ContactFormModal isOpen={isModalOpen} onClose={closeModal} />

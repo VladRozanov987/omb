@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 //Styled
@@ -18,6 +18,12 @@ import ArrowUp from "../assets/icons/ArrowUpRightW.svg";
 
 //PopUp
 const Popup = ({ person, onClose }) => {
+  useEffect(() => {
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, []);
   return (
     <StyledPopup>
       <div className="popup-content">
@@ -28,7 +34,9 @@ const Popup = ({ person, onClose }) => {
           <img className="person-image" src={person.image} alt={person.name} />
           <div className="popup-body">
             <h3>{person.name}</h3>
-            <p>{person.fullDescription}</p>
+            <div
+              dangerouslySetInnerHTML={{ __html: person.fullDescription }}
+            ></div>
           </div>
         </div>
       </div>
@@ -157,7 +165,7 @@ const FilterButtons = ({ filter, onFilterChange }) => (
         {type === "Director"
           ? "Директори"
           : type === "Expert"
-          ? "Рада Експертів"
+          ? "Наша команда"
           : type === "Regional Director"
           ? "Регіональні Директори"
           : "Волонтери"}
@@ -422,7 +430,7 @@ const StyledPopup = styled.div`
 
     .person-image {
       width: 170px;
-      height: auto;
+      height: 300px;
       max-height: 100%;
       border-radius: 8px;
       object-fit: cover;
@@ -432,7 +440,7 @@ const StyledPopup = styled.div`
     .popup-body {
       margin-top: 0;
       flex: 1;
-      max-height: 100%;
+      max-height: 60vh;
       overflow-y: auto;
 
       h3 {

@@ -135,15 +135,17 @@ const Header = () => {
           </ul>
 
           <div>
-            <a className="tel_number" href="tel:+0 800 501 720">
-              0 800 501 720
+            <a className="tel_number" href="tel:+48 605 911 005">
+              +48 605 911 005
             </a>
-            <p className="tel_text">(гаряча лінія)</p>
+            <p className="tel_text">(гаряча лінія в Польщі)</p>
           </div>
         </div>
 
         <button className="btn-primary" onClick={openModal}>
-          <span className="button-text">Зв’язатись з омбудсманом</span>
+          <span className="button-text">
+            Зв'язатись з Представництвом у Польщі
+          </span>
           <img className="arrow-icon" src={ArrowUpRight} alt="ArrowUpRight" />
         </button>
 
@@ -212,7 +214,7 @@ const Header = () => {
             <a className="tel_number" href="tel:+0 800 501 720">
               0 800 501 720
             </a>
-            <p className="tel_text">(гаряча лінія)</p>
+            <p className="tel_text">(гаряча лінія в Польщі)</p>
           </div>
           <button
             className="mob-menu-btn"
@@ -221,7 +223,7 @@ const Header = () => {
               openModal();
             }}
           >
-            Зв’язатись з омбудсманом
+            Зв’язатись з Омбудсманом
             <img className="arrow-icon" src={ArrowUpRight} alt="ArrowUpRight" />
           </button>
         </div>

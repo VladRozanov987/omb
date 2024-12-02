@@ -1,5 +1,13 @@
+//Styled
 import styled from "styled-components";
+
+//Icons
 import infoArr from "../assets/icons/info-arr.svg";
+
+//Docs
+import centers from "../assets/docs/centers.docx";
+import diplomatic from "../assets/docs/diplomatics.docx";
+import instruction from "../assets/docs/instruction.docx";
 
 const Info = () => {
   return (
@@ -8,7 +16,7 @@ const Info = () => {
         <h2>Корисна інформація</h2>
         <div className="d-flex">
           <p>Центри допомоги українцям в Польщі</p>
-          <a href="/path/to/your/file.txt" download="file.txt">
+          <a href={centers} download="Центри_допомоги_українцям_у_Польщі.docx">
             <button className="info-btn">
               Загрузити документ <img src={infoArr} alt="Arrow" />{" "}
             </button>
@@ -16,7 +24,10 @@ const Info = () => {
         </div>
         <div className="d-flex">
           <p>Дипломатичні установи України в Польщі</p>
-          <a href="/path/to/your/file.txt" download="file.txt">
+          <a
+            href={diplomatic}
+            download="Дипломатичні_установи_України_в_Польщі.docx"
+          >
             <button className="info-btn">
               Загрузити документ <img src={infoArr} alt="Arrow" />{" "}
             </button>
@@ -27,7 +38,10 @@ const Info = () => {
             Інструкція перетину польського кордону українцями, що потребують
             захисту від війни
           </p>
-          <a href="/path/to/your/file.txt" download="file.txt">
+          <a
+            href={instruction}
+            download="Інструкція_перетин_Польського_кордону_українцям_що_потребують.docx"
+          >
             <button className="info-btn">
               Загрузити документ <img src={infoArr} alt="Arrow" />{" "}
             </button>
@@ -64,6 +78,7 @@ const StyledInfo = styled.section`
     font-size: 14px;
     line-height: 171%;
     color: var(--245daa);
+    background: #fff;
   }
   @media (max-width: 768px) {
     padding-bottom: 56px;

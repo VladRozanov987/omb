@@ -8,6 +8,9 @@ import partner3 from "../assets/img/partner3.png";
 import partner4 from "../assets/img/partner4.png";
 import partner5 from "../assets/img/partner5.png";
 import partner6 from "../assets/img/partner6.png";
+import partner7 from "../assets/img/partner7.png";
+import partner8 from "../assets/img/partner8.png";
+import partner9 from "../assets/img/partner9.png";
 
 //Swiper
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -17,12 +20,18 @@ import "swiper/css/pagination";
 
 const Partners = () => {
   const partnersData = [
-    partner1,
-    partner2,
-    partner3,
-    partner4,
-    partner5,
-    partner6,
+    { src: partner1 },
+    { src: partner2 },
+    { src: partner3 },
+    { src: partner4 },
+    { src: partner5 },
+    { src: partner6 },
+    {
+      src: partner7,
+      href: "https://www.facebook.com/profile.php?id=100086879193938",
+    },
+    { src: partner8, href: "https://dubois-kancelaria.com/en/our-team/" },
+    { src: partner9, href: "https://tpu.org.pl/kontakt/" },
   ];
 
   return (
@@ -33,7 +42,9 @@ const Partners = () => {
         <div className="partners-grid-desktop">
           {partnersData.map((partner, index) => (
             <div key={index} className="partner-item">
-              <img src={partner} alt={`Партнер ${index + 1}`} />
+              <a href={partner.href} target="_blank" rel="noopener noreferrer">
+                <img src={partner.src} alt={`Партнер ${index + 1}`} />
+              </a>
             </div>
           ))}
         </div>
@@ -56,7 +67,13 @@ const Partners = () => {
               <div className="partners-grid-mobile">
                 {partnersData.map((partner, index) => (
                   <div key={index} className="partner-item">
-                    <img src={partner} alt={`Партнер ${index + 1}`} />
+                    <a
+                      href={partner.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <img src={partner.src} alt={`Партнер ${index + 1}`} />
+                    </a>
                   </div>
                 ))}
               </div>

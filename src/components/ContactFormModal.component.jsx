@@ -89,7 +89,7 @@ const ContactFormModal = ({ isOpen, onClose }) => {
           ×
         </button>
         <ModalContentInner>
-          <h4>Задайте питання омбудсману</h4>
+          <h4>Задайте питання Омбудсману</h4>
           <p>
             Головний документ, яким керується Омбудсман України — Конституція
             України. Відповідно до неї Уповноважений має доступ до місць
@@ -124,9 +124,18 @@ const ContactFormModal = ({ isOpen, onClose }) => {
               required
             >
               <option value="">Тема запиту</option>
-              <option value="reason1">Тема 1</option>
-              <option value="reason2">Тема 2</option>
-              <option value="reason3">Тема 3</option>
+              <option value="reason1">Порушення прав людини</option>
+              <option value="reason2">
+                Проблеми з адміністративними органами
+              </option>
+              <option value="reason3">
+                Доступ до правосуддя та правових послуг
+              </option>
+              <option value="reason4">
+                Охорона здоров’я та соціальні послуги
+              </option>
+              <option value="reason5">Порушення прав трудових відносин</option>
+              <option value="reason6">Інше</option>
             </select>
             <textarea
               name="message"

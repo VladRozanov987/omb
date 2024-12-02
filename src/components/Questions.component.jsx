@@ -22,7 +22,7 @@ const Questions = () => {
             життя за межами України. Захистимо ваші права разом!
           </p>
           <Link to="/order" className="btn-secondary link-btn">
-            Порядок звернення до омбудсмана <img src={ArrowUp} alt="ArrowUp" />
+            Порядок звернення до Омбудсмана <img src={ArrowUp} alt="ArrowUp" />
           </Link>
         </div>
         <div className="accordion-container">
