@@ -4,7 +4,7 @@ import { useState } from "react";
 import styled from "styled-components";
 
 // Images
-import logo from "../assets/img/Logo.png";
+import Logo from "../assets/img/Logo.svg";
 
 // Icons
 // import insta from "../assets/icons/insta.svg";
@@ -66,7 +66,7 @@ const Header = () => {
         </div>
 
         <Link to="/">
-          <img className="logo" src={logo} alt="Logo" />
+          <img className="logo" src={Logo} alt="Logo" />
         </Link>
 
         <div className="desctop-menu d-flex">

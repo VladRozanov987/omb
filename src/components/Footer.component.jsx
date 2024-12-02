@@ -4,7 +4,7 @@ import { useState } from "react";
 import styled from "styled-components";
 
 //Img
-import Logo from "../assets/img/Logo.png";
+import Logo from "../assets/img/Logo.svg";
 
 // Icons
 // import insta from "../assets/icons/insta.svg";
