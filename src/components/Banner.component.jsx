@@ -25,11 +25,11 @@ const Banner = () => {
           <p>
             Головний документ, яким керується Омбудсман України — Конституція
             України. Відповідно до неї Уповноважений має доступ до місць
-            несвободи,{" "}
+            несвободи.{" "}
           </p>
         </div>
         <button className="btn-primary" onClick={openModal}>
-          Зв’язатись з омбудсмеаном <img src={arrowUp} alt="ArrowUp" />{" "}
+          Зв’язатись з омбудсманом <img src={arrowUp} alt="ArrowUp" />{" "}
         </button>
       </div>
       <ContactFormModal isOpen={isModalOpen} onClose={closeModal} />
@@ -38,7 +38,7 @@ const Banner = () => {
 };
 
 const StyledBanner = styled.div`
-  margin-top: 128px;
+  margin-top: 114px;
   background-image: url(${bannerBg});
   background-position: center center;
   background-size: cover;

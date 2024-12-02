@@ -238,6 +238,7 @@ const StyledOrder = styled.section`
   }
 
   .order-banner {
+    border: 5px solid #67a4c7;
     border-radius: 30px;
     padding: 40px 44px 48px 44px;
     display: flex;

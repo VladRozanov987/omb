@@ -36,8 +36,12 @@ const Popup = ({ person, onClose }) => {
   );
 };
 
-const Council = ({ title = "Рада експертів", isAboutPage = false }) => {
-  const [filter, setFilter] = useState("Director");
+const Council = ({
+  title = "Рада експертів",
+  isAboutPage = false,
+  initialFilter = "Director",
+}) => {
+  const [filter, setFilter] = useState(initialFilter);
   const [selectedPerson, setSelectedPerson] = useState(null);
 
   const handleFilterChange = (type) => {
@@ -199,6 +203,7 @@ const StyledCouncil = styled.section`
   }
 
   .popUp-btn {
+    margin-bottom: 24px;
     font-weight: 400;
     font-size: 14px;
     color: var(--245daa);

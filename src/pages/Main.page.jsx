@@ -10,6 +10,7 @@ import Banner from "../components/Banner.component";
 import News from "../components/News.component";
 import Faq from "../components/Faq.component";
 import Partners from "../components/Partners.component";
+import Info from "../components/Info.section.component";
 
 const MainPage = () => {
   const questionsRef = useRef(null);
@@ -46,6 +47,7 @@ const MainPage = () => {
         <Faq />
       </div>
       <Partners />
+      <Info />
     </>
   );
 };
