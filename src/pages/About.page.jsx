@@ -40,11 +40,7 @@ const AboutPage = () => {
         </div>
       </StyledAbout>
       <AboutSecondary />
-      <Council
-        title="Регіональні представники"
-        isAboutPage={true}
-        initialFilter="Expert"
-      />
+      <Council isAboutPage={true} initialFilter="Expert" />
       <Banner />
       <AboutText />
     </>

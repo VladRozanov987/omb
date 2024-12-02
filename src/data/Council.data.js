@@ -45,8 +45,8 @@ export const data = [
   },
   {
     id: 2,
-    name: "Piotr Lewczyk ",
-    text: "Ekspert ds gospodarczych i karnoskarbowych",
+    name: "Пьотр Левчик",
+    text: "Експерт з економічних та кримінально-фіскальних питань",
     image: slide2,
     type: "Expert",
     fullDescription: `
@@ -59,8 +59,8 @@ export const data = [
   },
   {
     id: 3,
-    name: "Agnieszka Mazur ",
-    text: "Ekspert ds współpracy ze studentami, koordynacji pomiędzy front line a ekspertami.",
+    name: "Аґнєшка Мазур",
+    text: "Експерт з питань співпраці зі студентами, координаторка між першими особами та експертами.",
     image: slide3,
     type: "Director",
     fullDescription: `
@@ -71,8 +71,8 @@ export const data = [
   },
   {
     id: 5,
-    name: "Łukasz Fojutowski ",
-    text: "Ekspert ds edukacji",
+    name: "Лукаш Фоютовський ",
+    text: "Експерт з питань освіти",
     image: slide5,
     type: "Expert",
     fullDescription: `
@@ -85,8 +85,8 @@ export const data = [
   },
   {
     id: 6,
-    name: "Tymoteusz Paprocki ",
-    text: "ekspert ds. postępowania sądowego",
+    name: "Тимотеуш Папроцький",
+    text: "Експерт з судових спорів",
     image: slide6,
     type: "Expert",
     fullDescription: `
@@ -102,8 +102,8 @@ export const data = [
   },
   {
     id: 7,
-    name: "Olena Shtohryn ",
-    text: "Ekpert ds prawa ukraińskiego",
+    name: "Олена Штогрин",
+    text: "Експерт з українського права",
     image: slide7,
     type: "Expert",
     fullDescription: `
@@ -115,8 +115,8 @@ export const data = [
   },
   {
     id: 8,
-    name: "Anna Stozhko ",
-    text: "Kierownik Przedstawicielstwa Ombudsmana Ukrainy w Polsce",
+    name: "Анна Стожко",
+    text: "Керівник Представництва Омбудсмана України в Польщі",
     image: slide8,
     type: "Director",
     fullDescription: `
@@ -131,8 +131,8 @@ export const data = [
   },
   {
     id: 9,
-    name: "Agata Jasztal ",
-    text: "Dyrektor generalny Przedstawicielstwa Ombudsmana Ukrainy w Polsce",
+    name: "Агата Яшталь",
+    text: "Генеральний директор Представництва Омбудсмана України в Польщі",
     image: slide9,
     type: "Director",
     fullDescription: `
@@ -145,8 +145,8 @@ export const data = [
   },
   {
     id: 10,
-    name: "Piotr Puchalski ",
-    text: "Ekspert ds pomocy społecznej",
+    name: "Пьотр Пухальський",
+    text: "Експерт з питань соціальної допомоги",
     image: slide10,
     type: "Expert",
     fullDescription: `
@@ -158,8 +158,8 @@ export const data = [
   },
   {
     id: 11,
-    name: "Anna Kolasińska ",
-    text: "Ekspert ds pomocy humanitarnej",
+    name: "Анна Коласінська",
+    text: "Експерт з гуманітарної допомоги ",
     image: slide11,
     type: "Expert",
     fullDescription: `
@@ -180,8 +180,8 @@ export const data = [
   },
   {
     id: 12,
-    name: "Olena Kotseruba ",
-    text: "Ekspert ds. współpracy z samorządami",
+    name: "Олена Коцеруба",
+    text: "Експерт з питань співпраці з органами місцевого самоврядування",
     image: slide12,
     type: "Expert",
     fullDescription: `
@@ -192,8 +192,8 @@ export const data = [
   },
   {
     id: 13,
-    name: "Mateusz Misiorny ",
-    text: "Adwokat - ekspert ds uchodźców",
+    name: "Матеуш Місьорний",
+    text: "Експерт з питань біженців",
     image: slide13,
     type: "Expert",
     fullDescription: `
@@ -205,8 +205,8 @@ export const data = [
   },
   {
     id: 14,
-    name: "Oleksandr Holinshchak ",
-    text: "Ekspert ds pomocy humanitarnej",
+    name: "Олександр Голінщак",
+    text: "Експерт з гуманітарної допомоги",
     image: slide14,
     type: "Expert",
     fullDescription: `
@@ -219,8 +219,8 @@ export const data = [
   },
   {
     id: 15,
-    name: "Piotr Dwornicki",
-    text: "Dyrektor  Regionu Wielkopolskiego",
+    name: "Пьотр Дворницький",
+    text: "Директор Великопольського регіону",
     image: slide15,
     type: "Expert",
     fullDescription: `
@@ -233,8 +233,8 @@ export const data = [
   },
   {
     id: 16,
-    name: "Agata Stachurska",
-    text: "Ekspert ds. rozszerzenia UE o Ukrainę",
+    name: "Агата Стахурська",
+    text: "Експерт з питань розширення ЄС з Україною",
     image: slide16,
     type: "Expert",
     fullDescription: `

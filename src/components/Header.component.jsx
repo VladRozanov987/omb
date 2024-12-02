@@ -211,8 +211,8 @@ const Header = () => {
             </ul>
           </ul>
           <div className="mob-phone">
-            <a className="tel_number" href="tel:+0 800 501 720">
-              0 800 501 720
+            <a className="tel_number" href="tel:+48 605 911 005">
+              +48 605 911 005
             </a>
             <p className="tel_text">(гаряча лінія в Польщі)</p>
           </div>

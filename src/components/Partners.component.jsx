@@ -4,7 +4,7 @@ import styled from "styled-components";
 //Img
 import partner1 from "../assets/img/partner1.png";
 import partner2 from "../assets/img/partner2.png";
-import partner3 from "../assets/img/partner3.png";
+import partner3 from "../assets/img/partner3.jpg";
 import partner4 from "../assets/img/partner4.png";
 import partner5 from "../assets/img/partner5.png";
 import partner6 from "../assets/img/partner6.png";

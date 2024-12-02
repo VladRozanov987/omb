@@ -44,11 +44,7 @@ const Popup = ({ person, onClose }) => {
   );
 };
 
-const Council = ({
-  title = "Рада експертів",
-  isAboutPage = false,
-  initialFilter = "Director",
-}) => {
+const Council = ({ isAboutPage = false, initialFilter = "Director" }) => {
   const [filter, setFilter] = useState(initialFilter);
   const [selectedPerson, setSelectedPerson] = useState(null);
 
@@ -71,7 +67,7 @@ const Council = ({
     <StyledCouncil isAboutPage={isAboutPage}>
       <div className="container">
         <div className={`header-text d-flex ${isAboutPage ? "centered" : ""}`}>
-          <h2>{title}</h2>
+          <h2>Наша Команда</h2>
         </div>
 
         <div className="filters d-flex">
@@ -165,7 +161,7 @@ const FilterButtons = ({ filter, onFilterChange }) => (
         {type === "Director"
           ? "Директори"
           : type === "Expert"
-          ? "Наша команда"
+          ? "Рада Експертів"
           : type === "Regional Director"
           ? "Регіональні Директори"
           : "Волонтери"}
