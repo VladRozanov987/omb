@@ -136,6 +136,9 @@ const StyledNews = styled.section`
 
   .news-image {
     border-radius: 32px;
+    width: 100%;
+    height: 336px;
+    object-fit: cover;
   }
 
   .news-content {

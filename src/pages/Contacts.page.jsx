@@ -120,6 +120,9 @@ const StyledContacts = styled.section`
   .styled-banner {
     margin-top: -128px;
   }
+  .d-flex {
+    gap: 32px;
+  }
   .contacts-header {
     font-weight: 700;
     font-size: 56px;
@@ -127,6 +130,7 @@ const StyledContacts = styled.section`
     margin-bottom: 64px;
   }
   .contacts-btn {
+    max-width: 445px;
     margin-top: 40px;
   }
   .text-block:last-child {
@@ -149,6 +153,7 @@ const StyledContacts = styled.section`
       line-height: 150%;
       color: var(--1c1f1c);
       margin-bottom: 24px;
+      max-width: 760px;
     }
     span {
       font-weight: 300;
@@ -185,6 +190,13 @@ const StyledContacts = styled.section`
     .text-block {
       margin-top: 32px;
       margin-bottom: 40px;
+      .contacts-btn {
+        max-width: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
       h3 {
         font-weight: 400;
         font-size: 24px;
