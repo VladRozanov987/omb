@@ -92,7 +92,7 @@ const Header = () => {
             </li>
           </ul>
 
-          <ul>
+          <ul className="header-social-links">
             {/*<li>*/}
             {/*  <a*/}
             {/*    href="#"*/}
@@ -342,8 +342,72 @@ const StyledHeader = styled.header`
   }
 
   //Media
+
+  @media (max-width: 1366px) {
+    .container {
+      padding: 0 40px;
+    }
+    .logo {
+      width: 160px;
+    }
+    .desctop-menu ul {
+      margin-right: 20px;
+    }
+    .btn-primary {
+      padding: 10px;
+      background-color: var(--ffc50a);
+      font-family: var(--second-family);
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 171%;
+      color: var(--1c1f1c);
+    }
+  }
+
+  @media (max-width: 1180px) {
+    .header-social-links {
+      display: none;
+    }
+    .tel_number {
+      font-size: 14px;
+    }
+    .tel_text,
+    .button-text,
+    .link {
+      font-size: 12px;
+    }
+    .desctop-menu ul li:not(:last-child) {
+      margin-right: 12px;
+    }
+  }
+
+  @media (max-width: 968px) {
+    .btn-primary {
+      display: none;
+    }
+    .btn-primary {
+      padding: 13px;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .button-text {
+      display: none;
+    }
+    .arrow-icon {
+      content: url(${call});
+      width: 20px;
+    }
+  }
+
   @media (max-width: 768px) {
     padding: 12px;
+    .container {
+      padding: 0;
+    }
     .burger-menu {
       display: block;
     }

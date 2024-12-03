@@ -303,6 +303,18 @@ const StyledCouncil = styled.section`
     display: none;
   }
 
+  @media (max-width: 1180px) {
+    .card {
+      flex-direction: column;
+      text-align: center;
+    }
+    .popUp-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
   @media (max-width: 768px) {
     padding-top: 56px;
 
