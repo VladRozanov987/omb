@@ -34,7 +34,7 @@ const Contacts = () => {
             <div className="text-block-el">
               <span>Адреса</span>
               <p>Алея Єрозолімські 109, офіс 70,02-797, Варшава, Польща</p>
-              <span>Почта</span>
+              <span>Пошта</span>
               <a href="mailto:ombudsman@ombudsman.pl">ombudsman@ombudsman.pl</a>
               <span>Номер телефону</span>
               <a href="tel:+48 605 110 05">+48 605 110 05</a>
@@ -69,13 +69,23 @@ const Contacts = () => {
               <p>
                 Понеділок - п’ятниця: з 9:00 до 17:00 Субота та неділя: вихідні
               </p>
-              <span>Почта</span>
-              <a href="mailto:hotline@ombudsman.gov.ua">
-                (виключно для електронних звернень та адвокатських запитів)
-              </a>
-              <a href="mailto:zapyt@ombudsman.gov.ua">
-                (виключно для запитів на інформацію)
-              </a>
+              <span>Пошта</span>
+              <div className="flex-col">
+                <a href="mailto:hotline@ombudsman.gov.ua">
+                  hotline@ombudsman.gov.ua
+                </a>
+                <span className="flex-col-span">
+                  (виключно для електронних звернень та адвокатських запитів)
+                </span>
+              </div>
+              <div className="flex-col">
+                <a href="mailto:zapyt@ombudsman.gov.ua">
+                  zapyt@ombudsman.gov.ua
+                </a>
+                <span className="flex-col-span">
+                  (виключно для запитів на інформацію)
+                </span>
+              </div>
             </div>
 
             <div className="text-block-el">
@@ -121,6 +131,15 @@ const StyledContacts = styled.section`
   }
   .text-block:last-child {
     margin-bottom: 128px;
+  }
+  .flex-col {
+    display: flex;
+    flex-direction: column;
+  }
+  .flex-col-span {
+    font-weight: 400;
+    font-size: 14px;
+    color: var(--464646);
   }
   .text-block {
     margin-bottom: 64px;
