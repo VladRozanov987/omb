@@ -38,12 +38,6 @@ const Header = () => {
     navigate("/", { state: { scrollTo: "questions" } });
   };
 
-  const handleScrollToFooter = () => {
-    if (typeof window.scrollToFooter === "function") {
-      window.scrollToFooter();
-    }
-  };
-
   const handleMouseEnter = (icon) => {
     setHoveredIcons((prev) => ({ ...prev, [icon]: true }));
   };
@@ -92,9 +86,9 @@ const Header = () => {
               </Link>
             </li>
             <li>
-              <a className="link" onClick={handleScrollToFooter}>
+              <Link className="link" to="/contacts">
                 Контакти
-              </a>
+              </Link>
             </li>
           </ul>
 
@@ -177,14 +171,9 @@ const Header = () => {
               </Link>
             </li>
             <li>
-              <a
-                onClick={() => {
-                  handleScrollToFooter();
-                  closeMenu();
-                }}
-              >
+              <Link onClick={closeMenu} to="/contacts">
                 Контакти
-              </a>
+              </Link>
             </li>
             <ul className="mob-menu-social">
               <li>

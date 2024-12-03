@@ -16,7 +16,11 @@ const Info = () => {
         <h2>Корисна інформація</h2>
         <div className="d-flex">
           <p>Центри допомоги українцям в Польщі</p>
-          <a href={centers} download="Центри_допомоги_українцям_у_Польщі.docx">
+          <a
+            className="info-link"
+            href={centers}
+            download="Центри_допомоги_українцям_у_Польщі.docx"
+          >
             <button className="info-btn">
               Загрузити документ <img src={infoArr} alt="Arrow" />{" "}
             </button>
@@ -25,6 +29,7 @@ const Info = () => {
         <div className="d-flex">
           <p>Дипломатичні установи України в Польщі</p>
           <a
+            className="info-link"
             href={diplomatic}
             download="Дипломатичні_установи_України_в_Польщі.docx"
           >
@@ -39,6 +44,7 @@ const Info = () => {
             захисту від війни
           </p>
           <a
+            className="info-link"
             href={instruction}
             download="Інструкція_перетин_Польського_кордону_українцям_що_потребують.docx"
           >
@@ -70,6 +76,8 @@ const StyledInfo = styled.section`
     margin-bottom: 44px;
   }
   .info-btn {
+    display: flex;
+    align-items: center;
     border: 2px solid var(--245daa);
     border-radius: 16px;
     padding: 16px 24px;
@@ -97,9 +105,15 @@ const StyledInfo = styled.section`
         line-height: 171%;
       }
     }
+    .info-link {
+      width: 100%;
+    }
+
     .info-btn {
+      width: 100%;
       padding: 8px 10px;
       margin-top: 8px;
+      justify-content: center;
     }
   }
 `;

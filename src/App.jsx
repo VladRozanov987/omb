@@ -11,6 +11,7 @@ import MainPage from "./pages/Main.page";
 import AboutPage from "./pages/About.page";
 import AllNewsPage from "./pages/AllNews.page";
 import NewsDetail from "./pages/NewsDetail.page";
+import Contacts from "./pages/Contacts.page";
 
 //Global Style
 import GlobalStyle from "./components/GlobalStyle.component";
@@ -20,16 +21,6 @@ import ScrollToTop from "./hooks/ScrollToTop";
 import Order from "./pages/Order.page";
 
 function App() {
-  const footerRef = useRef(null);
-
-  useEffect(() => {
-    window.scrollToFooter = () => {
-      if (footerRef.current) {
-        footerRef.current.scrollIntoView({ behavior: "smooth" });
-      }
-    };
-  }, []);
-
   return (
     <Router>
       <ScrollToTop />
@@ -41,11 +32,10 @@ function App() {
           <Route path="/about" element={<AboutPage />} />
           <Route path="/news" element={<AllNewsPage />} />
           <Route path="/news/:id" element={<NewsDetail />} />
+          <Route path="/contacts" element={<Contacts />} />
           <Route path="/order" element={<Order />} />
         </Routes>
-        <div ref={footerRef}>
-          <Footer />
-        </div>
+        <Footer />
       </div>
     </Router>
   );

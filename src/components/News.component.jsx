@@ -133,7 +133,7 @@ const StyledNews = styled.section`
     flex-direction: column;
     align-items: flex-start;
   }
-    
+
   .news-image {
     border-radius: 32px;
   }
