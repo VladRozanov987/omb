@@ -86,7 +86,7 @@ const News = ({ title = "Останні новини", limit, showButton }) => {
 };
 
 const StyledNews = styled.section`
-  padding-top: 128px;
+  padding-top: 104px;
   .news-container {
     justify-content: space-between;
 
@@ -181,6 +181,7 @@ const StyledNews = styled.section`
       display: grid;
       grid-template-columns: repeat(1, 1fr);
       gap: 32px;
+      margin-top: 32px;
     }
     .news-items-mobile {
       display: block;

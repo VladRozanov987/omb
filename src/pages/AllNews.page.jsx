@@ -17,7 +17,7 @@ const AllNewsPage = () => {
 const StyledWrapper = styled.div`
   padding-top: 57px;
   @media (max-width: 768px) {
-    padding: 0;
+    padding-top: 90px;
   }
 `;
 
