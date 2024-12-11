@@ -35,7 +35,12 @@ const Contacts = () => {
               <span>Адреса</span>
               <p>Алея Єрозолімські 109, офіс 70,02-797, Варшава, Польща</p>
               <span>Пошта</span>
-              <a href="mailto:ombudsman@ombudsman.pl">ombudsman@ombudsman.pl</a>
+              <a href="mailto:hotline@ombudsman.gov.ua">
+                hotline@ombudsman.gov.ua
+              </a>
+              <a href="mailto:zvernennia@ombudsman.pl">
+                zvernennia@ombudsman.pl
+              </a>
               <span>Номер телефону</span>
               <a href="tel:+48 605 110 05">+48 605 110 05</a>
             </div>
@@ -43,10 +48,9 @@ const Contacts = () => {
             <div className="text-block-el">
               <span>Гаряча лінія в Польщі</span>
               <a href="tel:+48 605 110 05">+48 605 110 05</a>
-              <span>Громадська приймальня у Варшаві працює:</span>
-              <p>
-                Понеділок - п’ятниця: з 9:00 до 17:00 Субота та неділя: вихідні
-              </p>
+              <span>Консультації для громадян України в Польщі</span>
+              <p>по четвергах від 16.00 до 19.00</p>
+              <p>за попереднім записом.</p>
             </div>
           </div>
 

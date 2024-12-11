@@ -91,9 +91,9 @@ const Footer = () => {
               </a>
             </div>
             <div className="text-block">
-              <span>Громадська приймальня працює:</span>
-              <h3>понеділок - п'ятниця з 9:00-17:00</h3>
-              <h3>субота та неділя — вихідні</h3>
+              <span>Консультації для громадян України в Польщі</span>
+              <h3>по четвергах від 16.00 до 19.00</h3>
+              <h3>за попереднім записом.</h3>
             </div>
             <div className="text-block">
               <a className="tel_number" href="tel:+0800501720">
@@ -106,6 +106,9 @@ const Footer = () => {
             <div className="text-block">
               <a className="mail-to" href="mailto:hotline@ombudsman.gov.ua">
                 hotline@ombudsman.gov.ua 
+              </a>
+              <a className="mail-to" href="mailto:zvernennia@ombudsman.pl">
+                zvernennia@ombudsman.pl 
               </a>
               <p>виключно для електронних звернень </p>
             </div>

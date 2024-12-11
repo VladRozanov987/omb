@@ -234,7 +234,7 @@ export const data = [
   {
     id: 16,
     name: "Агата Стахурська",
-    text: "Експерт з питань розширення ЄС з Україною",
+    text: "Експерт з економічних питань",
     image: slide16,
     type: "Expert",
     fullDescription: `

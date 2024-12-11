@@ -88,7 +88,7 @@ const StyledMain = styled.main`
 
     h3 {
       font-family: var(--font-family);
-      font-weight: 400;
+      font-weight: 600;
       font-size: 20px;
       text-align: right;
       color: var(--1c1f1c);
