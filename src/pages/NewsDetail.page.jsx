@@ -25,6 +25,8 @@ const NewsDetail = () => {
 
   const newsItem = newsData.find((news) => news.id === parseInt(id));
 
+  const newsItemImageUrl = `${window.location.origin}${newsItem.image}`;
+
   if (!newsItem) {
     return <h2>Новина не знайдена</h2>;
   }
@@ -32,51 +34,30 @@ const NewsDetail = () => {
   const shareOnFacebook = () => {
     const facebookUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
       window.location.href
-    )}&quote=${encodeURIComponent(newsItem.name)}`;
+    )}`;
     window.open(facebookUrl, "_blank", "width=600,height=400");
   };
 
   const shareOnTwitter = () => {
     const twitterUrl = `https://twitter.com/intent/tweet?url=${encodeURIComponent(
       window.location.href
-    )}&text=${encodeURIComponent(newsItem.name)}&via=ВашТвиттерАккаунт`;
+    )}&text=${encodeURIComponent(newsItem.name)}`;
     window.open(twitterUrl, "_blank", "width=600,height=400");
   };
 
   const shareOnTelegram = () => {
     const telegramUrl = `https://t.me/share/url?url=${encodeURIComponent(
       window.location.href
-    )}&text=${encodeURIComponent(`${newsItem.name}\n${newsItem.text}`)}`;
+    )}&text=${encodeURIComponent(newsItem.name)}`;
     window.open(telegramUrl, "_blank", "width=600,height=400");
   };
-
-  // const shareOnFacebook = () => {
-  //   const facebookUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
-  //     window.location.href
-  //   )}`;
-  //   window.open(facebookUrl, "_blank", "width=600,height=400");
-  // };
-
-  // const shareOnTwitter = () => {
-  //   const twitterUrl = `https://twitter.com/intent/tweet?url=${encodeURIComponent(
-  //     window.location.href
-  //   )}&text=${encodeURIComponent(newsItem.name)}`;
-  //   window.open(twitterUrl, "_blank", "width=600,height=400");
-  // };
-
-  // const shareOnTelegram = () => {
-  //   const telegramUrl = `https://t.me/share/url?url=${encodeURIComponent(
-  //     window.location.href
-  //   )}&text=${encodeURIComponent(newsItem.name)}`;
-  //   window.open(telegramUrl, "_blank", "width=600,height=400");
-  // };
 
   return (
     <StyledNews>
       <Helmet>
         <meta property="og:title" content={newsItem.name} />
         <meta property="og:description" content={newsItem.text} />
-        <meta property="og:image" content={newsItem.image} />
+        <meta property="og:image" content={newsItemImageUrl} />
         <meta property="og:url" content={window.location.href} />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={newsItem.name} />
