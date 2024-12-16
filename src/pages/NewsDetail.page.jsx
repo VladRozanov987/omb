@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 //Styled
 import styled from "styled-components";
@@ -31,26 +32,57 @@ const NewsDetail = () => {
   const shareOnFacebook = () => {
     const facebookUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
       window.location.href
-    )}`;
+    )}&quote=${encodeURIComponent(newsItem.name)}`;
     window.open(facebookUrl, "_blank", "width=600,height=400");
   };
 
   const shareOnTwitter = () => {
     const twitterUrl = `https://twitter.com/intent/tweet?url=${encodeURIComponent(
       window.location.href
-    )}&text=${encodeURIComponent(newsItem.name)}`;
+    )}&text=${encodeURIComponent(newsItem.name)}&via=ВашТвиттерАккаунт`;
     window.open(twitterUrl, "_blank", "width=600,height=400");
   };
 
   const shareOnTelegram = () => {
     const telegramUrl = `https://t.me/share/url?url=${encodeURIComponent(
       window.location.href
-    )}&text=${encodeURIComponent(newsItem.name)}`;
+    )}&text=${encodeURIComponent(`${newsItem.name}\n${newsItem.text}`)}`;
     window.open(telegramUrl, "_blank", "width=600,height=400");
   };
 
+  // const shareOnFacebook = () => {
+  //   const facebookUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
+  //     window.location.href
+  //   )}`;
+  //   window.open(facebookUrl, "_blank", "width=600,height=400");
+  // };
+
+  // const shareOnTwitter = () => {
+  //   const twitterUrl = `https://twitter.com/intent/tweet?url=${encodeURIComponent(
+  //     window.location.href
+  //   )}&text=${encodeURIComponent(newsItem.name)}`;
+  //   window.open(twitterUrl, "_blank", "width=600,height=400");
+  // };
+
+  // const shareOnTelegram = () => {
+  //   const telegramUrl = `https://t.me/share/url?url=${encodeURIComponent(
+  //     window.location.href
+  //   )}&text=${encodeURIComponent(newsItem.name)}`;
+  //   window.open(telegramUrl, "_blank", "width=600,height=400");
+  // };
+
   return (
     <StyledNews>
+      <Helmet>
+        <meta property="og:title" content={newsItem.name} />
+        <meta property="og:description" content={newsItem.text} />
+        <meta property="og:image" content={newsItem.image} />
+        <meta property="og:url" content={window.location.href} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={newsItem.name} />
+        <meta name="twitter:description" content={newsItem.text} />
+        <meta name="twitter:image" content={newsItem.image} />
+      </Helmet>
       <div className="container">
         <StyledWrapper>
           <h2>{newsItem.name}</h2>
