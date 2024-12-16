@@ -34,7 +34,7 @@ const NewsDetail = () => {
   const shareOnFacebook = () => {
     const facebookUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
       window.location.href
-    )}`;
+    )}&text=${encodeURIComponent(newsItem.name)}`;
     window.open(facebookUrl, "_blank", "width=600,height=400");
   };
 
