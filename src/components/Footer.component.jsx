@@ -76,73 +76,79 @@ const Footer = () => {
           </ul>
         </div>
         <div className="footer-text">
-          <div className="footer-text-left">
-            <div className="text-block">
-              <h3>Варшава, 02-797, Польща</h3>
-              <h3>алея Єрозолімські 109, оф.70</h3>
+          <div className="footer-text-left d-flex">
+            <div>
+              <div className="text-block">
+                <h3>Варшава, 02-797, Польща</h3>
+                <h3>алея Єрозолімські 109, оф.70</h3>
+              </div>
+              <div className="text-block">
+                <h3>Контакт офісу у Варшаві</h3>
+                <a className="mail-to" href="mailto:ombudsman@ombudsman.pl">
+                  ombudsman@ombudsman.pl
+                </a>
+                <a className="tel_number" href="tel:+48605911005">
+                  +48 605 110 05
+                </a>
+              </div>
+              <div className="text-block">
+                <span>Консультації для громадян України в Польщі</span>
+                <h3>по четвергах від 16.00 до 19.00</h3>
+                <h3>за попереднім записом.</h3>
+              </div>
+              <div className="text-block">
+                <a className="tel_number" href="tel:+0800501720">
+                  0 800 501 720 <span>(гаряча лінія)</span>
+                </a>
+                <a className="tel_number" href="tel:+0442997408">
+                  044 299 74 08
+                </a>
+              </div>
             </div>
-            <div className="text-block">
-              <h3>Контакт офісу у Варшаві</h3>
-              <a className="mail-to" href="mailto:ombudsman@ombudsman.pl">
-                ombudsman@ombudsman.pl
-              </a>
-              <a className="tel_number" href="tel:+48605911005">
-                +48 605 110 05
-              </a>
+
+            <div>
+              <div className="text-block">
+                <a className="mail-to" href="mailto:hotline@ombudsman.gov.ua">
+                  hotline@ombudsman.gov.ua 
+                </a>
+                <a className="mail-to" href="mailto:zvernennia@ombudsman.pl">
+                  zvernennia@ombudsman.pl 
+                </a>
+                <p>виключно для електронних звернень </p>
+              </div>
+              <div className="text-block">
+                <a
+                  className="download-link"
+                  href={personal}
+                  download="Про обробку персональних даних.docx"
+                >
+                  Про обробку персональних даних
+                </a>
+                <a
+                  className="download-link"
+                  href={politics}
+                  download="Політика захисту персональних даних.pdf"
+                >
+                  Політика захисту персональних даних
+                </a>
+              </div>
+              <div className="text-block">
+                <a href="https://ombudsman.gov.ua/">Сайти Омбудсмана України</a>
+                <a href="https://poland.mfa.gov.ua/">
+                  Сайт генконсульства України в Польщі
+                </a>
+                <a href="https://mfa.gov.ua/">
+                  Сайт Міністерства закордонних справ України
+                </a>
+              </div>
+
+              <h4 className="copy">
+                © 2024 Секретаріат Уповноваженого Верховної Ради України з прав
+                людини 2013-2024
+              </h4>
             </div>
-            <div className="text-block">
-              <span>Консультації для громадян України в Польщі</span>
-              <h3>по четвергах від 16.00 до 19.00</h3>
-              <h3>за попереднім записом.</h3>
-            </div>
-            <div className="text-block">
-              <a className="tel_number" href="tel:+0800501720">
-                0 800 501 720 <span>(гаряча лінія)</span>
-              </a>
-              <a className="tel_number" href="tel:+0442997408">
-                044 299 74 08
-              </a>
-            </div>
-            <div className="text-block">
-              <a className="mail-to" href="mailto:hotline@ombudsman.gov.ua">
-                hotline@ombudsman.gov.ua 
-              </a>
-              <a className="mail-to" href="mailto:zvernennia@ombudsman.pl">
-                zvernennia@ombudsman.pl 
-              </a>
-              <p>виключно для електронних звернень </p>
-            </div>
-            <div className="text-block">
-              <a
-                className="download-link"
-                href={personal}
-                download="Про обробку персональних даних.docx"
-              >
-                Про обробку персональних даних
-              </a>
-              <a
-                className="download-link"
-                href={politics}
-                download="Політика захисту персональних даних.pdf"
-              >
-                Політика захисту персональних даних
-              </a>
-            </div>
-            <div className="text-block">
-              <a href="https://ombudsman.gov.ua/">Сайти Омбудсмана України</a>
-              <a href="https://poland.mfa.gov.ua/">
-                Сайт генконсульства України в Польщі
-              </a>
-              <a href="https://mfa.gov.ua/">
-                Сайт Міністерства закордонних справ України
-              </a>
-            </div>
-            <h4 className="copy">
-              © 2024 Секретаріат Уповноваженого Верховної Ради України з прав
-              людини 2013-2024
-            </h4>
           </div>
-          <div className="footer-text-right">
+          {/* <div className="footer-text-right">
             <div className="text-block">
               <span>
                 Громадська приймальня Уповноваженого з прав людини в
@@ -177,7 +183,7 @@ const Footer = () => {
                 +38 093 000 00 00
               </a>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </StyledFooter>
@@ -200,7 +206,11 @@ const StyledFooter = styled.footer`
 
   .footer-text {
     margin-top: 10px;
-    display: flex;
+    /* display: flex;
+    justify-content: space-between; */
+  }
+
+  .d-flex {
     justify-content: space-between;
   }
 
