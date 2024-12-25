@@ -118,7 +118,8 @@ const StyledWrapper = styled.div`
   max-width: 1020px;
   margin: 0 auto;
 
-  h2 {
+  h2,
+  h3 {
     margin-bottom: 24px;
   }
 
@@ -127,7 +128,15 @@ const StyledWrapper = styled.div`
     list-style-type: disc;
   }
 
+  a {
+    color: var(--245daa);
+  }
+
   span {
+    margin-bottom: 32px;
+  }
+
+  ul {
     margin-bottom: 32px;
   }
 

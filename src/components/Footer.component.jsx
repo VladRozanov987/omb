@@ -240,6 +240,10 @@ const StyledFooter = styled.footer`
   }
 
   @media screen and (max-width: 768px) {
+    .d-flex {
+      justify-content: space-between;
+      gap: 16px;
+    }
     .footer-links {
       flex-direction: column;
       align-items: baseline;
