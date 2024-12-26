@@ -87,22 +87,14 @@ const Footer = () => {
                 <a className="mail-to" href="mailto:ombudsman@ombudsman.pl">
                   ombudsman@ombudsman.pl
                 </a>
-                <a className="tel_number" href="tel:+48605911005">
-                  +48 605 110 05
+                <a className="tel_number" href="tel:+48 605 911 005">
+                  +48 605 911 005 <span>(гаряча лінія)</span>
                 </a>
               </div>
               <div className="text-block">
                 <span>Консультації для громадян України в Польщі</span>
                 <h3>по четвергах від 16.00 до 19.00</h3>
                 <h3>за попереднім записом.</h3>
-              </div>
-              <div className="text-block">
-                <a className="tel_number" href="tel:+0800501720">
-                  0 800 501 720 <span>(гаряча лінія)</span>
-                </a>
-                <a className="tel_number" href="tel:+0442997408">
-                  044 299 74 08
-                </a>
               </div>
               <h4 className="copy">
                 © 2024 Секретаріат Уповноваженого Верховної Ради України з прав
@@ -137,7 +129,7 @@ const Footer = () => {
                 </a>
               </div>
               <div className="text-block">
-                <a href="https://ombudsman.gov.ua/">Сайти Омбудсмана України</a>
+                <a href="https://ombudsman.gov.ua/">Сайт Омбудсмана України</a>
                 <a href="https://poland.mfa.gov.ua/">
                   Сайт генконсульства України в Польщі
                 </a>
@@ -242,7 +234,7 @@ const StyledFooter = styled.footer`
   @media screen and (max-width: 768px) {
     .d-flex {
       justify-content: space-between;
-      gap: 16px;
+      flex-direction: column;
     }
     .footer-links {
       flex-direction: column;

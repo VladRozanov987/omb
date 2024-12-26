@@ -129,7 +129,7 @@ const Header = () => {
           </ul>
 
           <div>
-            <a className="tel_number" href="tel:+48 605 911 005">
+            <a className="tel_number" href="tel:++48 605 911 005">
               +48 605 911 005
             </a>
             <p className="tel_text">(гаряча лінія в Польщі)</p>
