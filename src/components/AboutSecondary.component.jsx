@@ -2,7 +2,7 @@
 import styled from "styled-components";
 
 //Img
-import secondPhoto from "../assets/img/news1.jpg";
+import secondPhoto from "../assets/img/secPhoto.jpg";
 import firstPhoto from "../assets/img/secondaryAbout.png";
 
 const AboutSecondary = () => {
