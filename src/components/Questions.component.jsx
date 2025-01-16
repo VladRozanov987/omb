@@ -10,19 +10,21 @@ import ArrowUp from "../assets/icons/ArrowUpRightW.svg";
 //Router
 import { Link } from "react-router-dom";
 
+//Translate
+import { useTranslation } from "react-i18next";
+
 const Questions = () => {
+  const { t } = useTranslation();
+
   return (
     <StyledQuestions>
       <div className="container d-flex">
         <div className="questions-aside">
-          <h2>Основні категорії прав та принципи, які захищає Уповноважений</h2>
-          <p>
-            Ви можете звернутися з питаннями щодо соціального захисту, прав на
-            освіту, економічної підтримки та інших важливих аспектів вашого
-            життя за межами України. Захистимо ваші права разом!
-          </p>
+          <h2>{t("questSection.mainCategoriesAndPrinciples")}</h2>
+          <p>{t("questSection.youCanContactForQuestions")}</p>
           <Link to="/order" className="btn-secondary link-btn">
-            Порядок звернення до Омбудсмана <img src={ArrowUp} alt="ArrowUp" />
+            {t("questSection.orderProcedure")}{" "}
+            <img src={ArrowUp} alt="ArrowUp" />
           </Link>
         </div>
         <div className="accordion-container">

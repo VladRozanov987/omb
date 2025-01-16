@@ -6,7 +6,11 @@ import styled from "styled-components";
 //Data
 import { accordionData } from "../data/Accordion.data";
 
+//Translation
+import { useTranslation } from "react-i18next";
+
 const AccordionList = () => {
+  const { t } = useTranslation();
   const [openAccordion, setOpenAccordion] = useState(null);
   const [isExpanded, setIsExpanded] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
@@ -38,7 +42,7 @@ const AccordionList = () => {
       {visibleData.map(({ id, title, content }) => (
         <div key={id} className="accordion-item">
           <div className="accordion-header" onClick={() => toggleAccordion(id)}>
-            <h3>{title}</h3>
+            <h3>{t(`accordion.item.${id}.title`)}</h3>
             <span className="accordion-icon">
               {openAccordion === id ? "-" : "+"}
             </span>
@@ -47,7 +51,9 @@ const AccordionList = () => {
             <div className="accordion-body">
               <ul className="accordion-list">
                 {content.map((item, index) => (
-                  <li key={index}>{item}</li>
+                  <li key={index}>
+                    {t(`accordion.item.${id}.content.${index}`)}
+                  </li>
                 ))}
               </ul>
             </div>
@@ -57,13 +63,13 @@ const AccordionList = () => {
 
       {isMobile && !isExpanded && accordionData.length > 6 && (
         <button className="expand-btn" onClick={handleExpandClick}>
-          Відкрити ще
+          {t("accordion.open")}
         </button>
       )}
 
       {isMobile && isExpanded && (
         <button className="expand-btn" onClick={handleExpandClick}>
-          Сховати
+          {t("accordion.close")}
         </button>
       )}
     </StyledAccordionList>

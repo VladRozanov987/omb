@@ -11,31 +11,28 @@ import test from "../assets/img/test.png";
 //Router
 import { Link } from "react-router-dom";
 
+//Translate
+import { useTranslation } from "react-i18next";
+
 const MainSection = () => {
+  const { t } = useTranslation();
+
   return (
     <StyledMain>
       <div className="container">
         <div className="main-aside">
-          <h1>
-            Захист прав <br /> і свобод громадян пріоритет держави
-          </h1>
-          <p>
-            Офіс Омбудсмана України діє як посередник між людиною <br /> та
-            державою. Це незалежна інституція, яка покликана <br /> захищати
-            права громадян, які до неї звертаються.
-          </p>
+          <h1>{t("mainSection.title")}</h1>
+          <p>{t("mainSection.description")}</p>
         </div>
         <div className="wrapper">
           <Link to="/about" className="btn-secondary">
-            Детальніше <img src={ArrowUpRightW} alt="ArrowUpRight" />
+            {t("mainSection.detailsButton")}{" "}
+            <img src={ArrowUpRightW} alt="ArrowUpRight" />
           </Link>
 
           <div className="main-name">
-            <h3>Марчук Вероніка Олена</h3>
-            <p>
-              Представник Уповноваженого Верховної Ради України з прав людини в
-              Республіці Польща
-            </p>
+            <h3>{t("mainSection.representativeName")}</h3>
+            <p>{t("mainSection.representativePosition")}</p>
           </div>
         </div>
       </div>

@@ -7,7 +7,12 @@ import people from "../assets/img/people.jpg";
 //Icons
 import qm from "../assets/icons/qm.svg";
 
+//Translate
+import { useTranslation } from "react-i18next";
+
 const Photo = () => {
+  const { t } = useTranslation();
+
   return (
     <StyledPhoto>
       <div className="main-img">
@@ -15,11 +20,7 @@ const Photo = () => {
       </div>
       <div className="container">
         <div className="main-expl">
-          <h3>
-            Офіс Омбудсмана України у Польщі допомагає людям захищати свої права
-            та забезпечує прозорість у роботі державних органів. Ми працюємо для
-            того, щоб кожен міг отримати справедливе вирішення своїх проблем.
-          </h3>
+          <h3>{t("photo.description")}</h3>
         </div>
       </div>
     </StyledPhoto>

@@ -251,6 +251,9 @@ const ModalContent = styled.div`
     color: #fff;
     margin-bottom: 46px;
   }
+  .btn-primary {
+    width: 200px;
+  }
   .upload-container {
     display: flex;
     align-items: center;

@@ -11,7 +11,12 @@ import arrowUp from "../assets/icons/ArrowUpRight.svg";
 // Modal
 import ContactFormModal from "./ContactFormModal.component";
 
+//Translation
+import { useTranslation } from "react-i18next";
+
 const Banner = () => {
+  const { t } = useTranslation();
+
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const openModal = () => setIsModalOpen(true);
@@ -21,14 +26,11 @@ const Banner = () => {
     <StyledBanner>
       <div className="container d-flex">
         <div className="banner-text">
-          <h4>Виникли питання?</h4>
-          <p>
-            Головний документ, яким керується Омбудсман України — Конституція
-            України.
-          </p>
+          <h4>{t("banner.title")}</h4>
+          <p>{t("banner.text")}</p>
         </div>
         <button className="btn-primary" onClick={openModal}>
-          Зв’язатись з Омбудсманом <img src={arrowUp} alt="ArrowUp" />{" "}
+          {t("banner.btn")} <img src={arrowUp} alt="ArrowUp" />{" "}
         </button>
       </div>
       <ContactFormModal isOpen={isModalOpen} onClose={closeModal} />

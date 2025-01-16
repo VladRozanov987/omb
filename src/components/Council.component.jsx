@@ -16,8 +16,12 @@ import "swiper/css/pagination";
 //Icons
 import ArrowUp from "../assets/icons/ArrowUpRightW.svg";
 
+//Translate
+import { useTranslation } from "react-i18next";
+
 //PopUp
 const Popup = ({ person, onClose }) => {
+  const { t } = useTranslation();
   useEffect(() => {
     document.body.style.overflow = "hidden";
     return () => {
@@ -31,11 +35,17 @@ const Popup = ({ person, onClose }) => {
           ×
         </button>
         <div className="popup-content-inner">
-          <img className="person-image" src={person.image} alt={person.name} />
+          <img
+            className="person-image"
+            src={person.image}
+            alt={t(`council.members.${person.id}.name`)}
+          />
           <div className="popup-body">
-            <h3>{person.name}</h3>
+            <h3>{t(`council.members.${person.id}.name`)}</h3>
             <div
-              dangerouslySetInnerHTML={{ __html: person.fullDescription }}
+              dangerouslySetInnerHTML={{
+                __html: t(`council.members.${person.id}.fullDescription`),
+              }}
             ></div>
           </div>
         </div>
@@ -45,6 +55,7 @@ const Popup = ({ person, onClose }) => {
 };
 
 const Council = ({ isAboutPage = false, initialFilter = "Director" }) => {
+  const { t } = useTranslation();
   const [filter, setFilter] = useState(initialFilter);
   const [selectedPerson, setSelectedPerson] = useState(null);
 
@@ -67,7 +78,7 @@ const Council = ({ isAboutPage = false, initialFilter = "Director" }) => {
     <StyledCouncil isAboutPage={isAboutPage}>
       <div className="container">
         <div className={`header-text d-flex ${isAboutPage ? "centered" : ""}`}>
-          <h2>Наша Команда</h2>
+          <h2>{t("council.title")}</h2>
         </div>
 
         <div className="filters d-flex">
@@ -91,13 +102,13 @@ const Council = ({ isAboutPage = false, initialFilter = "Director" }) => {
               <div key={item.id} className="card d-flex">
                 <img src={item.image} alt={item.name} />
                 <div className="card-text">
-                  <h3>{item.name}</h3>
-                  <p>{item.text}</p>
+                  <h3>{t(`council.members.${item.id}.name`)}</h3>
+                  <p>{t(`council.members.${item.id}.text`)}</p>
                   <button
                     className="popUp-btn"
                     onClick={() => handlePopupOpen(item)}
                   >
-                    Детальніше
+                    {t("council.more")}
                   </button>
                 </div>
               </div>
@@ -120,13 +131,13 @@ const Council = ({ isAboutPage = false, initialFilter = "Director" }) => {
                   <div className="card d-flex">
                     <img src={item.image} alt={item.name} />
                     <div className="card-text">
-                      <h3>{item.name}</h3>
-                      <p>{item.text}</p>
+                      <h3>{t(`council.members.${item.id}.name`)}</h3>
+                      <p>{t(`council.members.${item.id}.text`)}</p>
                       <button
                         className="popUp-btn"
                         onClick={() => handlePopupOpen(item)}
                       >
-                        Детальніше
+                        {t("council.more")}
                       </button>
                     </div>
                   </div>
@@ -138,7 +149,7 @@ const Council = ({ isAboutPage = false, initialFilter = "Director" }) => {
 
         {!isAboutPage && (
           <Link to="/about" className="council-btn btn-secondary">
-            Детальніше про Раду <img src={ArrowUp} alt="ArrowUp" />
+            {t("council.cMore")} <img src={ArrowUp} alt="ArrowUp" />
           </Link>
         )}
       </div>
@@ -150,25 +161,30 @@ const Council = ({ isAboutPage = false, initialFilter = "Director" }) => {
   );
 };
 
-const FilterButtons = ({ filter, onFilterChange }) => (
-  <>
-    {["Director", "Expert", "Regional Director", "Volunteers"].map((type) => (
-      <button
-        key={type}
-        className={`btn btn-secondary ${filter === type ? "active" : ""}`}
-        onClick={() => onFilterChange(type)}
-      >
-        {type === "Director"
-          ? "Директори"
-          : type === "Expert"
-          ? "Рада Експертів"
-          : type === "Regional Director"
-          ? "Регіональні Директори"
-          : "Волонтери"}
-      </button>
-    ))}
-  </>
-);
+const FilterButtons = ({ filter, onFilterChange }) => {
+  const { t } = useTranslation();
+
+  const filterTypes = [
+    { key: "Director", label: t("council.filters.director") },
+    { key: "Expert", label: t("council.filters.expert") },
+    { key: "Regional Director", label: t("council.filters.regionalDirector") },
+    { key: "Volunteers", label: t("council.filters.volunteers") },
+  ];
+
+  return (
+    <>
+      {filterTypes.map(({ key, label }) => (
+        <button
+          key={key}
+          className={`btn btn-secondary ${filter === key ? "active" : ""}`}
+          onClick={() => onFilterChange(key)}
+        >
+          {label}
+        </button>
+      ))}
+    </>
+  );
+};
 
 const MobileFilterSelect = ({ filter, onFilterChange }) => (
   <select

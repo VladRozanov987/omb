@@ -24,7 +24,12 @@ import { Link, useNavigate } from "react-router-dom";
 // Modal
 import ContactFormModal from "../components/ContactFormModal.component";
 
+//Translate
+import LanguageSwitcher from "./LangSwitcher";
+import { useTranslation } from "react-i18next";
+
 const Header = () => {
+  const { t } = useTranslation();
   const navigate = useNavigate();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [hoveredIcons, setHoveredIcons] = useState({
@@ -67,27 +72,27 @@ const Header = () => {
           <ul>
             <li>
               <Link className="link" to="/">
-                Головна
+                {t("home")}
               </Link>
             </li>
             <li>
               <Link className="link" to="/about">
-                Про нас
+                {t("about")}
               </Link>
             </li>
             <li>
               <a className="link" onClick={handleScrollToQuestions}>
-                Питання
+                {t("questions")}
               </a>
             </li>
             <li>
               <Link className="link" to="/news">
-                Новини
+                {t("news")}
               </Link>
             </li>
             <li>
               <Link className="link" to="/contacts">
-                Контакти
+                {t("contacts")}
               </Link>
             </li>
           </ul>
@@ -132,27 +137,27 @@ const Header = () => {
             <a className="tel_number" href="tel:++48 605 911 005">
               +48 605 911 005
             </a>
-            <p className="tel_text">(гаряча лінія в Польщі)</p>
+            <p className="tel_text">{t("hotline")}</p>
           </div>
         </div>
 
         <button className="btn-primary" onClick={openModal}>
-          <span className="button-text">
-            Зв'язатись з Представництвом у Польщі
-          </span>
+          <span className="button-text">{t("header-btn")}</span>
           <img className="arrow-icon" src={ArrowUpRight} alt="ArrowUpRight" />
         </button>
+
+        <LanguageSwitcher />
 
         <div className={`mobile-menu ${isMenuOpen ? "open" : ""}`}>
           <ul className="mob-link-list">
             <li>
               <Link onClick={closeMenu} to="/">
-                Головна
+                {t("home")}
               </Link>
             </li>
             <li>
               <Link onClick={closeMenu} to="/about">
-                Про нас
+                {t("about")}
               </Link>
             </li>
             <li>
@@ -162,17 +167,17 @@ const Header = () => {
                   closeMenu();
                 }}
               >
-                Питання
+                {t("questions")}
               </a>
             </li>
             <li>
               <Link onClick={closeMenu} to="/news">
-                Новини
+                {t("news")}
               </Link>
             </li>
             <li>
               <Link onClick={closeMenu} to="/contacts">
-                Контакти
+                {t("contacts")}
               </Link>
             </li>
             <ul className="mob-menu-social">
@@ -203,7 +208,7 @@ const Header = () => {
             <a className="tel_number" href="tel:+48 605 911 005">
               +48 605 911 005
             </a>
-            <p className="tel_text">(гаряча лінія в Польщі)</p>
+            <p className="tel_text">{t("hotline")}</p>
           </div>
           <button
             className="mob-menu-btn"
