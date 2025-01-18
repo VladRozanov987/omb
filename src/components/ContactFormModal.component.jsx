@@ -5,7 +5,12 @@ import Download from "../assets/icons/Download.svg";
 import DeleteIcon from "../assets/icons/DeleteIcon.svg";
 import select from "../assets/icons/select.svg";
 
+// i18n
+import { useTranslation } from "react-i18next";
+
 const ContactFormModal = ({ isOpen, onClose }) => {
+  const { t } = useTranslation();
+
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -89,19 +94,15 @@ const ContactFormModal = ({ isOpen, onClose }) => {
           ×
         </button>
         <ModalContentInner>
-          <h4>Задайте питання Омбудсману</h4>
-          <p>
-            Головний документ, яким керується Омбудсман України — Конституція
-            України. Відповідно до неї Уповноважений має доступ до місць
-            несвободи.
-          </p>
+          <h4>{t("modal.title")}</h4>
+          <p>{t("modal.docText")}</p>
           <form onSubmit={handleSubmit}>
             <div className="d-flex name-tel">
               <input
                 className="marginInput"
                 type="text"
                 name="name"
-                placeholder="Ваше ім’я*"
+                placeholder={t("modal.namePlaceholder")}
                 value={formData.name}
                 onChange={handleChange}
                 required
@@ -109,7 +110,7 @@ const ContactFormModal = ({ isOpen, onClose }) => {
               <input
                 type="tel"
                 name="phone"
-                placeholder="Ваш телефон*"
+                placeholder={t("modal.phonePlaceholder")}
                 value={formData.phone}
                 onChange={handleChange}
                 required
@@ -123,23 +124,29 @@ const ContactFormModal = ({ isOpen, onClose }) => {
               onChange={handleChange}
               required
             >
-              <option value="">Тема запиту</option>
-              <option value="reason1">Порушення прав людини</option>
+              <option value="">{t("modal.selectPlaceholder")}</option>
+              <option value="reason1">
+                {t("modal.selectOptions.reason1")}
+              </option>
               <option value="reason2">
-                Проблеми з адміністративними органами
+                {t("modal.selectOptions.reason2")}
               </option>
               <option value="reason3">
-                Доступ до правосуддя та правових послуг
+                {t("modal.selectOptions.reason3")}
               </option>
               <option value="reason4">
-                Охорона здоров’я та соціальні послуги
+                {t("modal.selectOptions.reason4")}
               </option>
-              <option value="reason5">Порушення прав трудових відносин</option>
-              <option value="reason6">Інше</option>
+              <option value="reason5">
+                {t("modal.selectOptions.reason5")}
+              </option>
+              <option value="reason6">
+                {t("modal.selectOptions.reason6")}
+              </option>
             </select>
             <textarea
               name="message"
-              placeholder="Ваше повідомлення"
+              placeholder={t("modal.messagePlaceholder")}
               value={formData.message}
               onChange={handleChange}
             />
@@ -155,8 +162,8 @@ const ContactFormModal = ({ isOpen, onClose }) => {
                 <img src={Download} alt="Upload" />
               </label>
               <span>
-                Загрузити додаткові матеріали{" "}
-                <span className="orangeSpan">Відкрити</span>{" "}
+                {t("modal.uploadText")}{" "}
+                <span className="orangeSpan">{t("modal.openText")}</span>{" "}
               </span>
             </div>
 
@@ -175,7 +182,11 @@ const ContactFormModal = ({ isOpen, onClose }) => {
                                 alt={file.name}
                                 className="file-img"
                               />
-                              <span>{file.name}</span>
+                              <span>
+                                {t("modal.filePreview", {
+                                  fileName: file.name,
+                                })}
+                              </span>
                             </>
                           ) : (
                             <span>{file.name}</span>
@@ -186,7 +197,7 @@ const ContactFormModal = ({ isOpen, onClose }) => {
                           className="delete-btn"
                           onClick={() => handleRemoveFile(file)}
                         >
-                          <img src={DeleteIcon} alt="Delete" />
+                          <img src={DeleteIcon} alt={t("modal.fileDelete")} />
                         </button>
                       </li>
                     );
@@ -199,7 +210,9 @@ const ContactFormModal = ({ isOpen, onClose }) => {
               type="submit"
               disabled={isSubmitting}
             >
-              {isSubmitting ? "Надсилання..." : "Відправити питання"}
+              {isSubmitting
+                ? t("modal.sendingButton")
+                : t("modal.submitButton")}
               <img src={ArrowUp} alt="ArrowUp" />
             </button>
           </form>

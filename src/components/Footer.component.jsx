@@ -19,7 +19,12 @@ import facebookHov from "../assets/icons/facebook-hov.svg";
 import personal from "../assets/docs/personal.docx";
 import politics from "../assets/docs/politics.pdf";
 
+// i18n
+import { useTranslation } from "react-i18next";
+
 const Footer = () => {
+  const { t } = useTranslation();
+
   const [hoveredIcons, setHoveredIcons] = useState({
     insta: false,
     linked: false,
@@ -79,27 +84,24 @@ const Footer = () => {
           <div className="footer-text-left d-flex">
             <div>
               <div className="text-block">
-                <h3>Варшава, 02-797, Польща</h3>
-                <h3>алея Єрозолімські 109, оф.70</h3>
+                <h3>{t("footer.addres.title")}</h3>
+                <h3>{t("footer.addres.street")}</h3>
               </div>
               <div className="text-block">
-                <h3>Контакт офісу у Варшаві</h3>
+                <h3>{t("footer.contact.title")}</h3>
                 <a className="mail-to" href="mailto:ombudsman@ombudsman.pl">
                   ombudsman@ombudsman.pl
                 </a>
                 <a className="tel_number" href="tel:+48 605 911 005">
-                  +48 605 911 005 <span>(гаряча лінія)</span>
+                  +48 605 911 005 <span>{t("footer.contact.hotline")}</span>
                 </a>
               </div>
               <div className="text-block">
-                <span>Консультації для громадян України в Польщі</span>
-                <h3>по четвергах від 16.00 до 19.00</h3>
-                <h3>за попереднім записом.</h3>
+                <span>{t("footer.consultations.title")}</span>
+                <h3>{t("footer.consultations.hours")}</h3>
+                <h3>{t("footer.consultations.appointment")}</h3>
               </div>
-              <h4 className="copy">
-                © 2024 Секретаріат Уповноваженого Верховної Ради України з прав
-                людини 2013-2024
-              </h4>
+              <h4 className="copy">{t("footer.copyright")}</h4>
             </div>
 
             <div>
@@ -110,7 +112,7 @@ const Footer = () => {
                 <a className="mail-to" href="mailto:zvernennia@ombudsman.pl">
                   zvernennia@ombudsman.pl 
                 </a>
-                <p>виключно для електронних звернень </p>
+                <p>{t("footer.emails.note")}</p>
               </div>
               <div className="text-block">
                 <a
@@ -118,24 +120,24 @@ const Footer = () => {
                   href={personal}
                   download="Про обробку персональних даних.docx"
                 >
-                  Про обробку персональних даних
+                  {t("footer.documents.personalData")}
                 </a>
                 <a
                   className="download-link"
                   href={politics}
                   download="Політика захисту персональних даних.pdf"
                 >
-                  Політика захисту персональних даних
+                  {t("footer.documents.privacyPolicy")}
                 </a>
               </div>
               <div className="text-block">
-                <a href="https://ombudsman.gov.ua/">Сайт Омбудсмана України</a>
+                <a href="https://ombudsman.gov.ua/">
+                  {t("footer.links.ombudsmanWebsite")}
+                </a>
                 <a href="https://poland.mfa.gov.ua/">
-                  Сайт генконсульства України в Польщі
+                  {t("footer.links.consulateWebsite")}
                 </a>
-                <a href="https://mfa.gov.ua/">
-                  Сайт Міністерства закордонних справ України
-                </a>
+                <a href="https://mfa.gov.ua/">{t("footer.links.mfaWebsite")}</a>
               </div>
             </div>
           </div>

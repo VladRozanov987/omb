@@ -146,7 +146,9 @@ const Header = () => {
           <img className="arrow-icon" src={ArrowUpRight} alt="ArrowUpRight" />
         </button>
 
-        <LanguageSwitcher />
+        <div className="d-flex-end">
+          <LanguageSwitcher />
+        </div>
 
         <div className={`mobile-menu ${isMenuOpen ? "open" : ""}`}>
           <ul className="mob-link-list">
@@ -217,7 +219,7 @@ const Header = () => {
               openModal();
             }}
           >
-            Зв’язатись з Омбудсманом
+            {t("header-btn")}
             <img className="arrow-icon" src={ArrowUpRight} alt="ArrowUpRight" />
           </button>
         </div>
@@ -242,6 +244,16 @@ const StyledHeader = styled.header`
     display: flex;
     align-items: center;
     justify-content: space-between;
+  }
+
+  .d-flex-end {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .logo {
+    width: 200px;
   }
 
   .burger-menu {

@@ -4,16 +4,18 @@ import styled from "styled-components";
 //Data
 import FaqList from "./FaqList.component";
 
+// i18n
+import { useTranslation } from "react-i18next";
+
 const Faq = () => {
+  const { t } = useTranslation();
+
   return (
     <StyledFaq>
       <div className="container">
         <div className="faq-aside">
-          <h2>Відповіді на часті питання</h2>
-          <p>
-            У цьому розділі зібрано відповіді на найактуальніші питання, з якими
-            можуть стикатися українці, які перебувають у Польщі
-          </p>
+          <h2>{t("FAQ.title")}</h2>
+          <p>{t("FAQ.text")}</p>
         </div>
         <div className="accordion-container">
           <FaqList />

@@ -6,7 +6,11 @@ import styled from "styled-components";
 //Data
 import { FaqData } from "../data/FAQ.data";
 
+// i18n
+import { useTranslation } from "react-i18next";
+
 const FaqList = () => {
+  const { t } = useTranslation();
   const [openAccordion, setOpenAccordion] = useState(null);
   const [isExpanded, setIsExpanded] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
@@ -37,7 +41,7 @@ const FaqList = () => {
       {visibleData.map(({ id, title, content }) => (
         <div key={id} className="accordion-item">
           <div className="accordion-header" onClick={() => toggleAccordion(id)}>
-            <h3>{title}</h3>
+            <h3>{t(`FAQ.item.${id}.title`)}</h3>
             <span className="accordion-icon">
               {openAccordion === id ? "-" : "+"}
             </span>
@@ -46,7 +50,7 @@ const FaqList = () => {
             <div className="accordion-body">
               <ul className="accordion-list">
                 {content.map((item, index) => (
-                  <li key={index}>{item}</li>
+                  <li key={index}>{t(`FAQ.item.${id}.content.${index}`)}</li>
                 ))}
               </ul>
             </div>

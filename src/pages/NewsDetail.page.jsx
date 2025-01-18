@@ -17,7 +17,12 @@ import telegram from "../assets/icons/telegram.svg";
 //Data
 import { data as newsData } from "../data/News.data";
 
+// i18n
+import { useTranslation } from "react-i18next";
+
 const NewsDetail = () => {
+  const { t } = useTranslation();
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -66,12 +71,14 @@ const NewsDetail = () => {
       </Helmet>
       <div className="container">
         <StyledWrapper>
-          <h2>{newsItem.name}</h2>
+          <h2>{t(`newsComponent.item.${id}.title`)}</h2>
           <span>{newsItem.date}</span>
           <img src={newsItem.image} alt={newsItem.name} />
           <div
             className="news-text"
-            dangerouslySetInnerHTML={{ __html: newsItem.text }}
+            dangerouslySetInnerHTML={{
+              __html: t(`newsComponent.item.${id}.text`),
+            }}
           />
 
           <div className="share d-flex">

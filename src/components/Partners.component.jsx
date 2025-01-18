@@ -18,7 +18,12 @@ import { Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 
+// i18n
+import { useTranslation } from "react-i18next";
+
 const Partners = () => {
+  const { t } = useTranslation();
+
   const partnersData = [
     { src: partner1 },
     { src: partner2 },
@@ -37,7 +42,7 @@ const Partners = () => {
   return (
     <StyledPartners>
       <div className="container">
-        <h2>Наші партнери</h2>
+        <h2>{t("partners.title")}</h2>
 
         <div className="partners-grid-desktop">
           {partnersData.map((partner, index) => (

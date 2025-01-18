@@ -14,25 +14,19 @@ import Council from "../components/Council.component";
 import Banner from "../components/Banner.component";
 import AboutText from "../components/AboutText.component";
 
+// i18n
+import { useTranslation } from "react-i18next";
+
 const AboutPage = () => {
+  const { t } = useTranslation();
+
   return (
     <>
       <StyledAbout>
         <div className="container">
           <div className="about-text">
-            <h2>
-              Офіс Представника <br /> Уповноваженого <br /> Верховної Ради{" "}
-              <br />
-              України у Польщі{" "}
-            </h2>
-            <p>
-              Офіс Представника Уповноваженого Верховної Ради України з прав
-              людини в Республіці Польща покликаний захищати права та свободи
-              громадян України, які проживають або перебувають у Польщі. Діючи
-              як посередник між людиною та державою, наш офіс працює над тим,
-              щоб усі українці отримували справедливе ставлення, захищаючи їхні
-              права відповідно до законів України та міжнародного права.
-            </p>
+            <h2>{t("aboutSec.title")}</h2>
+            <p>{t("aboutSec.text")}</p>
           </div>
           <div className="mobile-bg">
             <img src={mobBG} alt="BG-image" />

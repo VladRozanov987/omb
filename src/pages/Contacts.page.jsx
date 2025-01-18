@@ -14,7 +14,11 @@ import Info from "../components/Info.section.component";
 import Banner from "../components/Banner.component";
 import News from "../components/News.component";
 
+// i18n
+import { useTranslation } from "react-i18next";
+
 const Contacts = () => {
+  const { t } = useTranslation();
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const openModal = () => setIsModalOpen(true);
@@ -23,83 +27,75 @@ const Contacts = () => {
   return (
     <StyledContacts>
       <div className="container">
-        <h2 className="contacts-header">Контакти</h2>
+        <h2 className="contacts-header">{t("contactPage.title")}</h2>
         <div className="text-block">
-          <h3>
-            Представництво Уповноваженого Верховної Ради України з прав людини в
-            Республіці Польща
-          </h3>
-
+          <h3>{t("contactPage.representationTitle")}</h3>
           <div className="d-flex">
             <div className="text-block-el">
-              <span>Адреса</span>
-              <p>Алея Єрозолімські 109, офіс 70,02-797, Варшава, Польща</p>
-              <span>Пошта</span>
-              <a href="mailto:hotline@ombudsman.gov.ua">
-                hotline@ombudsman.gov.ua
+              <span>{t("contactPage.address")}</span>
+              <p>{t("contactPage.address")}</p>
+              <span>{t("contactPage.email.main")}</span>
+              <a href={`mailto:${t("contactPage.email.main")}`}>
+                {t("contactPage.email.main")}
               </a>
-              <a href="mailto:zvernennia@ombudsman.pl">
-                zvernennia@ombudsman.pl
+              <a href={`mailto:${t("contactPage.email.second")}`}>
+                {t("contactPage.email.second")}
               </a>
-              <span>Номер телефону</span>
-              <a href="tel:+48 605 911 005">+48 605 911 005</a>
+              <span>{t("contactPage.phoneNumber")}</span>
+              <a href={`tel:${t("contactPage.phoneNumber")}`}>
+                {t("contactPage.phoneNumber")}
+              </a>
             </div>
 
             <div className="text-block-el">
-              <span>Гаряча лінія в Польщі</span>
-              <a href="tel:+48 605 911 005">+48 605 911 005</a>
-              <span>Консультації для громадян України в Польщі</span>
-              <p>по четвергах від 16.00 до 19.00</p>
-              <p>за попереднім записом.</p>
+              <span>{t("contactPage.hotlineTitle")}</span>
+              <a href={`tel:${t("contactPage.phoneNumber")}`}>
+                {t("contactPage.phoneNumber")}
+              </a>
+              <span>{t("contactPage.consultationInfo")}</span>
             </div>
           </div>
 
           <button className="btn-primary contacts-btn" onClick={openModal}>
-            Відправити запит до Представництва у Польщі
+            {t("contactPage.requestButton")}
             <img src={arrow} alt="arrow" />
           </button>
         </div>
-        <div className="text-block">
-          <h3>
-            Громадська приймальня Уповноваженого Верховної Ради України з прав
-            людини в Україні
-          </h3>
 
+        <div className="text-block">
+          <h3>{t("contactPage.ukraineReceptionTitle")}</h3>
           <div className="d-flex">
             <div className="text-block-el">
-              <span>Адреса</span>
-              <p>вул. Інститутська, 21/8, 01008, м. Київ, Україна</p>
-              <span>Режим роботи</span>
-              <p>
-                Понеділок - п’ятниця: з 9:00 до 17:00 Субота та неділя: вихідні
-              </p>
-              <span>Пошта</span>
+              <span>{t("contactPage.ukraineAddress")}</span>
+              <p>{t("contactPage.ukraineWorkingHours")}</p>
+              <span>{t("contactPage.ukraineEmails.main")}</span>
               <div className="flex-col">
-                <a href="mailto:hotline@ombudsman.gov.ua">
-                  hotline@ombudsman.gov.ua
+                <a href={`mailto:${t("contactPage.ukraineEmails.main")}`}>
+                  {t("contactPage.ukraineEmails.main")}
                 </a>
                 <span className="flex-col-span">
-                  (виключно для електронних звернень та адвокатських запитів)
+                  {t("contactPage.ukraineEmails.mainNote")}
                 </span>
               </div>
               <div className="flex-col">
-                <a href="mailto:zapyt@ombudsman.gov.ua">
-                  zapyt@ombudsman.gov.ua
+                <a href={`mailto:${t("contactPage.ukraineEmails.info")}`}>
+                  {t("contactPage.ukraineEmails.info")}
                 </a>
                 <span className="flex-col-span">
-                  (виключно для запитів на інформацію)
+                  {t("contactPage.ukraineEmails.infoNote")}
                 </span>
               </div>
             </div>
 
             <div className="text-block-el">
-              <span>Гаряча лінія в Україні</span>
-              <a href="tel:+0800-50-17-20">0800-50-17-20 (безкоштовно)</a>
-              <a href="tel:+044-299-74-08">044-299-74-08</a>
-              <span>Режим роботи гарячої лінії</span>
-              <p>
-                Понеділок - п'ятниця з 8:00-19:00, субота, неділя з 9:00 -15:00
-              </p>
+              <span>{t("contactPage.ukraineHotline.main")}</span>
+              <a href={`tel:${t("contactPage.ukraineHotline.main")}`}>
+                {t("contactPage.ukraineHotline.main")}
+              </a>
+              <a href={`tel:${t("contactPage.ukraineHotline.secondary")}`}>
+                {t("contactPage.ukraineHotline.secondary")}
+              </a>
+              <span>{t("contactPage.ukraineHotlineWorkingHours")}</span>
             </div>
           </div>
         </div>

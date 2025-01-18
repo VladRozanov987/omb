@@ -66,10 +66,10 @@ const StyledMain = styled.main`
   }
 
   .btn-secondary {
+    display: inline-flex;
+    width: auto;
     border-radius: 16px;
-    display: flex;
     align-items: center;
-    width: 150px;
     img {
       margin-left: 4px;
     }
@@ -106,7 +106,7 @@ const StyledMain = styled.main`
     background-image: url(${test});
     padding-top: 40px;
     min-height: auto;
-    margin-top: 65px;
+    margin-top: 116px;
     .wrapper {
       display: flex;
       flex-direction: column-reverse;

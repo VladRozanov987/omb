@@ -9,47 +9,49 @@ import centers from "../assets/docs/centers.docx";
 import diplomatic from "../assets/docs/diplomatics.docx";
 import instruction from "../assets/docs/instruction.docx";
 
+// i18n
+import { useTranslation } from "react-i18next";
+
 const Info = () => {
+  const { t } = useTranslation();
+
   return (
     <StyledInfo>
       <div className="container">
-        <h2>Корисна інформація</h2>
+        <h2>{t("info.title")}</h2>
         <div className="d-flex">
-          <p>Центри допомоги українцям в Польщі</p>
+          <p>{t("info.text1")}</p>
           <a
             className="info-link"
             href={centers}
             download="Центри_допомоги_українцям_у_Польщі.docx"
           >
             <button className="info-btn">
-              Загрузити документ <img src={infoArr} alt="Arrow" />{" "}
+              {t("info.btn")} <img src={infoArr} alt="Arrow" />{" "}
             </button>
           </a>
         </div>
         <div className="d-flex">
-          <p>Дипломатичні установи України в Польщі</p>
+          <p>{t("info.text2")}</p>
           <a
             className="info-link"
             href={diplomatic}
             download="Дипломатичні_установи_України_в_Польщі.docx"
           >
             <button className="info-btn">
-              Загрузити документ <img src={infoArr} alt="Arrow" />{" "}
+              {t("info.btn")} <img src={infoArr} alt="Arrow" />{" "}
             </button>
           </a>
         </div>
         <div className="d-flex">
-          <p>
-            Інструкція перетину польського кордону українцями, що потребують
-            захисту від війни
-          </p>
+          <p>{t("info.text3")}</p>
           <a
             className="info-link"
             href={instruction}
             download="Інструкція_перетин_Польського_кордону_українцям_що_потребують.docx"
           >
             <button className="info-btn">
-              Загрузити документ <img src={infoArr} alt="Arrow" />{" "}
+              {t("info.btn")} <img src={infoArr} alt="Arrow" />{" "}
             </button>
           </a>
         </div>

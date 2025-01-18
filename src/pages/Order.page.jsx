@@ -1,113 +1,81 @@
 import styled from "styled-components";
 import order from "../assets/img/order.jpg";
 
+// i18n
+import { useTranslation } from "react-i18next";
+
 const Order = () => {
+  const { t } = useTranslation();
   return (
     <StyledOrder>
       <div className="container">
-        <p className="order-text">
-          Головна / Порядок звернення до Уповноваженого з прав людини
-        </p>
-        <h2 className="order-title">
-          Порядок звернення <br /> до Уповноваженого з прав людини
-        </h2>
+        <p className="order-text">{t("orderPage.breadcrumb")}</p>
+        <h2
+          className="order-title"
+          dangerouslySetInnerHTML={{ __html: t("orderPage.title") }}
+        ></h2>
         <div className="wrapper">
           <img className="wrapper-img" src={order} alt="order" />
           <div className="wrapper-text">
-            <p>
-              Уповноважений розглядає звернення відповідно до законів України
-              «Про Уповноваженого Верховної Ради України з прав людини» та «Про
-              звернення громадян» щодо порушення прав і свобод людини і
-              громадянина органами державної влади, органами місцевого
-              самоврядування та їх посадовими і службовими особами, а також
-              юридичними та фізичними особами.
-            </p>
-            <p>
-              Не підлягають розгляду Уповноваженим звернення про порушення прав
-              і свобод, які є предметом досудового або судового розгляду,
-              трудового спору чи спору в рамках законодавства про захист
-              економічної конкуренції. Звернення без зазначення місця
-              проживання, не підписані автором (авторами), а також такі, з яких
-              неможливо встановити авторство (анонімні) не розглядаються
-            </p>
+            <p>{t("orderPage.orderText1")}</p>
+            <p>{t("orderPage.orderText2")}</p>
           </div>
         </div>
         <div className="order-info">
           <div className="info-block">
             <div className="info-title">
-              <h3>Подати звернення на електронну пошту</h3>
+              <h3>{t("orderPage.submitEmailTitle")}</h3>
             </div>
             <div className="info-text">
-              <h4>hotline@ombudsman.gov.ua</h4>
-              <p>
-                У зверненні має бути зазначено прізвище, ім`я, по батькові,
-                місце проживання громадянина, викладено суть порушеного питання,
-                зауваження, пропозиції, заяви чи скарги, прохання чи вимоги.
-                Письмове звернення повинно бути підписано заявником (заявниками)
-                із зазначенням дати. В електронному зверненні також має бути
-                зазначено електронну поштову адресу, на яку заявнику може бути
-                надіслано відповідь, або відомості про інші засоби зв’язку з
-                ним. Звернення, оформлене без дотримання зазначених вимог,
-                повертається заявнику з відповідними роз'ясненнями не пізніш як
-                через десять днів від дня його надходження, крім випадків,
-                передбачених частиною першою статті 7 Закону України "Про
-                звернення громадян"
-              </p>
-              <p className="info-text-colored">
-                Отримати бланк заяви можна:{" "}
-                <span className="info-text-span">
-                  завантажити за посиланням
-                </span>
-              </p>
+              <h4>{t("orderPage.email")}</h4>
+              <p>{t("orderPage.emailText")}</p>
+              <p className="info-text-colored">{t("orderPage.formLink")}</p>
             </div>
           </div>
           <div className="info-block">
             <div className="info-title">
-              <h3>Подати звернення поштою на адресу</h3>
+              <h3>{t("orderPage.submitMailTitle")}</h3>
             </div>
             <div className="info-text">
-              <h5>
-                Секретаріату Уповноваженого Верховної Ради України з прав
-                людини: вул. Інститутська, 21/8, м. Київ 01008
-              </h5>
+              <h5>{t("orderPage.mailAddress")}</h5>
             </div>
           </div>
           <div className="info-block">
             <div className="info-title">
-              <h3>Гаряча лінія</h3>
+              <h3>{t("orderPage.hotlineTitle")}</h3>
             </div>
             <div className="info-text last">
-              <p className="info-text-line">
-                Крім того, з метою здійснення моніторингу, реагування на
-                порушення прав і свобод людини і громадянина можна
-                зателефонувати на гарячу лінію:
-              </p>
+              <p className="info-text-line">{t("orderPage.hotlineText")}</p>
               <div className="info-number">
-                <a href="tel:+38 0 800 501 720">+38 0 800 501 720</a>
-                <span>Уповноваженого ВРУ з прав людини</span>
+                <a href={`tel:${t("orderPage.hotlineNumbers.first")}`}>
+                  {t("orderPage.hotlineNumbers.first")}
+                </a>
+                <span>{t("orderPage.hotlineDescription1")}</span>
               </div>
               <div className="info-number">
-                <a href="tel:+38 044 299 74 08">+38 044 299 74 08</a>
-                <span>Секретаріату Уповноваженого ВРУ з прав людини</span>
+                <a href={`tel:${t("orderPage.hotlineNumbers.second")}`}>
+                  {t("orderPage.hotlineNumbers.second")}
+                </a>
+                <span>{t("orderPage.hotlineDescription2")}</span>
               </div>
             </div>
           </div>
         </div>
         <div className="order-banner">
-          <p className="order-banner-text">
-            У разі, якщо звернення громадянина України, що перебуває в Польщі,
-            потребує розгляду безпосередньо в країні перебування, тоді ним
-            займається Представництво Омбудсмана України в Польщі, яке надає
-            необхідну підтримку для захисту прав громадян за кордоном і сприяє
-            вирішенню питань у межах своєї компетенції.
-          </p>
-          <p className="order-banner-office">Контакт офісу у Варшаві</p>
+          <p className="order-banner-text">{t("orderPage.bannerText")}</p>
+          <p className="order-banner-office">{t("orderPage.bannerOffice")}</p>
           <div className="order-web d-flex">
-            <a className="order-web-link" href="ombudsman@ombudsman.pl">
-              ombudsman@ombudsman.pl
+            <a
+              className="order-web-link"
+              href={`mailto:${t("orderPage.emailLinks.first")}`}
+            >
+              {t("orderPage.emailLinks.first")}
             </a>
-            <a className="order-web-link" href="headoffice@ombudsman.pl">
-              headoffice@ombudsman.pl
+            <a
+              className="order-web-link"
+              href={`mailto:${t("orderPage.emailLinks.second")}`}
+            >
+              {t("orderPage.emailLinks.second")}
             </a>
           </div>
         </div>
