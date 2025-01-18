@@ -15,6 +15,7 @@ import slide13 from "../assets/img/slide13.png";
 import slide14 from "../assets/img/slide14.png";
 import slide15 from "../assets/img/slide15.png";
 import slide16 from "../assets/img/slide16.png";
+import slide17 from "../assets/img/slide17.png";
 
 export const data = [
   {
@@ -148,7 +149,7 @@ export const data = [
     name: "Пьотр Пухальський",
     text: "Експерт з питань соціальної допомоги",
     image: slide10,
-    type: "Expert",
+    type: "Regional Director",
     fullDescription: `
       <p>Eксперт з питань соціальної допомоги, Директор Поморського та Вармінсько-Мазурського регіонів</p>
       <p>Закінчив факультет права та адміністрації Університету Миколи Коперника в Торуні. Протягом декількох років співпрацює з неурядовими організаціями, які надають допомогу людям, що знаходяться під загрозою соціальної ізоляції.</p>
@@ -222,7 +223,7 @@ export const data = [
     name: "Пьотр Дворницький",
     text: "Директор Великопольського регіону",
     image: slide15,
-    type: "Expert",
+    type: "Regional Director",
     fullDescription: `
       <p>Директор Великопольського регіону</p>
       <p>Ефективний менеджер з більш ніж 30-річним досвідом, більшу частину свого професійного життя пов'язаний з вищою освітою в Польщі (як державною, так і недержавною). За цей період він обіймав ряд важливих управлінських посад: проректор університету, ректор університету  зокрема як уповноважений ректора з особливих доручень.</p>
@@ -244,4 +245,18 @@ export const data = [
       <p>Наразі в Міністерстві державних активів (MAP), у Департаменті міжнародного співробітництва та європейських фондів, Агата Стахурська супроводжує керівництво міністерства та осіб, які представляють міністерство, на зустрічах з представниками посольств інших країн, працівниками органів державного управління, переважно Канцелярії прем'єр-міністра та Міністерства закордонних справ, а також з правліннями іноземних компаній з усього світу, зацікавлених у налагодженні співпраці з польськими господарюючими суб'єктами, головним чином, в енергетичному та оборонному секторах. </p>
     `,
   },
+  // {
+  //   id: 17,
+  //   name: "Ewa Szymczak",
+  //   text: "ekspertka ds. prawa imigracyjnego i integracji migrantów",
+  //   image: slide17,
+  //   type: "Expert",
+  //   fullDescription: `
+  //     <p>ekspertka ds. prawa imigracyjnego i integracji migrantów</p>
+  //     <p>Ukończyła studia na Uniwersytecie im. Adama Mickiewicza w Poznaniu na kierunku filologia rosyjska z filologią ukraińską oraz na Uniwersytecie im. Erazma w Wilnie na kierunku filologia rosyjska. Również ukończyła studia podyplomowe w WSB Merito, gdzie zdobyła wiedzę w zakresie doradztwa zawodowego i coachingu kariery.</p>
+  //     <p>Ewa Szymczak od 2015 roku pracuje z migrantami, udzielając wsparcia w procesie legalizacji pobytu i pracy. Od 2017 roku współpracuje także z przedsiębiorcami w zakresie legalnego zatrudniania cudzoziemców. Jednak jej działalność nie ogranicza się tylko do sektora biznesowego. Ewa ma bogate doświadczenie we współpracy z organami administracji państwowej, fundacjami i stowarzyszeniami zajmującymi się integracją migrantów. Od 2019 roku pracuje jako konsultantka ds. legalizacji pobytu i pracy w Punkcie Informacyjnym dla Migrantów oraz jako doradczyni zawodowa dla osób poszukujących pracy lub pragnących zmienić ścieżkę kariery. Ewa prowadzi szkolenia dla dyrektorów szkół w Centrum Przygotowania Nauczycieli w Poznaniu oraz tworzy materiały audiowizualne dla polskich nauczycieli na temat systemu edukacji na Ukrainie. Uczestniczyła w projekcie IRC dotyczącym tworzenia stref relaksu dla dzieci.</p>
+  //     <p>Ewa pracuje również w Centrum Doskonalenia Nauczycieli w Koninie, gdzie prowadzi szkolenia na Targach Edukacyjnych. Zajmuje się tłumaczeniami dla organizacji Caritas oraz Wojewódzkiego Urzędu Pracy w Poznaniu. Współpracuje z działem współpracy międzynarodowej w Urzędzie Marszałkowskim Województwa Wielkopolskiego oraz brała udział w organizacji festiwalu „Ukraińska Wiosna” w Konsulacie Honorowym Ukrainy w Poznaniu, który niestety już nie istnieje. Pracuje z Poznańskim Komitetem Ochrony Praw Dziecka oraz Fundacją Rozwoju Przedsiębiorczości i Inicjatyw Społecznych.</p>
+  //     <p>Ewa Szymczak jest ekspertką w dziedzinie prawa imigracyjnego i integracji migrantów. Jest współautorką szkolenia/seminarium dla instytucji współpracujących z ukraińskimi rodzinami, zatytułowanego „Współpraca z ukraińskimi rodzinami w kontekście różnic międzykulturowych”. Od 2022 roku Ewa pełni również funkcję tłumacza przysięgłego języka ukraińskiego. Włada językiem rosyjskim i ukraińskim.</p>
+  //   `,
+  // },
 ].sort(() => Math.random() - 0.5);
