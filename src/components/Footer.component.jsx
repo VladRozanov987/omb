@@ -84,8 +84,8 @@ const Footer = () => {
           <div className="footer-text-left d-flex">
             <div>
               <div className="text-block">
-                <h3>{t("footer.addres.title")}</h3>
-                <h3>{t("footer.addres.street")}</h3>
+                <h3>{t("footer.address.title")}</h3>
+                <h3>{t("footer.address.street")}</h3>
               </div>
               <div className="text-block">
                 <h3>{t("footer.contact.title")}</h3>

@@ -16,6 +16,7 @@ import slide14 from "../assets/img/slide14.png";
 import slide15 from "../assets/img/slide15.png";
 import slide16 from "../assets/img/slide16.png";
 import slide17 from "../assets/img/slide17.png";
+import slide18 from "../assets/img/slide18.png";
 
 export const data = [
   {
@@ -147,7 +148,7 @@ export const data = [
   {
     id: 10,
     name: "Пьотр Пухальський",
-    text: "Експерт з питань соціальної допомоги",
+    text: "Експерт з питань соціальної допомоги Директор Поморського та Вармінсько-Мазурського регіонів",
     image: slide10,
     type: "Regional Director",
     fullDescription: `
@@ -245,18 +246,34 @@ export const data = [
       <p>Наразі в Міністерстві державних активів (MAP), у Департаменті міжнародного співробітництва та європейських фондів, Агата Стахурська супроводжує керівництво міністерства та осіб, які представляють міністерство, на зустрічах з представниками посольств інших країн, працівниками органів державного управління, переважно Канцелярії прем'єр-міністра та Міністерства закордонних справ, а також з правліннями іноземних компаній з усього світу, зацікавлених у налагодженні співпраці з польськими господарюючими суб'єктами, головним чином, в енергетичному та оборонному секторах. </p>
     `,
   },
-  // {
-  //   id: 17,
-  //   name: "Ewa Szymczak",
-  //   text: "ekspertka ds. prawa imigracyjnego i integracji migrantów",
-  //   image: slide17,
-  //   type: "Expert",
-  //   fullDescription: `
-  //     <p>ekspertka ds. prawa imigracyjnego i integracji migrantów</p>
-  //     <p>Ukończyła studia na Uniwersytecie im. Adama Mickiewicza w Poznaniu na kierunku filologia rosyjska z filologią ukraińską oraz na Uniwersytecie im. Erazma w Wilnie na kierunku filologia rosyjska. Również ukończyła studia podyplomowe w WSB Merito, gdzie zdobyła wiedzę w zakresie doradztwa zawodowego i coachingu kariery.</p>
-  //     <p>Ewa Szymczak od 2015 roku pracuje z migrantami, udzielając wsparcia w procesie legalizacji pobytu i pracy. Od 2017 roku współpracuje także z przedsiębiorcami w zakresie legalnego zatrudniania cudzoziemców. Jednak jej działalność nie ogranicza się tylko do sektora biznesowego. Ewa ma bogate doświadczenie we współpracy z organami administracji państwowej, fundacjami i stowarzyszeniami zajmującymi się integracją migrantów. Od 2019 roku pracuje jako konsultantka ds. legalizacji pobytu i pracy w Punkcie Informacyjnym dla Migrantów oraz jako doradczyni zawodowa dla osób poszukujących pracy lub pragnących zmienić ścieżkę kariery. Ewa prowadzi szkolenia dla dyrektorów szkół w Centrum Przygotowania Nauczycieli w Poznaniu oraz tworzy materiały audiowizualne dla polskich nauczycieli na temat systemu edukacji na Ukrainie. Uczestniczyła w projekcie IRC dotyczącym tworzenia stref relaksu dla dzieci.</p>
-  //     <p>Ewa pracuje również w Centrum Doskonalenia Nauczycieli w Koninie, gdzie prowadzi szkolenia na Targach Edukacyjnych. Zajmuje się tłumaczeniami dla organizacji Caritas oraz Wojewódzkiego Urzędu Pracy w Poznaniu. Współpracuje z działem współpracy międzynarodowej w Urzędzie Marszałkowskim Województwa Wielkopolskiego oraz brała udział w organizacji festiwalu „Ukraińska Wiosna” w Konsulacie Honorowym Ukrainy w Poznaniu, który niestety już nie istnieje. Pracuje z Poznańskim Komitetem Ochrony Praw Dziecka oraz Fundacją Rozwoju Przedsiębiorczości i Inicjatyw Społecznych.</p>
-  //     <p>Ewa Szymczak jest ekspertką w dziedzinie prawa imigracyjnego i integracji migrantów. Jest współautorką szkolenia/seminarium dla instytucji współpracujących z ukraińskimi rodzinami, zatytułowanego „Współpraca z ukraińskimi rodzinami w kontekście różnic międzykulturowych”. Od 2022 roku Ewa pełni również funkcję tłumacza przysięgłego języka ukraińskiego. Włada językiem rosyjskim i ukraińskim.</p>
-  //   `,
-  // },
+  {
+    id: 17,
+    name: "Ева Шимчак",
+    text: "експерт з питань імміграційного права та інтеграції мігрантів",
+    image: slide17,
+    type: "Expert",
+    fullDescription: `
+      <p>Здобула освіту в Познанському університеті імені Адама Міцкевича за спеціальністю «російська філологія з українською філологією» та у Вільнюському університеті імені Еразма за спеціальністю «російська філологія». Також закінчила аспірантуру в WSB Merito, де здобула знання в галузі професійного консультування та кар'єрного коучингу. </p>
+      <p>Ева Шимчак з 2015 року працює з мігрантами та мігрантками, надаючи підтримку в процесі легалізації їх перебування та роботи. Від 2017 року вона також співпрацює з підприємцями у сфері легального працевлаштування іноземців. Однак її діяльність не обмежується лише бізнес-сектором. Ева має великий досвід роботи з органами державної влади, фондами та асоціаціями, що займаються інтеграцією мігрантів. Вона працює як консультант з питань легалізації перебування та роботи в Інформаційному пункті для мігрантів з 2019 року. Крім того, вона є кар'єрним консультантом для тих, хто шукає роботу або бажає змінити свій кар'єрний шлях. Ева проводить тренінги для директорів шкіл у Центрі підготовки вчителів у Познані та створює аудіовізуальні матеріали для польських вчителів про систему освіти в Україні. Вона брала участь у проєкті IRC зі створення куточків релаксації для дітей.</p>
+      <p>Ева також працює у Центрі підвищення кваліфікації вчителів у Коніні, де проводить навчання на Освітньому ярмарку. Вона здійснює переклади для організацій Карітас та Воєводське управління праці в Познані. Ева співпрацює з відділом міжнародної співпраці в Маршалківському управлінні Великопольського воєводства, а також брала участь в організації фестивалю «Українська весна» у Почесному консульстві України в Познані, яке, на жаль, вже не існує. Вона працює з Познанським районним комітетом захисту прав дітей та Фундацією розвитку підприємництва та соціальних ініціатив. </p>
+      <p>Ева Шимчак є експертом у сфері імміграційного права та інтеграції мігрантів. Вона є співавтором тренінгу/семінару для установ, які співпрацюють з українськими сім'ями, під назвою «Співпраця з українськими сім'ями в контексті міжкультурних відмінностей». З 2022 року Ева виконує обов'язки присяжного перекладача української мови. Вона володіє російською та українською мовами.</p>
+    `,
+  },
+  {
+    id: 18,
+    name: "Вікторія Кощавцева",
+    text: "Директор Малопольського регіону",
+    image: slide18,
+    type: "Regional Director",
+    fullDescription: `
+      <p>Власниця компанії VSK Consulting, партнер міжнародної спільноти українських підприємців Board у Кракові.</p>
+      <p>Консультант Дія.Бізнес, автор статей Happy Monday, Viva, лектор Експертка з рекрутингу та HR.  Сертифікований спеціаліст у оцінюванні персоналу.</p>
+      <p>Її діяльність направлена на покращення та поглиблення польсько-українських стосунків у сфері бізнесу. Співорганізатор цільових заходів з тематики розвитку бізнесу.</p>
+      <p>Радник міського голови м. Конотоп</p>
+      <p>Волонтер</p>
+      <p>Освіта - вища технічна, вища економічна</p>
+      <p>Коуч за міжнародною сертифікацією.</p>
+      <p>Володіння мовами: українська, польська, англійська, італійська</p>
+    `,
+  },
 ].sort(() => Math.random() - 0.5);
