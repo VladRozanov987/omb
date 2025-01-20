@@ -552,5 +552,10 @@
     "fileDelete": "Видалити",
     "submitButton": "Wysłać pytanie",
     "sendingButton": "Wysyłanie..."
+  },
+  "newsDetail": {
+    "notFind": "Nie znaleziono wiadomości",
+    "share": "Podzielić się wiadomością:",
+    "same": "Podobne wiadomości"
   }
 }

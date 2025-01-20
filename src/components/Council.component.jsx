@@ -186,18 +186,24 @@ const FilterButtons = ({ filter, onFilterChange }) => {
   );
 };
 
-const MobileFilterSelect = ({ filter, onFilterChange }) => (
-  <select
-    value={filter}
-    onChange={(e) => onFilterChange(e.target.value)}
-    className="mobile-filter"
-  >
-    <option value="Director">Директори</option>
-    <option value="Expert">Рада Експертів</option>
-    <option value="Regional Director">Регіональні Директори</option>
-    <option value="Volunteers">Волонтери</option>
-  </select>
-);
+const MobileFilterSelect = ({ filter, onFilterChange }) => {
+  const { t } = useTranslation();
+
+  return (
+    <select
+      value={filter}
+      onChange={(e) => onFilterChange(e.target.value)}
+      className="mobile-filter"
+    >
+      <option value="Director">{t("council.filters.director")}</option>
+      <option value="Expert">{t("council.filters.expert")}</option>
+      <option value="Regional Director">
+        {t("council.filters.regionalDirector")}
+      </option>
+      <option value="Volunteers">{t("council.filters.volunteers")}</option>
+    </select>
+  );
+};
 
 const StyledCouncil = styled.section`
   padding-top: 128px;

@@ -33,7 +33,7 @@ const NewsDetail = () => {
   const newsItemImageUrl = `${window.location.origin}${newsItem.image}`;
 
   if (!newsItem) {
-    return <h2>Новина не знайдена</h2>;
+    return <h2>{t("newsDetail.notFind")}</h2>;
   }
 
   const shareOnFacebook = () => {
@@ -82,7 +82,7 @@ const NewsDetail = () => {
           />
 
           <div className="share d-flex">
-            <p>Поділитись новиною:</p>
+            <p>{t("newsDetail.share")}</p>
 
             <img
               className="share-btn"
@@ -105,7 +105,7 @@ const NewsDetail = () => {
           </div>
         </StyledWrapper>
       </div>
-      <News title="Схожі новини" limit={2} showButton={false} />
+      <News title={t("newsDetail.same")} limit={2} showButton={false} />
       <Banner />
     </StyledNews>
   );
@@ -224,6 +224,7 @@ const StyledWrapper = styled.div`
     }
     .share {
       margin-top: 0;
+      margin-bottom: 56px;
     }
   }
 `;

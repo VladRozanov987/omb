@@ -19,7 +19,7 @@ import "swiper/css/pagination";
 // i18n
 import { useTranslation } from "react-i18next";
 
-const News = ({ title = "Останні новини", limit, showButton }) => {
+const News = ({ title = "newsComponent.title", limit, showButton }) => {
   const { t } = useTranslation();
 
   const location = useLocation();
@@ -31,7 +31,7 @@ const News = ({ title = "Останні новини", limit, showButton }) => {
     <StyledNews isAllNewsPage={isAllNewsPage}>
       <div className="container">
         <div className="news-container d-flex">
-          <h2>{t("newsComponent.title")}</h2>
+          <h2>{t(title)}</h2>
           {showButton && !isAllNewsPage && (
             <Link to="/news" className="btn-secondary pc-btn">
               {t("newsComponent.viewAll")} <img src={arrowUp} alt="arrowUp" />
@@ -74,8 +74,8 @@ const News = ({ title = "Останні новини", limit, showButton }) => {
                   <Link to={`/news/${id}`} className="news-item">
                     <img src={image} alt={name} className="news-image" />
                     <div className="news-content">
-                      <h3>{t(`NewsComponent.item.${id}.title`)}</h3>
-                      <p>{t(`NewsComponent.item.${id}.short`)}</p>
+                      <h3>{t(`newsComponent.item.${id}.title`)}</h3>
+                      <p>{t(`newsComponent.item.${id}.short`)}</p>
                       <span className="news-date">{date}</span>
                     </div>
                   </Link>

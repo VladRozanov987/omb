@@ -60,13 +60,13 @@ const FaqList = () => {
 
       {isMobile && !isExpanded && FaqData.length > 6 && (
         <button className="expand-btn" onClick={handleExpandClick}>
-          Відкрити ще
+          {t("accordion.open")}
         </button>
       )}
 
       {isMobile && isExpanded && (
         <button className="expand-btn" onClick={handleExpandClick}>
-          Сховати
+          {t("accordion.close")}
         </button>
       )}
     </StyledAccordionList>
