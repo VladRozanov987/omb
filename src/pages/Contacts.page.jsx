@@ -41,10 +41,6 @@ const Contacts = () => {
               <a href={`mailto:${t("contactPage.email.second")}`}>
                 {t("contactPage.email.second")}
               </a>
-              <span>{t("contactPage.phoneNumber")}</span>
-              <a href={`tel:${t("contactPage.phoneNumber")}`}>
-                {t("contactPage.phoneNumber")}
-              </a>
             </div>
 
             <div className="text-block-el">

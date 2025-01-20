@@ -84,7 +84,7 @@ const News = ({ title = "newsComponent.title", limit, showButton }) => {
             </Swiper>
             {showButton && (
               <Link to="/news" className="btn-secondary mob-btn">
-                {t("NewsComponent.viewAll")} <img src={arrowUp} alt="arrowUp" />
+                {t("newsComponent.viewAll")} <img src={arrowUp} alt="arrowUp" />
               </Link>
             )}
           </div>
