@@ -8,7 +8,7 @@ import Banner from "../components/Banner.component";
 const AllNewsPage = () => {
   return (
     <StyledWrapper>
-      <News title="Усі новини" showButton={false} />
+      <News title="newsComponent.title" showButton={false} />
       <Banner />
     </StyledWrapper>
   );

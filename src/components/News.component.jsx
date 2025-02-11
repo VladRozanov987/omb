@@ -179,7 +179,7 @@ const StyledNews = styled.section`
   }
 
   @media (max-width: 768px) {
-    padding-top: 0;
+    padding-top: 24px;
     .news-items-desktop {
       display: none;
     }
