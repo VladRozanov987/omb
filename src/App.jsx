@@ -20,7 +20,7 @@ import GlobalStyle from "./components/GlobalStyle.component";
 import ScrollToTop from "./hooks/ScrollToTop";
 import Order from "./pages/Order.page";
 
-function Аpp() {
+function App() {
   return (
     <Router>
       <ScrollToTop />
