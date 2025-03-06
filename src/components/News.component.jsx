@@ -1,16 +1,12 @@
-//Styled
+import { useState } from "react";
+
+// Styled
 import styled from "styled-components";
 
-//Icons
-import arrowUp from "../assets/icons/ArrowUpRightW.svg";
-
-//Data
-import { data as newsData } from "../data/News.data";
-
-//Router
+// Router
 import { Link, useLocation } from "react-router-dom";
 
-//Swiper
+// Swiper
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
 import "swiper/css";
@@ -19,13 +15,28 @@ import "swiper/css/pagination";
 // i18n
 import { useTranslation } from "react-i18next";
 
-const News = ({ title = "newsComponent.title", limit, showButton }) => {
-  const { t } = useTranslation();
+// Icons
+import arrowUp from "../assets/icons/ArrowUpRightW.svg";
 
+// Data
+import { data as newsData } from "../data/News.data";
+
+const News = ({
+  title = "newsComponent.title",
+  initialLimit = 10,
+  showButton,
+}) => {
+  const { t } = useTranslation();
   const location = useLocation();
   const isAllNewsPage = location.pathname === "/news";
 
-  const newsToDisplay = limit ? newsData.slice(0, limit) : newsData;
+  const [visibleCount, setVisibleCount] = useState(initialLimit);
+
+  const newsToDisplay = newsData.slice(0, visibleCount);
+
+  const handleShowMore = () => {
+    setVisibleCount((prev) => prev + 10);
+  };
 
   return (
     <StyledNews isAllNewsPage={isAllNewsPage}>
@@ -47,7 +58,7 @@ const News = ({ title = "newsComponent.title", limit, showButton }) => {
             <Link key={id} to={`/news/${id}`} className="news-item">
               <img
                 src={image}
-                alt={t(`newsComponent.item${id}.title`)}
+                alt={t(`newsComponent.item.${id}.title`)}
                 className="news-image"
               />
               <div className="news-content">
@@ -58,6 +69,12 @@ const News = ({ title = "newsComponent.title", limit, showButton }) => {
             </Link>
           ))}
         </div>
+
+        {visibleCount < newsData.length && (
+          <button className="show-more-btn" onClick={handleShowMore}>
+            {t("newsComponent.showMore")}
+          </button>
+        )}
 
         {/* Mobile Slider */}
         {!isAllNewsPage && (
@@ -175,6 +192,28 @@ const StyledNews = styled.section`
       font-size: 14px;
       line-height: 229%;
       color: #000;
+    }
+  }
+
+  .show-more-btn {
+    display: block;
+    margin: 32px auto 0;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: 500;
+    background: var(--245daa);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+
+    &:hover {
+      background: #1c3b8a;
+    }
+
+    @media (max-width: 768px) {
+      width: 100%;
     }
   }
 
