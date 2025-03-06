@@ -105,7 +105,12 @@ const NewsDetail = () => {
           </div>
         </StyledWrapper>
       </div>
-      <News title={t("newsDetail.same")} limit={2} showButton={false} />
+      <News
+        title={t("newsDetail.same")}
+        limit={2}
+        showButton={false}
+        initialLimit={2}
+      />
       <Banner />
     </StyledNews>
   );
