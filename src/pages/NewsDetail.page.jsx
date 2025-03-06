@@ -162,7 +162,7 @@ const StyledWrapper = styled.div`
     font-size: 16px;
     line-height: 187%;
     color: var(--1c1f1c);
-    margin-bottom: 32px;
+    margin-bottom: 24px;
   }
 
   .news-title {
