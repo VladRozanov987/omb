@@ -25,6 +25,7 @@ const News = ({
   title = "newsComponent.title",
   initialLimit = 10,
   showButton,
+  hideShowMoreButton = false,
 }) => {
   const { t } = useTranslation();
   const location = useLocation();
@@ -70,7 +71,7 @@ const News = ({
           ))}
         </div>
 
-        {visibleCount < newsData.length && (
+        {!hideShowMoreButton && visibleCount < newsData.length && (
           <button className="show-more-btn" onClick={handleShowMore}>
             {t("newsComponent.showMore")}
           </button>

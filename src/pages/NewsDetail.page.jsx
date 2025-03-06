@@ -110,6 +110,7 @@ const NewsDetail = () => {
         limit={2}
         showButton={false}
         initialLimit={2}
+        hideShowMoreButton={true}
       />
       <Banner />
     </StyledNews>
