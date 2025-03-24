@@ -1,5 +1,5 @@
 import { useRef, useEffect, useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 // Components
 import MainSection from "../components/MainSection.component";
@@ -42,7 +42,12 @@ const MainPage = () => {
       <Council title="Рада експертів" isAboutPage={false} />
       <Questions />
       <Banner />
-      <News limit={2} showButton={true} />
+      <News
+        limit={2}
+        initialLimit={2}
+        showButton={true}
+        hideShowMoreButton={true}
+      />
       <div ref={questionsRef}>
         <Faq />
       </div>

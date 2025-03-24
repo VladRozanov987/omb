@@ -16,7 +16,7 @@ import facebook from "../assets/icons/facebook.svg";
 import facebookHov from "../assets/icons/facebook-hov.svg";
 
 //Docs
-import personal from "../assets/docs/personal.docx";
+import personal from "../assets/docs/personal.pdf";
 import politics from "../assets/docs/politics.pdf";
 
 // i18n
@@ -109,6 +109,9 @@ const Footer = () => {
                 <a className="mail-to" href="mailto:hotline@ombudsman.gov.ua">
                   hotline@ombudsman.gov.ua 
                 </a>
+                <a href={`mailto:${t("contactPage.ukraineEmails.other")}`}>
+                  {t("contactPage.ukraineEmails.other")}
+                </a>
                 <a className="mail-to" href="mailto:zvernennia@ombudsman.pl">
                   zvernennia@ombudsman.pl 
                 </a>
@@ -118,7 +121,7 @@ const Footer = () => {
                 <a
                   className="download-link"
                   href={personal}
-                  download="Про обробку персональних даних.docx"
+                  download="Про обробку персональних даних.pdf"
                 >
                   {t("footer.documents.personalData")}
                 </a>

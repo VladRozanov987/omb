@@ -661,7 +661,8 @@
       "main": "hotline@ombudsman.gov.ua",
       "mainNote": "(виключно для електронних звернень та адвокатських запитів)",
       "info": "zapyt@ombudsman.gov.ua",
-      "infoNote": "(виключно для запитів на інформацію)"
+      "infoNote": "(виключно для запитів на інформацію)",
+      "other": "headoffice@ombudsman.pl"
     },
     "ukraineHotline": {
       "main": "0800-50-17-20 (безкоштовно)",

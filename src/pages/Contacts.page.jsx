@@ -41,6 +41,9 @@ const Contacts = () => {
               <a href={`mailto:${t("contactPage.email.second")}`}>
                 {t("contactPage.email.second")}
               </a>
+              <a href={`mailto:${t("contactPage.ukraineEmails.other")}`}>
+                {t("contactPage.ukraineEmails.other")}
+              </a>
             </div>
 
             <div className="text-block-el">
@@ -80,6 +83,9 @@ const Contacts = () => {
                 <span className="flex-col-span">
                   {t("contactPage.ukraineEmails.infoNote")}
                 </span>
+                <a href={`mailto:${t("contactPage.ukraineEmails.other")}`}>
+                  {t("contactPage.ukraineEmails.other")}
+                </a>
               </div>
             </div>
 
@@ -103,7 +109,12 @@ const Contacts = () => {
       <div className="styled-banner">
         <Banner />
       </div>
-      <News limit={2} showButton={true} />
+      <News
+        limit={2}
+        initialLimit={2}
+        showButton={true}
+        hideShowMoreButton={true}
+      />
     </StyledContacts>
   );
 };
