@@ -18,7 +18,7 @@ import slide16 from "../assets/img/slide16.png";
 import slide17 from "../assets/img/slide17.png";
 import slide18 from "../assets/img/slide18.png";
 import slide19 from "../assets/img/slide19.png";
-import slide20 from "../assets/img/slide20.jpg";
+import slide20 from "../assets/img/slide20.png";
 
 export const data = [
   {
@@ -301,7 +301,7 @@ export const data = [
   {
     id: 20,
     name: "Олександр Олесневич",
-    text: "Магістр маркетингового менеджменту та управління, юрист, викладач права у Польському університеті.",
+    text: "Експерт з маркетингового менеджменту та управління, юрист.",
     image: slide20,
     type: "Expert",
     fullDescription: `
