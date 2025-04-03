@@ -46,7 +46,7 @@ const LanguageButton = styled.button`
   background: ${({ color }) =>
     color === "ua"
       ? "linear-gradient(to bottom, #005bbb 50%, #ffd700 50%)"
-      : "linear-gradient(to bottom, #ffffff, #d7141a 50%)"};
+      : "linear-gradient(to bottom, #ffffff 50%, #d7141a 50%)"};
 
   &:hover {
     transform: translateY(-2px);
