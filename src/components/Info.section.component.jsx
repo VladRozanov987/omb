@@ -8,6 +8,7 @@ import infoArr from "../assets/icons/info-arr.svg";
 import centers from "../assets/docs/centers.docx";
 import diplomatic from "../assets/docs/diplomatics.docx";
 import instruction from "../assets/docs/instruction.docx";
+import klauzula from "../assets/docs/KLAUZULA.pdf";
 
 // i18n
 import { useTranslation } from "react-i18next";
@@ -50,6 +51,14 @@ const Info = () => {
             href={instruction}
             download="Інструкція_перетин_Польського_кордону_українцям_що_потребують.docx"
           >
+            <button className="info-btn">
+              {t("info.btn")} <img src={infoArr} alt="Arrow" />{" "}
+            </button>
+          </a>
+        </div>
+        <div className="d-flex">
+          <p>{t("info.text4")}</p>
+          <a className="info-link" href={klauzula} download="KLAUZULA.pdf">
             <button className="info-btn">
               {t("info.btn")} <img src={infoArr} alt="Arrow" />{" "}
             </button>
